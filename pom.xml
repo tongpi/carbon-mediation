@@ -920,12 +920,12 @@
                 <groupId>org.wso2.carbon.mediation</groupId>
                 <artifactId>org.wso2.carbon.cloud.gateway.proxyadmin.ui</artifactId>
                 <version>${carbon.mediation.version}</version>
-            </dependency>  
+            </dependency>
             <dependency>
                 <groupId>org.wso2.carbon.mediation</groupId>
                 <artifactId>org.wso2.carbon.cloud.gateway.agent.ui</artifactId>
                 <version>${carbon.mediation.version}</version>
-            </dependency>       
+            </dependency>
             <dependency>
                 <groupId>org.wso2.carbon.mediation</groupId>
                 <artifactId>org.wso2.carbon.cloud.gateway.agent</artifactId>
@@ -935,7 +935,7 @@
                 <groupId>org.wso2.carbon.mediation</groupId>
                 <artifactId>org.wso2.carbon.cloud.gateway</artifactId>
                 <version>${carbon.mediation.version}</version>
-            </dependency>                 
+            </dependency>
             <dependency>
                 <groupId>org.wso2.carbon.mediation</groupId>
                 <artifactId>org.wso2.carbon.application.deployer.synapse</artifactId>
@@ -1571,7 +1571,7 @@
             </dependency>
             <dependency>
                 <groupId>org.wso2.carbon.mediation</groupId>
-                <artifactId>org.wso2.carbon.mediation.configadmin.server.feature</artifactId>            
+                <artifactId>org.wso2.carbon.mediation.configadmin.server.feature</artifactId>
                 <version>${carbon.mediation.version}</version>
                 <type>zip</type>
 	        </dependency>
@@ -2220,8 +2220,8 @@
         </dependency>
         <dependency>
                 <groupId>io.netty</groupId>
-                <artifactId>netty-buffer</artifactId>   
-                <version>${netty.version}</version>             
+                <artifactId>netty-buffer</artifactId>
+                <version>${netty.version}</version>
             </dependency>
             <dependency>
                 <groupId>net.sf.opencsv</groupId>
@@ -2578,5 +2578,5 @@
             <name>长城数字软件开发库</name>
             <url>http://192.168.200.69:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
-    </distributionManagement>      
+    </distributionManagement>
 </project>
