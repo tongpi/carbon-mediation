@@ -244,7 +244,7 @@
         </repository>
     </repositories>
 
-    <distributionManagement>
+<!--     <distributionManagement>
         <repository>
             <id>nexus-releases</id>
             <name>WSO2 Release Distribution Repository</name>
@@ -255,6 +255,18 @@
             <name>Apache Snapshot Repository</name>
             <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
-    </distributionManagement>
+    </distributionManagement> -->
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>长城数字软件产品库</name>
+            <url>http://192.168.200.69:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>长城数字软件开发库</name>
+            <url>http://192.168.200.69:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>       
 
 </project>
