@@ -196,7 +196,7 @@
 
                         <div class="toggle_container">
                             <textarea name="eventDescription" id="eventDescription"
-                                      title="Sequence Description"
+                                      title="序列描述"
                                       cols="100"
                                       rows="3"><%= ((entry != null) && (entry.getDescription() != null)) ? entry.getDescription() : ""%></textarea>
                         </div>

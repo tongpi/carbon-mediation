@@ -723,10 +723,10 @@
                                 });
                             </script>
 
-                            <h2 class="trigger active"><a href="#">Sequence Description</a></h2>
+                            <h2 class="trigger active"><a href="#">序列描述</a></h2>
 
                             <div class="toggle_container">
-                                <textarea name="seqeunceDescription" id="seqeunceDescription" title="Sequence Description"
+                                <textarea name="seqeunceDescription" id="seqeunceDescription" title="序列描述"
                                           cols="100" rows="3"><%= sequence.getDescription() != null ? sequence.getDescription() : ""%></textarea>
                             </div>
 
