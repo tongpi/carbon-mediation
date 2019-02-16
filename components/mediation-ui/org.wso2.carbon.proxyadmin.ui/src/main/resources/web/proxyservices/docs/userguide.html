@@ -17,236 +17,229 @@
  ~ under the License.
  -->
 <html>
+
 <head>
-  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"/>
-    <title>Proxy Services - User Guide</title>
-    <link href="../../admin/css/documentation.css" rel="stylesheet" type="text/css" media="all"/>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <title>代理服务 - 使用指南</title>
+    <link href="../../admin/css/documentation.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 
 <body>
-<h1>Proxy Services</h1>
+    <h1>代理服务</h1>
 
-<p>A proxy service acts as a service hosted in WSO2 ESB, and typically
-    fronts an existing service endpoint. A proxy service can be created and
-    exposed on a different transport, schema, WSDL, or QoS (such as WS-Security,
-    WS-Reliable Messaging) other than the real service. It can mediate the
-    messages before they are delivered to the actual endpoint and the responses
-    before they reach the client.</p>
+    <p>代理服务充当ESB中托管的服务，通常处于现有服务端点的前面。可以创建代理服务暴露在不同的传输，架构，WSDL或QoS（例如WS-Security，     WS-Reliable Messaging）除了真实服务之外。它可以在传递到实际端点前调解消息或在
+            在返回客户端之前调制消息。
+    </p>
 
-<p>Clients can send requests for proxy services directly to the ESB, as the
-    client sees it as a service hosted on WSO2 ESB.For example it can perform the
-    <code>?wsdl</code> function and view the WSDL of the virtual proxy service.
-    In the ESB configuration, such requests can be handled anyway you like. You
-    can process the message and send it to the actual service, probably running
-    on a different computer, but it is not necessary to always send the message
-    to the actual service. You can list a combination of tasks to be performed on
-    the messages received for the proxy service and terminate the flow or send a
-    message back to the client even without sending it to the actual service. </p>
+    <p>客户端可以直接向ESB发送代理服务请求 。客户端将其视为托管在ESB上的服务。例如，它可以执行
+        <code>?wsdl </code>函数并查看虚拟代理服务的WSDL。在ESB配置中，无论如何都可以处理此类请求。您可以处理消息并将其发送到实际服务，可能正在运行在另一台计算机上，但没有必要始终发送消息到实际的服务。您可以列出要执行的任务组合 收到的代理服务消息并终止流程或发送，即使不将其发送到实际服务，也会将消息发回客户端。
+    </p>
 
 
-<h2>Adding a Proxy Service</h2>
-<p>
-    From the left navigation menu, select <strong>Proxy Service</strong> under
-    Manage > Services > Add. This will take you to the <strong>Create Proxy
-    Service from Template</strong> page.
-</p>
-<div class="image">
-    <img  alt="add proxy image" src="images/templates.png"/>
+    <h2>添加代理服务</h2>
+    <p>
+        从左侧导航菜单中，点击管理>服务>添加,选择
+        <strong>代理服务</strong>。这将带您进入
+        <strong>使用模板创建代理服务</strong>页面。
+    </p>
+    <div class="image">
+        <img alt="add proxy image" src="images/templates.png" />
 
-    <p>Figure 1: Select Proxy Service Template</p>
-</div>
-<p>
-    Select a template that suits your mediation requirements. If you are looking
-    to create an advanced proxy service or if none of the available templates
-    matches your requirements, select the <strong><a href="custom-proxy.html">Custom Proxy</a>
-    </strong> option at the end of the templates list. This will launch the proxy
-    service creation wizard which enables you to customize all aspects of the proxy
-    service including the sequences, endpoints, transport settings, WSDL options and
-    other QoS settings.
-</p>
-<p>
-    The <strong>Create Proxy Service from Template</strong> page provides you the
-    following set of built-in templates for creating and setting up proxy services
-    easily and quickly.
-</p>
-<ul>
-    <li><a href="#passthroughproxy">Pass Through Proxy</a></li>
-    <li><a href="#secureproxy">Secure Proxy</a></li>
-    <li><a href="#wsdlbasedproxy">WSDL Based Proxy</a></li>
-    <li><a href="#logproxy">Log and Forward Proxy</a></li>
-    <li><a href="#transformerproxy">Transformer Proxy</a></li>
-	<li><a href="custom-proxy.html">Custom Proxy</a></li>
-</ul>
+        <p>图 1: 选择代理服务模板</p>
+    </div>
+    <p>
+        选择适合您的中介要求的模板。如果你在期望创建高级代理服务且没有可用的模板符合您的要求，请选择位于模板列表最后的
+        <strong>
+            <a href='custom-proxy.html'>自定义代理</a>
+        </strong>选项。这将启动代理服务创建向导，使您可以自定义代理的所有方面服务包括序列，端点，传输设置，WSDL选项和其他QoS设置。
+    </p>
+    <p>
+        <strong>基于模板模板创建代理服务</strong>页面为您提供了以下一组用于创建和设置代理服务的内置模板轻松快速。
+    </p>
+    <ul>
+        <li>
+            <a href="#passthroughproxy">穿透型代理</a>
+        </li>
+        <li>
+            <a href="#secureproxy">安全代理</a>
+        </li>
+        <li>
+            <a href="#wsdlbasedproxy">基于WSDL的代理</a>
+        </li>
+        <li>
+            <a href="#logproxy">日志或转发代理</a>
+        </li>
+        <li>
+            <a href="#transformerproxy">转换代理</a>
+        </li>
+        <li>
+            <a href="custom-proxy.html">自定义代理</a>
+        </li>
+    </ul>
 
-<h3><a name="passthroughproxy">Pass Through Proxy</a></h3>
-<p>
-This template can be used to create a simple proxy service on a specified endpoint.
-Here is no any option  availble to define sequences.</p>
-<p> This proxy service does not perform any processing on the messages that pass through the proxy.</p>
+    <h3>
+        <a name="passthroughproxy">穿透型代理</a>
+    </h3>
+    <p>
+        此模板可用于在指定端点上创建简单代理服务。这里没有任何可用于定义序列的选项。</p>
+    <p> 此代理服务不会对通过代理的邮件执行任何处理。</p>
 
-<div class="image">
-    <img  alt="passthrough proxy" src="images/pass-through-proxy.jpeg"/>
+    <div class="image">
+        <img alt="穿透型代理" src="images/pass-through-proxy.jpeg" />
 
-    <p>Figure 2: Pass Through Proxy Template</p>
-</div>
+        <p>图 2: 穿透型代理模板</p>
+    </div>
 
-<h4> Parameters </h4>
-<ul>
-    <li>Proxy service settings	: User should porvide proxy name and the endpoint URL. Selecting an endpoint can be chossed as direct endpoint or a 
-	registry entry.</li>
-    <li>WSDL options			: If user likes to publish the actual back end service WSDL/ customized WSDL, he can provide the WSDL entry as 
-	a registry entry or as a URL or an inline wsdl option.  If user doesn't provide the WSDL option, the default WSDL will be published when user request for ?WSDL. </li>
-    <li>Transport settings		: Proxy service transport options can be specified here.</li>    
-</ul>
+    <h4> 参数 </h4>
+    <ul>
+        <li>代理服务设置 : 用户应提供代理名称和端点URL。选择端点可以作为直接端点或注册表项。</li>
+        <li>WSDL 选项 : 如果用户想要发布实际的后端服务WSDL/自定义WSDL，他可以提供WSDL条目注册表项或URL或内联wsdl选项。如果用户没有提供WSDL选项，则在用户请求?WSDL时将发布默认WSDL。 </li>
+        <li>传输设置 : 可以在此处指定代理服务传输选项。</li>
+    </ul>
 
-<p> <strong>Note: </strong>If the user configures WSO2 ESB with WSO2 Governance Registry and if he uploads all the required files as *.gar file (described in WSO2 GREG documentation),
- he can  provide only the base WSDL under 'WSDl options'.
-There is no need to provide all required imported schemas as WSDL resources since ESB is able to resolve the imported resources using only the base WSDL.
-Please note that for the above function user needs to uncomment the following lines @ synapse.properties file which is avilable in ESB_HOME/lib/core/WEB_INF/classes folder.
-</p>
-<p><strong>
-synapse.wsdl.resolver=org.wso2.carbon.mediation.initializer.RegistryWSDLLocator <br/>
-synapse.schema.resolver=org.wso2.carbon.mediation.initializer.RegistryXmlSchemaURIResolver
-</strong>
-</p>
+    <p>
+        <strong>注意: </strong>如果用户使用WSO2 Governance Registry配置WSO2 ESB，并且他将所有必需的文件上传为* .gar文件（在WSO2 GREG文档中描述），他只能在“WSDl选项”下提供基本WSDL。
+        无需将所有必需的导入模式作为WSDL资源提供，因为ESB只能使用基本WSDL来解析导入的资源。请注意，对于上述功能，用户需要取消注释以下行@synapse.properties文件，该文件在ESB_HOME/lib/core/WEB_INF/classes文件夹中。
+    </p>
+    <p>
+        <strong>
+            synapse.wsdl.resolver=org.wso2.carbon.mediation.initializer.RegistryWSDLLocator
+            <br/> synapse.schema.resolver=org.wso2.carbon.mediation.initializer.RegistryXmlSchemaURIResolver
+        </strong>
+    </p>
 
-<h3><a name="secureproxy">Secure Proxy</a></h3>
+    <h3>
+        <a name="secureproxy">安全代理</a>
+    </h3>
 
-<p>
-This template can be used to create a proxy with WS-Security engaged. If you wish to expose an existing service with WS-Security you can
-choose this option. 
-</p>
+    <p>
+        此模板可用于创建使用WS-Security安全的代理。如果您希望使用WS-Security公开现有服务，则可以选择此选项。
+    </p>
 
-<div class="image">
-    <img  alt="secure proxy" src="images/secure-proxy.jpeg"/>
+    <div class="image">
+        <img alt="安全代理" src="images/secure-proxy.jpeg" />
 
-    <p>Figure 3: SecureProxy Template</p>
-</div>
+        <p>图 3: 安全代理模板</p>
+    </div>
 
-<h4> Parameters </h4>
+    <h4> 参数 </h4>
 
-<p>
-In addition to  "Pass through proxy" configurations, user should provide the security policy.
-</p>
-<ul>
-    <li>Proxy service settings	: User should porvide proxy name and the endpoint URL. Selecting an endpoint can be chossed as direct endpoint or a 
-	registry entry.</li>
-    <li>WSDL options			: If user likes to publish the actual back end service WSDL/ customized WSDL, he can provide the WSDL entry as 
-	a registry entry or as a URL or an inline wsdl option.  If user doesn't provide the WSDL option, the default WSDL will be published when user request for ?WSDL. </li>
-    <li>Transport settings		: Proxy service transport options can be soecified here.</li>    
-</ul>
+    <p>
+        除了“穿透型代理”配置参数外，用户还应提供安全策略参数。
+    </p>
+    <ul>
+        <li>代理服务设置 : 用户应提供代理名称和端点URL。选择端点可以作为直接端点或注册表项。</li>
+        <li>WSDL 选项 : 如果用户想要发布实际的后端服务WSDL/自定义WSDL，他可以提供WSDL条目注册表项或URL或内联wsdl选项。如果用户没有提供WSDL选项，则在用户请求?WSDL时将发布默认WSDL。 </li>
+        <li>传输设置 : 可以在此处指定代理服务传输选项。</li>
+    </ul>
 
-<p> <strong>Note: </strong>If the user configures WSO2 ESB with WSO2 Governance Registry and if he uploads all the required files as *.gar file (described in WSO2 GREG documentation),
- he can  provide only the base WSDL under 'WSDl options'.
-There is no need to provide all required imported schemas as WSDL resources since ESB is able to resolve the imported resources using only the base WSDL.
-Please note that for the above function user needs to uncomment the following lines @ synapse.properties file which is avilable in ESB_HOME/lib/core/WEB_INF/classes folder.
-</p>
-<p><strong>
-synapse.wsdl.resolver=org.wso2.carbon.mediation.initializer.RegistryWSDLLocator <br/>
-synapse.schema.resolver=org.wso2.carbon.mediation.initializer.RegistryXmlSchemaURIResolver
-</strong>
-</p>
+    <p>
+        <strong>注意: </strong>如果用户使用助力注册表配置ESB并且上传了全部服务的文件构成的*.gar 文件, 他只需要在“WSDl选项”下提供基本WSDL。无需将所有必需的导入模式作为WSDL资源提供，因为ESB只能使用基本WSDL来解析导入的资源。
+        请注意，对于上述功能，用户需要取消注释以下行@synapse.properties文件，该文件在ESB_HOME/lib/core/WEB_INF/classes文件夹中。
+    </p>
+    <p>
+        <strong>
+            synapse.wsdl.resolver=org.wso2.carbon.mediation.initializer.RegistryWSDLLocator
+            <br/> synapse.schema.resolver=org.wso2.carbon.mediation.initializer.RegistryXmlSchemaURIResolver
+        </strong>
+    </p>
 
-<h3><a name="wsdlbasedproxy">WSDL Based Proxy</a></h3>
+    <h3>
+        <a name="wsdlbasedproxy">基于WSDL的代理</a>
+    </h3>
 
-<p>
-This template can be used to create a proxy service out of a WSDL of an existing Web Service.  Endpoint information is extracted 
-from a remotely hosted WSDL of an actual service.
-</p>
+    <p>
+        此模板可用于从现有Web Service的WSDL创建代理服务。提取端点信息从远程托管的实际服务的WSDL。
+    </p>
 
-<div class="image">
-    <img  alt="secure proxy" src="images/wsdlbased-proxy.jpeg"/>
-    <p>Figure 4: WSDL Based Proxy Template</p>
-</div>
+    <div class="image">
+        <img alt="基于WSDL的代理" src="images/wsdlbased-proxy.jpeg" />
+        <p>图 4: 基于WSDL的代理模板</p>
+    </div>
 
-<h4> Parameters </h4>
+    <h4> 参数 </h4>
 
-<ul>
-    <li>Proxy service settings	: User should porvide proxy name and the WSDL URL,Service and port number.</li>
-    <li>WSDL options			: If user likes to publish the actual back end service WSDL/ customized WSDL, he can provide the WSDL entry as 
-	a registry entry or as a URL or an inline wsdl option.  If user doesn't provide the WSDL option, the default WSDL will be published when user request for ?WSDL. </li>
-    <li>Transport settings		: Proxy service transport options can be soecified here.</li>    
-</ul>
+    <ul>
+        <li>代理服务设置 : 用户应提供代理名称和端点URL。选择端点可以作为直接端点或注册表项。</li>
+        <li>WSDL 选项 : 如果用户想要发布实际的后端服务WSDL/自定义WSDL，他可以提供WSDL条目注册表项或URL或内联wsdl选项。如果用户没有提供WSDL选项，则在用户请求?WSDL时将发布默认WSDL。 </li>
+        <li>传输设置 : 可以在此处指定代理服务传输选项。</li>
+    </ul>
 
-<p> <strong>Note: </strong>If the user configures WSO2 ESB with WSO2 Governance Registry and if he uploads all the required files as *.gar file (described in WSO2 GREG documentation),
- he can  provide only the base WSDL under 'WSDl options'.
-There is no need to provide all required imported schemas as WSDL resources since ESB is able to resolve the imported resources using only the base WSDL.
-Please note that for the above function user needs to uncomment the following lines @ synapse.properties file which is avilable in ESB_HOME/lib/core/WEB_INF/classes folder.
-</p>
-<p><strong>
-synapse.wsdl.resolver=org.wso2.carbon.mediation.initializer.RegistryWSDLLocator <br/>
-synapse.schema.resolver=org.wso2.carbon.mediation.initializer.RegistryXmlSchemaURIResolver
-</strong>
-</p>
+    <p>
+        <strong>注意: </strong>如果用户使用助力注册表配置ESB并且上传了全部服务的文件构成的*.gar 文件, 他只需要在“WSDl选项”下提供基本WSDL。无需将所有必需的导入模式作为WSDL资源提供，因为ESB只能使用基本WSDL来解析导入的资源。
+        请注意，对于上述功能，用户需要取消注释以下行@synapse.properties文件，该文件在ESB_HOME/lib/core/WEB_INF/classes文件夹中。
+    </p>
+    <p>
+        <strong>
+            synapse.wsdl.resolver=org.wso2.carbon.mediation.initializer.RegistryWSDLLocator
+            <br/> synapse.schema.resolver=org.wso2.carbon.mediation.initializer.RegistryXmlSchemaURIResolver
+        </strong>
+    </p>
 
-<h3><a name="logproxy">Logging Proxy</a></h3>
+    <h3>
+        <a name="logproxy">日志代理</a>
+    </h3>
 
-<p>
-This template can be used to create a proxy service  which logs all
- the incoming requests and forwards them to a given endpoint. 
- If necessary responses coming back from the backend service can be logged before routing them to the client. 
-</p>
+    <p>
+        此模板可用于创建代理服务，该服务记录所有传入请求并将其转发到给定端点。如果必要，可以在将它们路由到客户端之前记录从后端服务返回的响应。
+    </p>
 
-<div class="image">
-    <img  alt="secure proxy" src="images/logging-proxy.jpeg"/>
-    <p>Figure 5:Logging  Proxy Template</p>
-</div>
+    <div class="image">
+        <img alt="secure proxy" src="images/logging-proxy.jpeg" />
+        <p>图 5:日志代理模板</p>
+    </div>
 
-<h4> Parameters </h4>
+    <h4> 参数 </h4>
 
-<ul>
-    <li>Proxy service settings	: User should porvide proxy name and the endpoint URL. Selecting an endpoint can be chossed as direct endpoint or a 
-	registry entry. Request and Response log level also should be provided if user wants to log the messages.</li>
-    <li>WSDL options			: If user likes to publish the actual back end service WSDL/ customized WSDL, he can provide the WSDL entry as 
-	a registry entry or as a URL or an inline wsdl option.  If user doesn't provide the WSDL option, the default WSDL will be published when user request for ?WSDL. </li>
-    <li>Transport settings		: Proxy service transport options can be soecified here.</li>    
-</ul>
+    <ul>
+        <li>代理服务设置 : 用户应提供代理名称和端点URL。选择端点可以作为直接端点或注册表项。</li>
+        <li>WSDL 选项 : 如果用户想要发布实际的后端服务WSDL/自定义WSDL，他可以提供WSDL条目注册表项或URL或内联wsdl选项。如果用户没有提供WSDL选项，则在用户请求?WSDL时将发布默认WSDL。 </li>
+        <li>传输设置 : 可以在此处指定代理服务传输选项。</li>
+    </ul>
 
-<p> <strong>Note: </strong>If the user configures WSO2 ESB with WSO2 Governance Registry and if he uploads all the required files as *.gar file (described in WSO2 GREG documentation),
- he can  provide only the base WSDL under 'WSDl options'.
-There is no need to provide all required imported schemas as WSDL resources since ESB is able to resolve the imported resources using only the base WSDL.
-Please note that for the above function user needs to uncomment the following lines @ synapse.properties file which is avilable in ESB_HOME/lib/core/WEB_INF/classes folder.
-</p>
-<p><strong>
-synapse.wsdl.resolver=org.wso2.carbon.mediation.initializer.RegistryWSDLLocator <br/>
-synapse.schema.resolver=org.wso2.carbon.mediation.initializer.RegistryXmlSchemaURIResolver
-</strong>
-</p>
+    <p>
+        <strong>注意: </strong>如果用户使用助力注册表配置ESB并且上传了全部服务的文件构成的*.gar 文件, 他只需要在“WSDl选项”下提供基本WSDL。无需将所有必需的导入模式作为WSDL资源提供，因为ESB只能使用基本WSDL来解析导入的资源。
+        请注意，对于上述功能，用户需要取消注释以下行@synapse.properties文件，该文件在ESB_HOME/lib/core/WEB_INF/classes文件夹中。
+    </p>
+    <p>
+        <strong>
+            synapse.wsdl.resolver=org.wso2.carbon.mediation.initializer.RegistryWSDLLocator
+            <br/> synapse.schema.resolver=org.wso2.carbon.mediation.initializer.RegistryXmlSchemaURIResolver
+        </strong>
+    </p>
 
-<h3><a name="transformerproxy">Transformer Proxy</a></h3>
+    <h3>
+        <a name="transformerproxy">转换代理</a>
+    </h3>
 
-<p>
-This template can be used to create a proxy service , where user is trying to implement a
-    scenario where an existing service is exposed over a different schema (message format)
-    you can make use of the <strong>Transformer Proxy</strong> option to easily setup
-    a proxy service which can transform requests and responses based on specified XSLT
-    configurations.
-</p>
+    <p>
+        此模板可用于创建代理服务，其中用户尝试实现通过不同方案（消息格式）公开现有服务的需求，您可以使用
+        <strong> 转换代理 </strong>选项轻松设置代理服务，该服务可以根据指定的XSLT配置转换请求和响应。
+    </p>
 
-<div class="image">
-    <img  alt="secure proxy" src="images/transformer-proxy.jpeg"/>
-    <p>Figure 6:Transformer Proxy Template</p>
-</div>
+    <div class="image">
+        <img alt="secure proxy" src="images/transformer-proxy.jpeg" />
+        <p>图 6:转换代理模板</p>
+    </div>
 
-<h4> Parameters </h4>
+    <h4> 参数 </h4>
 
-<ul>
-    <li>Proxy service settings	: User should porvide proxy name and the endpoint URL. Selecting an endpoint can be chossed as direct endpoint or a 
-	registry entry. XSLT tranformation script should be provided as a registry entry.</li>
-    <li>WSDL options			: If user likes to publish the actual back end service WSDL/ customized WSDL, he can provide the WSDL entry as 
-	a registry entry or as a URL or an inline wsdl option.  If user doesn't provide the WSDL option, the default WSDL will be published when user request for ?WSDL. </li>
-    <li>Transport settings		: Proxy service transport options can be soecified here.</li>    
-</ul>
-<p> <strong>Note: </strong>If the user configures WSO2 ESB with WSO2 Governance Registry and if he uploads all the required files as *.gar file (described in WSO2 GREG documentation),
- he can  provide only the base WSDL under 'WSDl options'.
-There is no need to provide all required imported schemas as WSDL resources since ESB is able to resolve the imported resources using only the base WSDL.
-Please note that for the above function user needs to uncomment the following lines @ synapse.properties file which is avilable in ESB_HOME/lib/core/WEB_INF/classes folder.
-</p>
-<p><strong>
-synapse.wsdl.resolver=org.wso2.carbon.mediation.initializer.RegistryWSDLLocator <br/>
-synapse.schema.resolver=org.wso2.carbon.mediation.initializer.RegistryXmlSchemaURIResolver
-</strong>
-</p>
+    <ul>
+        <li>代理服务设置 : 用户应提供代理名称和端点URL。选择端点可以作为直接端点或注册表项。</li>
+        <li>WSDL 选项 : 如果用户想要发布实际的后端服务WSDL/自定义WSDL，他可以提供WSDL条目注册表项或URL或内联wsdl选项。如果用户没有提供WSDL选项，则在用户请求?WSDL时将发布默认WSDL。 </li>
+        <li>传输设置 : 可以在此处指定代理服务传输选项。</li>
+    </ul>
+    <p>
+        <strong>注意: </strong>如果用户使用助力注册表配置ESB并且上传了全部服务的文件构成的*.gar 文件, 他只需要在“WSDl选项”下提供基本WSDL。无需将所有必需的导入模式作为WSDL资源提供，因为ESB只能使用基本WSDL来解析导入的资源。
+        请注意，对于上述功能，用户需要取消注释以下行@synapse.properties文件，该文件在ESB_HOME/lib/core/WEB_INF/classes文件夹中。
+    </p>
+    <p>
+        <strong>
+            synapse.wsdl.resolver=org.wso2.carbon.mediation.initializer.RegistryWSDLLocator
+            <br/> synapse.schema.resolver=org.wso2.carbon.mediation.initializer.RegistryXmlSchemaURIResolver
+        </strong>
+    </p>
 
 </body>
+
 </html>
