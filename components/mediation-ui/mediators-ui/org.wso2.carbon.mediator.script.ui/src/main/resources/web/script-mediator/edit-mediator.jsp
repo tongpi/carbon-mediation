@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -108,13 +108,13 @@
                     <%
                         if (scriptMediator.getKey() == null) {
                     %>
-                    <option id="inline" value="inline" selected="true">Inline</option>
-                    <option id="registry_key" value="regKey">Registry Key</option>
+                    <option id="inline" value="inline" selected="true">内联</option>
+                    <option id="registry_key" value="regKey">注册表键</option>
                     <%
                     } else {
                     %>
                     <option id="inline" value="inline">Inline</option>
-                    <option id="registry_key" value="regKey" selected="true">Registry Key</option>
+                    <option id="registry_key" value="regKey" selected="true">注册表键</option>
                     <%
                         }
                     %>

@@ -17,7 +17,7 @@
 -->
 <%@page import="org.apache.synapse.mediators.Value" %>
 <%@page import="org.apache.synapse.util.xpath.SynapseXPath" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.mediator.service.ui.Mediator" %>
 <%@ page import="org.wso2.carbon.mediator.service.util.MediatorProperty" %>
 <%@ page import="org.wso2.carbon.sequences.ui.util.SequenceEditorHelper" %>

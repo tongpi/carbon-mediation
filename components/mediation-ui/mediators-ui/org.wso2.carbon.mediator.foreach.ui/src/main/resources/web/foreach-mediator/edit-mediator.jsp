@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%--
  ~ Copyright (c) 2014, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~ 
@@ -123,7 +123,7 @@
                     <table class="normal">
                         <tr>
                             <td>
-                                <h3 class="mediator">Sequence</h3>
+                                <h3 class="mediator">序列</h3>
                                 <input type="hidden" name="mediator.foreach.seq.type"
                                        id="mediator.foreach.seq.type" value="anon"/>
                             </td>
@@ -131,13 +131,13 @@
                         <tr>
                             <td>
                                 <input id="mediator.foreach.seq.radio.anon" name="mediator.foreach.seq.radio" type="radio" onclick="hideSeqRegistryOption()"/>
-                                Anonymous
+                                匿名
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <input id="mediator.foreach.seq.radio.reg" name="mediator.foreach.seq.radio" type="radio" onclick="showSeqRegistryOption()"/>
-                                Pick From Registry
+                                从注册表提取
                             </td>
                             <td>
                                 <input type="text" name="mediator.foreach.seq.reg"

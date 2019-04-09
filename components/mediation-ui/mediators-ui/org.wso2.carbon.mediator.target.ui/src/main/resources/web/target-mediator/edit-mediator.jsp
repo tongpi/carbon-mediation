@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -131,7 +131,7 @@
         <table class="normal" width="100%">
             <tr>
                 <td>
-                    <h2>Target Configuration</h2>
+                    <h2>目标配置</h2>
                 </td>
             </tr>
 
@@ -140,7 +140,7 @@
                     <table class="normal">
                         <tr>
                             <td>
-                                SOAP Action
+                                SOAP 操作
                             </td>
                             <td>
                                 <input type="text" name="mediator.target.soapaction" id="mediator.target.soapaction"
@@ -150,7 +150,7 @@
 
                         <tr>
                             <td>
-                                To Address
+                                目标地址
                             </td>
                             <td>
                                 <input type="text" name="mediator.target.toaddress" id="mediator.target.toaddress"
@@ -160,7 +160,7 @@
 
                         <tr>
                             <td>
-                                <h3 class="mediator">Sequence</h3>
+                                <h3 class="mediator">序列</h3>
                                 <input type="hidden" name="mediator.target.seq.type"
                                        id="mediator.target.seq.type" value="none"/>
                             </td>
@@ -168,19 +168,19 @@
                         <tr>
                             <td>
                                 <input id="mediator.target.seq.radio.none" name="mediator.target.seq.radio"  type="radio" value="none"
-                                      onclick="hideSeqRegistryOption(); seqNoneClicked();"/>None
+                                      onclick="hideSeqRegistryOption(); seqNoneClicked();"/>无
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <input id="mediator.target.seq.radio.anon" name="mediator.target.seq.radio" type="radio" onclick="hideSeqRegistryOption()"/>
-                                Anonymous
+                                匿名
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <input id="mediator.target.seq.radio.reg" name="mediator.target.seq.radio" type="radio" onclick="showSeqRegistryOption()"/>
-                                Pick From Registry
+                                从注册表提取
 
                             </td>
                             <td>
@@ -203,28 +203,28 @@
 
 
                         <tr>
-                            <td><h3 class="mediator">Endpoint</h3></td>
+                            <td><h3 class="mediator">端点</h3></td>
                         </tr>
                         <tr>
                             <td>
                                 <input id="epOpNone" type="radio" name="epOp" value="none"
-                                       onclick="hideEpOps();"/>None
+                                       onclick="hideEpOps();"/>无
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <input id="epOpAnon" type="radio" name="epOp" value="anon"
-                                       onclick="showEpAddtionalOptions('epAnonAddEdit');"/>Anonymous
+                                       onclick="showEpAddtionalOptions('epAnonAddEdit');"/>匿名
                             </td>
                             <%
 
                             %>
                             <% if( anonEpXML != null && !"".equals(anonEpXML)) { %>
                                 <td>
-                                    <a href="#" class="add-icon-link" id="epAnonAdd" onclick="anonEpAdd();" style="display:none;">Add</a>
+                                    <a href="#" class="add-icon-link" id="epAnonAdd" onclick="anonEpAdd();" style="display:none;">添加</a>
                                 </td>
                                 <td>
-                                    <a href="#" class="edit-icon-link" id="epAnonEdit" onclick="anonEpEdit();">Edit</a>
+                                    <a href="#" class="edit-icon-link" id="epAnonEdit" onclick="anonEpEdit();">编辑</a>
                                 </td>
 
                                 <td>
@@ -233,23 +233,23 @@
                             <% } else { %>
 
                                 <td>
-                                    <a href="#" class="add-icon-link" id="epAnonAdd" onclick="anonEpAdd();">Add</a>
+                                    <a href="#" class="add-icon-link" id="epAnonAdd" onclick="anonEpAdd();">添加</a>
                                 </td>
                                 <td>
-                                    <a href="#" class="edit-icon-link" id="epAnonEdit" onclick="anonEpEdit();"  style="display:none;">Edit</a>
+                                    <a href="#" class="edit-icon-link" id="epAnonEdit" onclick="anonEpEdit();"  style="display:none;">编辑</a>
                                 </td>
                                 <td>
                                     <input type="hidden" id="anonAddEdit" name="anonAddEdit" value="Add"/>
                                 </td>
                             <% } %>
                                 <td>
-                                    <a href="#"  class="delete-icon-link" id="epAnonClear" onclick="anonEpClear();">Clear</a>
+                                    <a href="#"  class="delete-icon-link" id="epAnonClear" onclick="anonEpClear();">清除</a>
                                 </td>
                         </tr>
                         <tr>
                             <td>
                                 <input id="epOpReg" type="radio" name="epOp" value="registry"
-                                       onclick="showEpAddtionalOptions('registryEp');"/>Pick From Registry
+                                       onclick="showEpAddtionalOptions('registryEp');"/>从注册表提取
                             </td>
                             <td>
                                 <input type="text" id="registryKey" name="registryKey"

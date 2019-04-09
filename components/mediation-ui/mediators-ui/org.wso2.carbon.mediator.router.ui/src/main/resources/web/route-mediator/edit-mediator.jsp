@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -62,9 +62,9 @@
                         <td>
                             <select name="mediator.route.break" id="mediator.route.break">
                                 <option value="true" <%= routeMediator.isBreakRouter() ?
-                                        "selected=\"true\"" : ""%>>Yes</option>
+                                        "selected=\"true\"" : ""%>>是</option>
                                 <option value="false" <%= !routeMediator.isBreakRouter() ?
-                                        "selected=\"true\"" : ""%>>No</option>
+                                        "selected=\"true\"" : ""%>>否</option>
                             </select>
                         </td>
                     </tr>

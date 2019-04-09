@@ -15,7 +15,7 @@
 ~ specific language governing permissions and limitations
 ~ under the License.
 -->
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.mediator.fault.FaultMediator" %>
 <%@ page import="org.wso2.carbon.mediator.fault.ui.util.FaultUtil" %>
 <%@ page import="org.wso2.carbon.mediator.service.ui.Mediator" %>
@@ -106,14 +106,14 @@
     <td>
         <select name="fault_code1" class="esb-edit small_textbox">
             <option value="VersionMismatch" <% if ("VersionMismatch".equals(faultcodeOption)) { %>
-                    selected="selected" <%}%> >versionMismatch
+                    selected="selected" <%}%> >版本不匹配
             </option>
             <option value="MustUnderstand" <% if ("MustUnderstand".equals(faultcodeOption)) { %>
-                    selected="selected" <%}%> >mustUnderstand
+                    selected="selected" <%}%> >必须理解
             </option>
-            <option value="Client" <% if ("Client".equals(faultcodeOption)) { %> selected="selected" <%}%> >Client
+            <option value="Client" <% if ("Client".equals(faultcodeOption)) { %> selected="selected" <%}%> >客户端
             </option>
-            <option value="Server" <% if ("Server".equals(faultcodeOption)) { %> selected="selected" <%}%> >Server
+            <option value="Server" <% if ("Server".equals(faultcodeOption)) { %> selected="selected" <%}%> >服务器
             </option>
         </select>
     </td>
@@ -125,17 +125,17 @@
     <td>
         <select name="fault_code2" class="esb-edit small_textbox">
             <option value="VersionMismatch" <% if ("VersionMismatch".equals(faultcodeOption)) { %>
-                    selected="selected" <%}%> >versionMismatch
+                    selected="selected" <%}%> >版本不匹配
             </option>
             <option value="MustUnderstand" <% if ("MustUnderstand".equals(faultcodeOption)) { %>
-                    selected="selected" <%}%> >mustUnderstand
+                    selected="selected" <%}%> >必须理解
             </option>
             <option value="DataEncodingUnknown" <% if ("DataEncodingUnknown".equals(faultcodeOption)) { %>
-                    selected="selected" <%}%> >dataEncodingUnknown
+                    selected="selected" <%}%> >数据编码未知
             </option>
-            <option value="Sender" <% if ("Sender".equals(faultcodeOption)) { %> selected="selected" <%}%> >Sender
+            <option value="Sender" <% if ("Sender".equals(faultcodeOption)) { %> selected="selected" <%}%> >发送者
             </option>
-            <option value="Receiver" <% if ("Receiver".equals(faultcodeOption)) { %> selected="selected" <%}%> >Receiver
+            <option value="Receiver" <% if ("Receiver".equals(faultcodeOption)) { %> selected="selected" <%}%> >接收者
             </option>
         </select>
     </td>
@@ -152,24 +152,24 @@
             if (faultMediator.getFaultReasonValue() != null) {
         %>
         <input type="radio" name="fault_string" value="value" checked="true"
-               onclick="changeButton('value');">value
+               onclick="changeButton('value');">值
         <input type="radio" name="fault_string" value="expression"
-               onclick="changeButton('expression');">expression
+               onclick="changeButton('expression');">表达式
         <%
         } else if (faultMediator.getFaultReasonExpr() != null) {
         %>
         <input type="radio" name="fault_string" value="value"
-               onclick="changeButton('value');">value
+               onclick="changeButton('value');">值
         <input type="radio" name="fault_string" value="expression" checked="true"
-               onclick="changeButton('expression');">expression
+               onclick="changeButton('expression');">表达式
 
         <%
         } else {
         %>
         <input type="radio" name="fault_string" value="value" checked="true"
-               onclick="changeButton('value');">value
+               onclick="changeButton('value');">值
         <input type="radio" name="fault_string" value="expression"
-               onclick="changeButton('expression');">expression
+               onclick="changeButton('expression');">表达式
         <%
             }
         %>
@@ -261,25 +261,25 @@
             if (faultMediator.getFaultDetail() != null) {
         %>
         <input type="radio" name="fault_detail" value="value" checked="true"
-               onclick="changeButton('detail_value');">value
+               onclick="changeButton('detail_value');">值
         <input type="radio" name="fault_detail" value="expression"
-               onclick="changeButton('detail_expression');">expression
+               onclick="changeButton('detail_expression');">表达式
         <%
         } else if (faultMediator.getFaultDetailExpr() != null) {
         %>
         <input type="radio" name="fault_detail" value="value"
-               onclick="changeButton('detail_value');">value
+               onclick="changeButton('detail_value');">值
         <input type="radio" name="fault_detail" value="expression" checked="true"
-               onclick="changeButton('detail_expression');">expression
+               onclick="changeButton('detail_expression');">表达式
 
         <%
         } else {
         %>
 
         <input type="radio" name="fault_detail" value="value" checked="true"
-               onclick="changeButton('detail_value');">value
+               onclick="changeButton('detail_value');">值
         <input type="radio" name="fault_detail" value="expression"
-               onclick="changeButton('detail_expression');">expression
+               onclick="changeButton('detail_expression');">表达式
         <%
             }
         %>

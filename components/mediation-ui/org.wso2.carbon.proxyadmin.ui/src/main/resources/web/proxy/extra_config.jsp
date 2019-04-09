@@ -15,6 +15,7 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
@@ -44,28 +45,28 @@
     <tr>
         <td id="edit<%=name%>">
             <% if(pd.getArtifactContainerName() != null) { %>
-                <a href="#" onclick="editCAppPS();"><img src="../admin/images/edit.gif" alt="" border="0"> Edit</a>
+                <a href="#" onclick="editCAppPS();"><img src="../admin/images/edit.gif" alt="" border="0"> 编辑</a>
             <% } else { %>
-                <a href="#" onclick="editPS();return false;"><img src="../admin/images/edit.gif" alt="" border="0"> Edit</a>
+                <a href="#" onclick="editPS();return false;"><img src="../admin/images/edit.gif" alt="" border="0"> 编辑</a>
             <% } %>
         </td>
         <td id="enableStat<%=name%>">
-            <a href="#" onclick="statOnOffPS('<%=name%>', 'enable');return false;"><img src="../admin/images/static-icon-disabled.gif" alt="" border="0"> Enable Statistics</a>
+            <a href="#" onclick="statOnOffPS('<%=name%>', 'enable');return false;"><img src="../admin/images/static-icon-disabled.gif" alt="" border="0"> 启用统计</a>
         </td>
         <td id="disableStat<%=name%>">
-            <a href="#" onclick="statOnOffPS('<%=name%>', 'disable');return false;"><img src="../admin/images/static-icon.gif" alt="" border="0"> Disable Statistics</a>
+            <a href="#" onclick="statOnOffPS('<%=name%>', 'disable');return false;"><img src="../admin/images/static-icon.gif" alt="" border="0"> 禁用统计</a>
         </td>
     </tr>
 
     <tr>
         <td id="redeploy<%=name%>">
-            <a href="#" onclick="redeployPS('<%=name%>');return false;"><img src="../proxyservices/images/core/icon-redeploy.gif" alt="" border="0"> Redeploy</a>
+            <a href="#" onclick="redeployPS('<%=name%>');return false;"><img src="../proxyservices/images/core/icon-redeploy.gif" alt="" border="0"> 重新部署</a>
         </td>
         <td id="enableTracing<%=name%>">
-            <a href="#" onclick="traceOnOffPS('<%=name%>', 'enable');return false;"><img src="../admin/images/trace-icon-disabled.gif" alt="" border="0"> Enable Tracing</a>
+            <a href="#" onclick="traceOnOffPS('<%=name%>', 'enable');return false;"><img src="../admin/images/trace-icon-disabled.gif" alt="" border="0"> 启用跟踪</a>
         </td>
         <td id="disableTracing<%=name%>">
-            <a href="#" onclick="traceOnOffPS('<%=name%>', 'disable');return false;"><img src="../admin/images/trace-icon.gif" alt="" border="0"> Disable Tracing</a>
+            <a href="#" onclick="traceOnOffPS('<%=name%>', 'disable');return false;"><img src="../admin/images/trace-icon.gif" alt="" border="0"> 禁用跟踪</a>
         </td>
     </tr>
 
@@ -109,7 +110,7 @@
     }
 
     function editCAppPS() {
-        CARBON.showConfirmationDialog("The changes will not persist to the CAPP after restart or redeploy. Do you want to Edit?", function() {
+        CARBON.showConfirmationDialog("重启或重新部署后更改不会持久化到. 你确信要编辑吗?", function() {
             jQuery.ajax({
                 type: 'POST',
                 success: function() {

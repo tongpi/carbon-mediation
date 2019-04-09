@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -217,7 +217,7 @@ session.setAttribute(CarbonUIMessage.ID, uiMsg);
             <tr id="mediator.dbr.driver_row" <%=!isPool ? "style=\"display:none;\"" : ""%>>
                 <td style="width:150px">
                     <fmt:message key="mediator.dbreport.driver"/>
-                    <font style="color: red; font-size: 8pt;"> *</font>
+                    <font style="color: red; font-size: 8pt;">ï¿½*</font>
                 </td>
                 <td><input style="width:300px" type="text" name="driver" id="driver" class="longTextField" value="<%=driver%>"/></td>
             </tr>
@@ -230,28 +230,28 @@ session.setAttribute(CarbonUIMessage.ID, uiMsg);
             <tr id="mediator.dbr.ds_row" <%=!isPool && isInline ? "" : "style=\"display:none;\""%>>
                 <td>
                     <fmt:message key="mediator.dbreport.dsName"/>
-                    <font style="color: red; font-size: 8pt;"> *</font>
+                    <font style="color: red; font-size: 8pt;">ï¿½*</font>
                 </td>
                 <td><input type="text" style="width:300px" name="ext_data_source" id="ext_data_source" value="<%=dsName%>"/></td>
             </tr>
             <tr id='mediator.dbr.url' <%=!displayCommonProps ? "style=\"display:none;\"" : ""%>>
                 <td>
                     <fmt:message key="mediator.dbreport.url"/>
-                    <font style="color: red; font-size: 8pt;"> *</font>
+                    <font style="color: red; font-size: 8pt;">ï¿½*</font>
                 </td>
                 <td><input type="text" style="width:300px" name="url" id="url" value="<%=url%>"/></td>
             </tr>
             <tr id="mediator.dbr.user" <%=!displayCommonProps ? "style=\"display:none;\"" : ""%>>
                 <td>
                     <fmt:message key="mediator.dbreport.user"/>
-                    <font style="color: red; font-size: 8pt;"> *</font>
+                    <font style="color: red; font-size: 8pt;">ï¿½*</font>
                 </td>
                 <td><input type="text" style="width:300px"  name="user" id="user" value="<%=user%>"/></td>
             </tr>
             <tr id="mediator.dbr.passwd" <%=!displayCommonProps ? "style=\"display:none;\"" : ""%>>
                 <td>
                     <fmt:message key="mediator.dbreport.password"/>
-                    <font style="color: red; font-size: 8pt;"> *</font>
+                    <font style="color: red; font-size: 8pt;">ï¿½*</font>
                 </td>
                 <td><input type="password" name="password" id="password" style="width:300px"  value="<%=passwd%>"/></td>
             </tr>
@@ -384,7 +384,7 @@ session.setAttribute(CarbonUIMessage.ID, uiMsg);
             <table class="normal">
                 <tbody>
                     <tr>
-                        <td style="width:80px"><fmt:message key="mediator.dbreport.sql"/><font style="color: red; font-size: 8pt;"> *</font></td>
+                        <td style="width:80px"><fmt:message key="mediator.dbreport.sql"/><font style="color: red; font-size: 8pt;">ï¿½*</font></td>
                         <td style="width:305px"><input type="text" id="sql_val<%=(i)%>" name="sql_val<%=(i)%>" class="longTextField" value="<%=rowSQL%>"/></td>
                         <td><a onclick="dbrDeleteStatement('<%="statement" + (i)%>');" class="delete-icon-link" href="#"><fmt:message key="mediator.dbreport.delete"/></a>
                         </td>

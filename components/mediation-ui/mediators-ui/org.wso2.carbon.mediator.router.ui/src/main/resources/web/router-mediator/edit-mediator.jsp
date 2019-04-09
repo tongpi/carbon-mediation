@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -53,9 +53,9 @@
                         <td>
                             <select name="mediator.router.continue" id="mediator.router.continue">
                                 <option value="true" <%= routerMediator.isContinueAfter() ?
-                                        "selected=\"true\"" : ""%>>Yes</option>
+                                        "selected=\"true\"" : ""%>>是</option>
                                 <option value="false" <%= !routerMediator.isContinueAfter() ?
-                                        "selected=\"true\"" : ""%>>No</option>
+                                        "selected=\"true\"" : ""%>>否</option>
                             </select>
                         </td>
                     </tr>
@@ -71,7 +71,7 @@
                         <td>
                             <a class="add-icon-link"
                                href="#addRouterLink"
-                               onclick="addRoute()">Add Route</a>
+                               onclick="addRoute()">添加路由</a>
                         </td>
                     </tr>
                 </table>

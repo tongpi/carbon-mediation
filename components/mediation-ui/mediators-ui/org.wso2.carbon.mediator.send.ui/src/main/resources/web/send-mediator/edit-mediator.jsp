@@ -15,7 +15,7 @@
 ~ specific language governing permissions and limitations
 ~ under the License.
 -->
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <%@ page import="org.apache.synapse.config.xml.endpoints.EndpointSerializer" %>
 <%@ page import="org.apache.synapse.endpoints.AbstractEndpoint" %>
@@ -188,11 +188,11 @@
                                 <a href="#registryBrowserLink" id="confRegEpLink"
                                    class="registry-picker-icon-link"
                                    onclick="showRegistryBrowser('registryKey','/_system/config');">
-                                    Configuration Registry</a>
+                                    配置注册表</a>
                                 <a href="#registryBrowserLink" id="govRegEpLink"
                                    class="registry-picker-icon-link"
                                    onclick="showRegistryBrowser('registryKey','/_system/governance');">
-                                    Governance Registry</a>
+                                    治理注册表</a>
                             </td>
                         </tr>
                         <tr>
@@ -281,10 +281,10 @@
                         <td>
                             <select name="build.message" id="build.message">
                                 <option value="true" <%= sendMediator.isBuildMessage() ?
-                                                         "selected=\"true\"" : ""%>>Yes
+                                                         "selected=\"true\"" : ""%>>是
                                 </option>
                                 <option value="false" <%= !sendMediator.isBuildMessage() ?
-                                                          "selected=\"true\"" : ""%>>No
+                                                          "selected=\"true\"" : ""%>>否
                                 </option>
                             </select>
                         </td>

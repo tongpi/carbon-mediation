@@ -2,7 +2,7 @@
 <%@page import="org.wso2.carbon.ui.CarbonUIMessage"%>
 <%@page import="java.util.List"%>
 <%@page import="org.wso2.carbon.mediator.dblookup.DBLookupMediatorClient"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -205,42 +205,42 @@
             <tr id="mediator.dbl.driver_row" <%=isPool ? "" : "style=\"display:none\";"%>>
                 <td style="width:150px">
                     <fmt:message key="mediator.dblookup.driver"/>
-                    <font style="color: red; font-size: 8pt;"> *</font>
+                    <font style="color: red; font-size: 8pt;">ï¿½*</font>
                 </td>
                 <td><input type="text" id="driver" name="driver" style="width:300px" value="<%=driver%>"/></td>
             </tr>
             <tr id="mediator.dbl.inictx_row" <%=!isPool && isInline ? "" : "style=\"display:none;\""%>>
                 <td style="width:150px">
                     <fmt:message key="mediator.dblookup.contex"/>
-                    <font style="color: red; font-size: 8pt;"> *</font>
+                    <font style="color: red; font-size: 8pt;">ï¿½*</font>
                 </td>
                 <td><input type="text" style="width:300px" id="init_ctx" name="init_ctx" value="<%=initCtx%>"/></td>
             </tr>
             <tr id="mediator.dbl.ds_row" <%=!isPool && isInline ? "" : "style=\"display:none;\""%>>
                 <td>
                     <fmt:message key="mediator.dblookup.dsname"/>
-                    <font style="color: red; font-size: 8pt;"> *</font>
+                    <font style="color: red; font-size: 8pt;">ï¿½*</font>
                 </td>
                 <td><input type="text" style="width:300px" name="ext_data_source" id="ext_data_source" value="<%=dsName%>"/></td>
             </tr>
             <tr id="mediator.dbl.url" <%=!displayCommonProps ? "style=\"display:none;\"" : ""%>>
                 <td>
                     <fmt:message key="mediator.dblookup.url"/>
-                    <font style="color: red; font-size: 8pt;"> *</font>
+                    <font style="color: red; font-size: 8pt;">ï¿½*</font>
                 </td>
                 <td><input type="text" style="width:300px" id="url" name="url" value="<%=url%>"/></td>
             </tr>
             <tr id="mediator.dbl.user" <%=!displayCommonProps ? "style=\"display:none;\"" : ""%>>
                 <td>
                     <fmt:message key="mediator.dblookup.user"/>
-                    <font style="color: red; font-size: 8pt;"> *</font>
+                    <font style="color: red; font-size: 8pt;">ï¿½*</font>
                 </td>
                 <td><input type="text" style="width:300px" id="user" name="user" value="<%=user%>"/></td>
             </tr>
             <tr id="mediator.dbl.passwd" <%=!displayCommonProps ? "style=\"display:none;\"" : ""%>>
                 <td>
                     <fmt:message key="mediator.dblookup.password"/>
-                    <font style="color: red; font-size: 8pt;"> *</font>
+                    <font style="color: red; font-size: 8pt;">ï¿½*</font>
                 </td>
                 <td><input type="password" id="password" name="password" style="width:300px" value="<%=passwd%>"/></td>
             </tr>
@@ -412,7 +412,7 @@
             <table class="normal">
                 <tbody>
                     <tr>
-                        <td style="width:80px"><fmt:message key="mediator.dblookup.sql"/><font style="color: red; font-size: 8pt;"> *</font></td>
+                        <td style="width:80px"><fmt:message key="mediator.dblookup.sql"/><font style="color: red; font-size: 8pt;">ï¿½*</font></td>
                         <td style="width:305px"><input type="text" name="sql_val<%=(i)%>" id="sql_val<%=(i)%>" style="width:300px" value="<%=rowSQL%>"/></td>
                         <td><a onclick="dblDeleteStatement('<%="statement" + (i)%>');" class="delete-icon-link" href="#"><fmt:message key="mediator.dblookup.delete"/></a>
                         </td>

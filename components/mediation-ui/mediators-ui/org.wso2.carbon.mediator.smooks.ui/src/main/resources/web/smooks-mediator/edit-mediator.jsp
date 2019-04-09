@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
@@ -96,7 +96,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Input</td>
+                <td>输入</td>
                 <td colspan="3">
                     <select name="inputTypeSelect" id="inputTypeSelect">
                         <option value="xml" <%=inputType.equals("xml") ? "selected=\"selected\"": ""%>>XML</option>
@@ -106,7 +106,7 @@
             </tr>
             <tr>
                 <td style="width: 80px;">
-                    <label>Expression</label>
+                    <label>表达式</label>
                 </td>
                 <td style="width: 305px;">
                     <input id="inputExpr" name="inputExpr" type="text"
@@ -119,12 +119,12 @@
                        onclick="showNameSpaceEditor('inputExpr');"
                        class="nseditor-icon-link"
                        style="padding-left:40px">
-                        Namespaces</a>
+                        名字空间</a>
                 </td>
                 <td></td>
             </tr>
             <tr>
-                <td><label>Output</label></td>
+                <td><label>输出</label></td>
                 <td colspan="3">
                     <select name="outputTypeSelect" id="outputTypeSelect">
                         <option value="xml" <%=outputType.equals("xml") ? "selected=\"selected\"": ""%>>XML</option>
@@ -137,15 +137,15 @@
                 <% if (smooksMediator.getOutputProperty() == null) { %>
                 <td>
                     <select name="outputExprSelect" id="exprTypeSelect" onchange="typeChanged()">
-                        <option selected="selected" value="expression">Expression</option>
-                        <option value="property">Property</option>
+                        <option selected="selected" value="expression">表达式</option>
+                        <option value="property">属性</option>
                     </select>
                 </td>
                 <% } else { %>
                 <td>
                     <select name="outputExprSelect" id="exprTypeSelect" onchange="typeChanged()">
-                        <option value="expression">Expression</option>
-                        <option selected="selected" value="property">Property</option>
+                        <option value="expression">表达式</option>
+                        <option selected="selected" value="property">属性</option>
                     </select>
                 </td>
                 <% } %>
@@ -167,13 +167,13 @@
                        onclick="showNameSpaceEditor('inputExpr');"
                        class="nseditor-icon-link"
                        style="padding-left:40px">
-                        Namespaces</a>
+                        名字空间</a>
                 </td>
                 <td <%=!isExpression ? "style=\"display:none;\" id=\"actionSelect\" " : "id=\"actionSelect\" "%>>
                     <select name="outputActionSelect">
-                        <option value="add" <%=outputAction.equals("add") ? "selected=\"selected\"": ""%>>Add</option>
-                        <option value="replace" <%=outputAction.equals("replace") ? "selected=\"selected\"": ""%>>Replace</option>
-                        <option value="sibling" <%=outputAction.equals("sibling") ? "selected=\"selected\"": ""%>>Sibling</option>
+                        <option value="add" <%=outputAction.equals("add") ? "selected=\"selected\"": ""%>>添加</option>
+                        <option value="replace" <%=outputAction.equals("replace") ? "selected=\"selected\"": ""%>>替换</option>
+                        <option value="sibling" <%=outputAction.equals("sibling") ? "selected=\"selected\"": ""%>>兄弟</option>
                     </select>
                 </td>
             </tr>

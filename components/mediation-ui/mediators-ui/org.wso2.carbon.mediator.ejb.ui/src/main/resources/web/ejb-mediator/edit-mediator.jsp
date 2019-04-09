@@ -14,7 +14,7 @@
   ~  limitations under the License.
   --%>
 <%@page import="java.util.Map.Entry"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar" prefix="carbon"%>
 <%@ page import="org.wso2.carbon.mediator.ejb.EJBMediator"%>
@@ -140,18 +140,18 @@
 												<%
 													if(beanId != null && beanId.getExpression() != null){
 												%>
-												<option value="literal">Value</option>
-												<option value="expression" selected="selected">Expression</option>
+												<option value="literal">值</option>
+												<option value="expression" selected="selected">表达式</option>
 												<%
 													}else if(beanId != null && beanId.getKeyValue() !=null){
 												%>
-												<option value="literal" selected="selected">Value</option>
-												<option value="expression">Expression</option>
+												<option value="literal" selected="selected">值</option>
+												<option value="expression">表达式</option>
 												<%
 													}else{
 												%>
-												<option value="literal">Value</option>
-												<option value="expression">Expression</option>
+												<option value="literal">值</option>
+												<option value="expression">表达式</option>
 												<%
 													}
 												%>
@@ -251,18 +251,18 @@
 													<%
 														if(value != null){
 													%>
-													<option value="literal" selected="selected">Value</option>
-													<option value="expression">Expression</option>
+													<option value="literal" selected="selected">值</option>
+													<option value="expression">表达式</option>
 													<%
 														}else if( expression != null){
 													%>
-													<option value="literal">Value</option>
-													<option value="expression" selected="selected">Expression</option>
+													<option value="literal">值</option>
+													<option value="expression" selected="selected">表达式</option>
 													<%
 														}else{
 													%>
-													<option value="literal">Value</option>
-													<option value="expression">Expression</option>
+													<option value="literal">值</option>
+													<option value="expression">表达式</option>
 													<%
 														}
 													%>

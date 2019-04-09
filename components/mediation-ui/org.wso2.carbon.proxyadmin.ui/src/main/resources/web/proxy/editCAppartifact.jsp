@@ -15,6 +15,7 @@
 ~ specific language governing permissions and limitations
 ~ under the License.
 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
@@ -49,7 +50,7 @@
         window.location.href='../proxyservices/index.jsp?header=Modify' + '&serviceName='+serviceName+'&startwiz=true';
     }
     function editCAppPS(serviceName) {
-        CARBON.showConfirmationDialog("The changes will not persist to the CAPP after restart or redeploy. Do you want to Edit?", function() {
+        CARBON.showConfirmationDialog("重启或重新部署后更改不会持久化到. 你确信要编辑吗?", function() {
             jQuery.ajax({
                 type: 'POST',
                 success: function() {
@@ -78,14 +79,14 @@
             <% } else { %>
         <a title="Edit '<%=Encode.forHtmlAttribute(pd.getName())%>' in the design view" href="#" onclick="editPS('<%=Encode.forHtmlAttribute(pd.getName())%>');return false;">
             <% } %>
-            <img src="../proxyservices/images/design-view.gif" alt="" border="0"> Design View</a>
+            <img src="../proxyservices/images/design-view.gif" alt="" border="0"> 设计视图</a>
 </td>
 <td>
     <% if (pd.getArtifactContainerName() != null) { %>
     <a title="Edit '<%=Encode.forHtmlAttribute(pd.getName())%>' in the source view editor" style="background-image: url(../proxyservices/images/source-view.gif);"
-       class="icon-link" onclick="editCAppProxySourceView('<%=Encode.forHtmlAttribute(pd.getName())%>')" href="#">Source View</a>
+       class="icon-link" onclick="editCAppProxySourceView('<%=Encode.forHtmlAttribute(pd.getName())%>')" href="#">代码视图</a>
     <% } else { %>
     <a title="Edit '<%=Encode.forHtmlAttribute(pd.getName())%>' in the source view editor" style="background-image: url(../proxyservices/images/source-view.gif);"
-       class="icon-link" onclick="editProxySourceView('<%=Encode.forHtmlAttribute(pd.getName())%>')" href="#">Source View</a>
+       class="icon-link" onclick="editProxySourceView('<%=Encode.forHtmlAttribute(pd.getName())%>')" href="#">代码视图</a>
     <% } %>
 </td>

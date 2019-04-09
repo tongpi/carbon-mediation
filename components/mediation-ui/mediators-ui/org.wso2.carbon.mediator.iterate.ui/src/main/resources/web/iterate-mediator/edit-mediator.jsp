@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -68,13 +68,13 @@
                                 <%
                                     if (iterateMediator.isSequential()) {
                                 %>
-                                <option selected="true" value="true">True</option>
-                                <option value="false">False</option>
+                                <option selected="true" value="true">是</option>
+                                <option value="false">否</option>
                                 <%
                                 } else {
                                 %>
-                                <option value="true">True</option>
-                                <option selected="true" value="false">False</option>
+                                <option value="true">是</option>
+                                <option selected="true" value="false">否</option>
                                 <%
                                     }
                                 %>
@@ -92,13 +92,13 @@
                                 <%
                                     if (iterateMediator.isContinueParent()) {
                                 %>
-                                <option selected="true" value="true">True</option>
-                                <option value="false">False</option>
+                                <option selected="true" value="true">是</option>
+                                <option value="false">否</option>
                                 <%
                                 } else {
                                 %>
-                                <option value="true">True</option>
-                                <option selected="true" value="false">False</option>
+                                <option value="true">是</option>
+                                <option selected="true" value="false">否</option>
                                 <%
                                     }
                                 %>
@@ -116,13 +116,13 @@
                                 <%
                                     if (iterateMediator.isPreservePayload()) {
                                 %>
-                                <option selected="true" value="true">True</option>
-                                <option value="false">False</option>
+                                <option selected="true" value="true">是</option>
+                                <option value="false">否</option>
                                 <%
                                 } else {
                                 %>
-                                <option value="true">True</option>
-                                <option selected="true" value="false">False</option>
+                                <option value="true">是</option>
+                                <option selected="true" value="false">否</option>
                                 <%
                                     }
                                 %>

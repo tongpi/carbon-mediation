@@ -593,7 +593,7 @@
         var serviceGroupRegex = /[~!@#$%^&*()\\\/+=\:;<>'"?[\]{}|\s,]/;
 
         if ((elem = getElement('psName')).value == null || proxyNameRegex.test(elem.value)) {
-            return 'Proxy service name is empty or contains invalid characters';
+            return proxyi18n["Proxy.service.name.is.empty"]; //'Proxy service name is empty or contains invalid characters';
         }
         if (num == 0) {
             var wsdl = getElement('publishWsdlCombo');
@@ -618,7 +618,7 @@
             }
             var serviceGroupElm = getElement("serviceGroup");
             if(serviceGroupElm != null && serviceGroupElm.value != null && serviceGroupRegex.test(serviceGroupElm.value)) {
-                return 'Service Group contains invalid characters';
+                return proxyi18n["Service.Group.contains.invalid.characters"];//'Service Group contains invalid characters';
             }
         } else if (num == 1) {
 

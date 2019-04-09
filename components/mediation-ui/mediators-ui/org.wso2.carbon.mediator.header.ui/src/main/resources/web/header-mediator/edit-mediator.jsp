@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -82,7 +82,7 @@
             <tr id="mediator.header.name.row" style="<%=(type == 1 || type == 2) ? "": "display:none;"%> ">
                 <td width="20%">
                     <fmt:message key="mediator.header.name"/>
-                    <font style="color: red; font-size: 8pt;"> *</font></td>
+                    <font style="color: red; font-size: 8pt;">ï¿½*</font></td>
                 <td width="5%">
                     <input type="text" size="40" id="mediator.header.name" name="mediator.header.name"
                            value="<%=headerMediator.getQName() != null ? headerMediator.getQName().getLocalPart() : ""%>"/>
@@ -121,7 +121,7 @@
                            onclick="javascript:  displayElement('mediator.header.val_ex', true); displayElement('mediator.header.expression.namespace_button', true);
                            displayElement('mediator.header.inlinexmltext', false);displayElement('mediator.header.name.row', true)"
                            <%=(type == 2) ? "checked=\"checked\"": "" %>/>
-                    <fmt:message key="mediator.header.expression"/><font style="color: red; font-size: 8pt;"> *</font>
+                    <fmt:message key="mediator.header.expression"/><font style="color: red; font-size: 8pt;">ï¿½*</font>
                 </td>
                 <td width="30%">
                     <input type="text" id="mediator.header.val_ex" size="40" name="mediator.header.val_ex" value="<%=val%>" style="<%=(type == 3) ? "display:none" : ""%>"/>
@@ -139,7 +139,7 @@
                            displayElement('mediator.header.inlinexmltext', true);displayElement('mediator.header.val_ex', false);
                            displayElement('mediator.header.name.row', false)"
                            <%=(type == 3) ? "checked=\"checked\"": "" %>/>
-                    <fmt:message key="mediator.header.inlinexml"/><font style="color: red; font-size: 8pt;"> *</font>
+                    <fmt:message key="mediator.header.inlinexml"/><font style="color: red; font-size: 8pt;">ï¿½*</font>
                 </td>
                 <td width="80%" colspan="2">
                     <textarea rows="8" cols="50" id="mediator.header.inlinexmltext" name="mediator.header.inlinexmltext"  style="<%=(type == 3) ? "": "display:none;"%> " ><%=xml%></textarea>
