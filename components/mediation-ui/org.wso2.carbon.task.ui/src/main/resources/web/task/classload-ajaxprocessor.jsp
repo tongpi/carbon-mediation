@@ -5,7 +5,7 @@
 <%@ page import="javax.xml.namespace.QName" %>
 <%@ page import="java.util.Iterator" %>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
@@ -17,7 +17,7 @@
 %>
 <script type="text/javascript">
     jQuery(document).ready(function() {
-        CARBON.showErrorDialog("An error has been occurred !. Error Message : Task implementation class name is empty.");
+        CARBON.showErrorDialog("发生错误 !. 错误信息 : 任务实现类不能为空.");
     });
 </script>
 <%
@@ -29,7 +29,7 @@
 %>
 <script type="text/javascript">
     jQuery(document).ready(function() {
-        CARBON.showErrorDialog("An error has been occurred !. Error Message :  Task group is empty.");
+        CARBON.showErrorDialog("发生错误 !. 错误信息 : 任务组不能为空.");
     });
 </script>
 <%

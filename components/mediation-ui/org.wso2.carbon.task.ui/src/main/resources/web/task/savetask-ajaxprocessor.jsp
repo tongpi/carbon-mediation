@@ -26,8 +26,7 @@
 <%@ page import="java.util.Set"%>
 <%@ page import="org.wso2.carbon.CarbonConstants"%>
 <%@ page import="org.owasp.encoder.Encode" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar"
 	prefix="carbon"%>
