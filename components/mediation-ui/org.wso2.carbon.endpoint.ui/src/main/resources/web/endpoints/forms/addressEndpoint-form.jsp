@@ -946,8 +946,7 @@
     <tr>
         <td colspan="2">
             <a onclick="addServiceParams('headerTable')"
-               style="background-image: url('../admin/images/add.gif');" class="icon-link">Add
-                                                                                           Property</a><input
+               style="background-image: url('../admin/images/add.gif');" class="icon-link"><fmt:message key="endpoint.property.add"/></a><input
                 type="hidden" name="endpointProperties" id="endpointProperties"/>
         </td>
     </tr>
