@@ -15,7 +15,6 @@
   ~  See the License for the specific language governing permissions and
   ~  limitations under the License.
   --%>
-
 <%@ page import="org.wso2.carbon.mediator.bam.ui.BamMediator" %>
 <%@ page import="org.wso2.carbon.mediator.service.ui.Mediator" %>
 <%@ page import="org.wso2.carbon.sequences.ui.util.SequenceEditorHelper" %>
@@ -30,7 +29,7 @@
 <%
     Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
 
-    
+
     if (!(mediator instanceof BamMediator)) {
         // todo : proper error handling
         throw new RuntimeException("Unable to edit the mediator");
@@ -71,7 +70,7 @@
                                 data:{action:"getServerProfiles", serverProfilePath:serverProfileLocationPath},
                                 success:function(data){
                                     document.getElementById("serverProfileList").innerHTML = "";
-                                    jQuery("#serverProfileList").append("<option>- Select Server Profile -</option>");
+                                    jQuery("#serverProfileList").append("<option>- 选择服务器资料 -</option>");
                                     jQuery("#serverProfileList").append(data);
                                     if(serverProfilePath != null && serverProfilePath != ""){
                                         document.getElementById("serverProfileList").value = serverProfilePath;
@@ -87,7 +86,7 @@
                                 data:{action:"getStreamNames", serverProfilePath:serverProfilePath},
                                 success:function(data){
                                     document.getElementById("streamNameList").innerHTML = "";
-                                    jQuery("#streamNameList").append("<option>- Select Stream Name -</option>");
+                                    jQuery("#streamNameList").append("<option>- 选择流名称 -</option>");
                                     jQuery("#streamNameList").append(data);
                                     if(streamName != null && streamName != ""){
                                         document.getElementById("streamNameList").value = streamName;
@@ -104,7 +103,7 @@
                                 data:{action:"getStreamVersions", serverProfilePath:serverProfilePath, streamName:streamName},
                                 success:function(data){
                                     document.getElementById("streamVersionList").innerHTML = "";
-                                    jQuery("#streamVersionList").append("<option>- Select Stream Version -</option>");
+                                    jQuery("#streamVersionList").append("<option>- 选择流版本 -</option>");
                                     jQuery("#streamVersionList").append(data);
                                     if(streamVersion != null && streamVersion != "" && document.getElementById("streamVersionList").value != null){
                                         document.getElementById("streamVersionList").value = streamVersion;
@@ -150,7 +149,7 @@
                 </td>
                 <td>
                     <select name="serverProfileList" id="serverProfileList" onchange="onServerProfileSelected('<%=SERVER_PROFILE_LOCATION%>')">
-                        <option>- Select Server Profile -</option>
+                        <option>- 选择服务器资料 -</option>
                     </select>
                     <script type="text/javascript">
                         loadServerProfiles("<%=SERVER_PROFILE_LOCATION%>", "<%=serverProfilePath%>");
@@ -170,7 +169,7 @@
                 </td>
                 <td>
                     <select name="streamNameList" id="streamNameList" disabled="disabled" onchange="selectStreamVersionList('<%=SERVER_PROFILE_LOCATION%>')">
-                        <option>- Select Stream Name -</option>
+                        <option>- 选择流名称 -</option>
                     </select>
                     <script type="text/javascript">
                         if("" != "<%=serverProfilePath%>"){
@@ -185,7 +184,7 @@
                 </td>
                 <td>
                     <select name="streamVersionList" id="streamVersionList" disabled="disabled">
-                        <option>- Select Stream Version -</option>
+                        <option>- 选择流版本 -</option>
                     </select>
                     <script type="text/javascript">
                         if("" != "<%=serverProfilePath%>"){

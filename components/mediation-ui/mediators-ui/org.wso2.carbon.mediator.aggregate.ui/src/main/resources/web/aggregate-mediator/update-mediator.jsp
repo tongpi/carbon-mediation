@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -26,7 +26,7 @@
     XPathFactory xPathFactory = XPathFactory.getInstance();
     if (!(mediator instanceof AggregateMediator)) {
         // todo : proper error handling
-        throw new RuntimeException("Unable to edit the mediator");
+        throw new RuntimeException("不能编辑中介");
     }
     String aggregate_expr = request.getParameter("aggregate_expr");
     String complete_time = request.getParameter("complete_time");
@@ -36,14 +36,14 @@
     String sequenceOption = request.getParameter("sequenceOption");
 
     AggregateMediator aggregateMediator = (AggregateMediator) mediator;
-  
-    
+
+
     if ("selectFromRegistry".equals(sequenceOption)) {
         String selectFromRegistry = request.getParameter("mediator.sequence");
         aggregateMediator.setOnCompleteSequenceRef(selectFromRegistry);
         int size = aggregateMediator.getList().size();
         for (int i = 0; i < size; i++) {
-            aggregateMediator.removeChild(i);                   
+            aggregateMediator.removeChild(i);
         }
     } else {
         aggregateMediator.setOnCompleteSequenceRef(null);
@@ -65,7 +65,7 @@
     	  msgMinTypeEx = new Value(complete_min);
       }
      aggregateMediator.setMinMessagesToComplete(msgMinTypeEx);
-      
+
      String msgMaxType = request.getParameter("msgMaxType");
      boolean ismsgMaxType = msgMaxType != null && "expression".equals(msgMaxType.trim());
      Value msgMaxTypeEx =null;
@@ -76,7 +76,7 @@
     	 msgMaxTypeEx = new Value(complete_max);
      }
      aggregateMediator.setMaxMessagesToComplete(msgMaxTypeEx);
-      
+
 //    if(!complete_max.equals("")){
 //    aggregateMediator.setMaxMessagesToComplete(Integer.parseInt(complete_max));
 //} else {
@@ -87,19 +87,19 @@
 //} else {
 //    aggregateMediator.setMinMessagesToComplete(-1);
 //}
-      
-     
+
+
        if(!aggregate_expr.equals("")){
              aggregateMediator.setAggregationExpression(xPathFactory.createSynapseXPath("aggregate_expr", request, session));
        }
-       
+
       if(!correlate_exp.equals("")){
             aggregateMediator.setCorrelateExpression(xPathFactory.createSynapseXPath("correlate_expr", request, session));
       } else {
             aggregateMediator.setCorrelateExpression(null);
       }
-      
-      if (request.getParameter("mediator.aggregate.id") != null && 
+
+      if (request.getParameter("mediator.aggregate.id") != null &&
     				  !request.getParameter("mediator.aggregate.id").trim().
 						equals("")) {
     		aggregateMediator.setId(request.getParameter("mediator.aggregate.id"));
@@ -114,4 +114,3 @@
     }
 
 %>
-

@@ -25,7 +25,7 @@
         Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
         if (!(mediator instanceof CloneMediator)) {
             // todo : proper error handling
-            throw new RuntimeException("Unable to edit the mediator");
+            throw new RuntimeException("不能编辑中介");
         }
         CloneMediator cloneMediator = (CloneMediator) mediator;
     %>
@@ -53,7 +53,7 @@
                     <fmt:message key="clone.id"/>
                     </td>
                     <td><input type="text" id="clone.id" name="clone.id"
-						value='<%= cloneMediator.getId() != null ? 
+						value='<%= cloneMediator.getId() != null ?
 								 cloneMediator.getId(): ""%>' />
 					</td>
 					<td></td>

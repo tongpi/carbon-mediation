@@ -28,7 +28,7 @@
     Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
     if (!(mediator instanceof CacheMediator)) {
         // todo : proper error handling
-        throw new RuntimeException("Unable to edit the mediator");
+        throw new RuntimeException("不能编辑中介");
     }
     CacheMediator cacheMediator = (CacheMediator) mediator;
 
@@ -54,8 +54,8 @@
                             <td><fmt:message key="mediator.cache.type" /><font
                                     style="color: red; font-size: 8pt;"> *</font></td>
                             <td><select name="cacheType" onchange="collectorSelector(this)">
-                                <option value="Collector">Collector</option>
-                                <option value="Finder">Finder</option>
+                                <option value="Collector">收集器</option>
+                                <option value="Finder">查找器</option>
                             </select></td>
                         </tr>
                         <%} else {%>
@@ -63,8 +63,8 @@
                             <td><fmt:message key="mediator.cache.type" /><font
                                     style="color: red; font-size: 8pt;"> *</font></td>
                             <td><select name="cacheType" onchange="collectorSelector(this)">
-                                <option value="Finder">Finder</option>
-                                <option value="Collector">Collector</option>
+                                <option value="Finder">查找器</option>
+                                <option value="Collector">收集器</option>
                             </select></td>
                         </tr>
                         <%}%>
@@ -183,13 +183,13 @@
                                         <%
                                             if (cacheMediator.isCacheControlEnabled()) {
                                         %>
-                                        <option selected="true" value="true">True</option>
-                                        <option value="false">False</option>
+                                        <option selected="true" value="true">是</option>
+                                        <option value="false">否</option>
                                         <%
                                         } else {
                                         %>
-                                        <option value="true">True</option>
-                                        <option selected="true" value="false">False</option>
+                                        <option value="true">是</option>
+                                        <option selected="true" value="false">否</option>
                                         <%
                                             }
                                         %>
@@ -205,13 +205,13 @@
                                         <%
                                             if (cacheMediator.isAddAgeHeaderEnabled()) {
                                         %>
-                                        <option selected="true" value="true">True</option>
-                                        <option value="false">False</option>
+                                        <option selected="true" value="true">是</option>
+                                        <option value="false">否</option>
                                         <%
                                         } else {
                                         %>
-                                        <option value="true">True</option>
-                                        <option selected="true" value="false">False</option>
+                                        <option value="true">是</option>
+                                        <option selected="true" value="false">否</option>
                                         <%
                                             }
                                         %>

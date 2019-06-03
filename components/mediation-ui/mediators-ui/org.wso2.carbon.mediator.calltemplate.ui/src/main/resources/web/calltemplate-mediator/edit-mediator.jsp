@@ -37,7 +37,7 @@
     Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
     if (!(mediator instanceof CallTemplateMediator)) {
         // todo : proper error handling
-        throw new RuntimeException("Unable to edit the mediator");
+        throw new RuntimeException("不能编辑中介");
     }
     CallTemplateMediator callMediator = (CallTemplateMediator) mediator;
 
@@ -91,7 +91,7 @@
                 </td>
                 <td>
                     <select name="templateSelector" id="templateSelector" onchange="onTemplateSelectionChange()">
-                        <option value="default">Select From Templates</option>
+                        <option value="default">--从模板选择--</option>
                         <%
                             for (String templateName : templateNameList) {%>
                                 <option value="<%=templateName%>"><%=templateName%></option>
@@ -100,7 +100,7 @@
                 </td>
             </tr>
         </table>
-        
+
     </td>
 </tr>
 <tr>
@@ -172,7 +172,7 @@
                                 <input id="propertyValue<%=i%>" name="propertyValue<%=i%>" type="text"/>
                                 <% }%>
                             </td>
-                            
+
                             <td id="dynamicXpathCol<%=i%>" style="<%=isLiteral? "display:none;" : ""%>">
                                 <% if (value!=null && !isLiteral && synapseXPath != null) {%>
                                 <script type="text/javascript">
@@ -193,7 +193,7 @@
                                         key="namespaces"/></a>
                                   <%}%>
                             </td>
-                          
+
 
                             <td><a href="#" class="delete-icon-link" onclick="deleteproperty('<%=i%>');return false;"><fmt:message
                                     key="delete"/></a></td>
@@ -234,4 +234,4 @@
 
 <div id="registryBrowser" style="display:none;"></div>
 </div>
-</fmt:bundle> 
+</fmt:bundle>

@@ -39,7 +39,7 @@
     boolean isServiceUrlEndpoint = false; //Whether Service URL is specifies as a Endpoint
     if (!(mediator instanceof CalloutMediator)) {
         // todo : proper error handling
-        throw new RuntimeException("Unable to edit the mediator");
+        throw new RuntimeException("不能编辑中介");
     }
     CalloutMediator calloutMediator = (CalloutMediator) mediator;
     if (calloutMediator.getServiceURL() != null) {
@@ -154,13 +154,13 @@
                         <a id="confRegEpLink"
                            class="registry-picker-icon-link"
                            onclick="showRegistryBrowser('mediator.callout.serviceurl.key.value','/_system/config');">
-                            Configuration Registry</a>
+                            配置注册表</a>
                     </td>
                     <td>
                         <a id="govRegEpLink"
                            class="registry-picker-icon-link"
                            onclick="showRegistryBrowser('mediator.callout.serviceurl.key.value','/_system/governance');">
-                            Governance Registry</a>
+                            治理注册表</a>
                     </td>
                 </tr>
         </table>

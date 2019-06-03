@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -31,7 +31,7 @@
     String param = null;
     if (!(mediator instanceof CalloutMediator)) {
         // todo : proper error handling
-        throw new RuntimeException("Unable to edit the mediator");
+        throw new RuntimeException("不能编辑中介");
     }
     CalloutMediator calloutMediator = (CalloutMediator) mediator;
 
@@ -59,7 +59,7 @@
     param = request.getParameter("mediator.callout.action");
     if (param != null && !param.equals("")) {
         calloutMediator.setAction(param);
-    }    
+    }
     param = request.getParameter("mediator.callout.repo");
     if (param != null && !param.equals("")) {
         calloutMediator.setClientRepository(param);
@@ -140,4 +140,3 @@
         }
     }
 %>
-

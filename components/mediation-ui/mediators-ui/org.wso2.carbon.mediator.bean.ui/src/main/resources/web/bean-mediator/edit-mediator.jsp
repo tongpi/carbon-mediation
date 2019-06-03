@@ -36,7 +36,7 @@
 	request, session);
 	if (!(mediator instanceof BeanMediator)) {
 		// todo : proper error handling
-		throw new RuntimeException("Unable to edit the mediator");
+		throw new RuntimeException("不能编辑中介");
 	}
 	BeanMediator ejbMediator = (BeanMediator) mediator;
 
@@ -63,19 +63,19 @@
 
 
 	 NameSpacesRegistrar nameSpacesRegistrar = NameSpacesRegistrar.getInstance();
-	
+
 	 if(ejbMediator.getValue() != null && ejbMediator.getValue().getExpression() != null){
 		 nameSpacesRegistrar.registerNameSpaces(ejbMediator.getValue().getExpression(),"beanValue",session);
 	 }
-	 
+
 	 if(ejbMediator.getTarget() != null && ejbMediator.getTarget().getExpression() != null){
 		 nameSpacesRegistrar.registerNameSpaces(ejbMediator.getTarget().getExpression(),"targetValue",session);
 	 }
-	 
+
 	 Value beanValue = ejbMediator.getValue();
 	 Value targetValue = ejbMediator.getTarget();
 
-	
+
 %>
 
 <fmt:bundle basename="org.wso2.carbon.mediator.bean.ui.i18n.Resources">
@@ -108,7 +108,7 @@
 								class="required">*</span>
 							</td>
 							<td>
-							  <select name="beanAction" id="beanAction">	
+							  <select name="beanAction" id="beanAction">
 							  	  <%if(action != null && action.equals("CREATE")){ %>
 							  	  <option value="CREATE" selected="selected"><fmt:message key="mediator.bean.action.create" /></option>
 							  	  <option value="REMOVE"><fmt:message key="mediator.bean.action.remove" /></option>
@@ -148,7 +148,7 @@
 							<td><fmt:message key="mediator.bean.property" /></td>
 							<td><input class="longInput" type="text" value="<%=property%>"
 								name="property" id="property" /></td>
-						  </tr>			
+						  </tr>
 						  <tr>
 							<td>
 								<fmt:message key="mediator.bean.value" />
@@ -159,14 +159,14 @@
 							      <td>
 							        <select name="beanValueType" id="beanValueType" onchange="onTypeSelectionChange('beanValueType','nsBeanTypeEditorButtonTD')" >
 							  			<%if(beanValue != null && beanValue.getExpression() != null){ %>
-							  			<option value="literal">Value</option>
-										<option value="expression" selected="selected">Expression</option>
+							  			<option value="literal">值</option>
+										<option value="expression" selected="selected">表达式</option>
 										<%}else if(beanValue != null && beanValue.getKeyValue() !=null){ %>
-										<option value="literal" selected="selected">Value</option>
-										<option value="expression">Expression</option>
+										<option value="literal" selected="selected">值</option>
+										<option value="expression">表达式</option>
 										<%}else{ %>
-										<option value="literal">Value</option>
-										<option value="expression">Expression</option>
+										<option value="literal">值</option>
+										<option value="expression">表达式</option>
 										<%}%>
 									</select>
 							      </td>
@@ -178,7 +178,7 @@
 							      	 <%}else{%>
 							      	 	<input class="smallInput" type="text" value=""  name="beanValue" id="beanValue" />
 							      	 <%}%>
-							      	 
+
 							      </td>
 							      <td id="nsBeanTypeEditorButtonTD"  style="<%=(beanValue ==null || beanValue.getExpression() ==null)?"display:none;":""%>">
 							    	<a href="#nsEditorLink"
@@ -200,14 +200,14 @@
 							      <td>
 							        <select name="targetValueType" id="targetValueType" onchange="onTypeSelectionChange('targetValueType','nsTargetTypeEditorButtonTD')" >
 							  			<%if(targetValue != null && targetValue.getExpression() != null){ %>
-							  			<option value="literal">Value</option>
-										<option value="expression" selected="selected">Expression</option>
+							  			<option value="literal">值</option>
+										<option value="expression" selected="selected">表达式</option>
 										<%}else if(targetValue != null && targetValue.getKeyValue() !=null){ %>
-										<option value="literal" selected="selected">Value</option>
-										<option value="expression">Expression</option>
+										<option value="literal" selected="selected">值</option>
+										<option value="expression">表达式</option>
 										<%}else{ %>
-										<option value="literal">Value</option>
-										<option value="expression">Expression</option>
+										<option value="literal">值</option>
+										<option value="expression">表达式</option>
 										<%}%>
 									</select>
 							      </td>
@@ -219,7 +219,7 @@
 							      	 <%}else{%>
 							      	 	<input class="smallInput" type="text" value=""  name="targetValue" id="targetValue" />
 							      	 <%}%>
-							      	 
+
 							      </td>
 							      <td id="nsTargetTypeEditorButtonTD"  style="<%=(targetValue ==null || targetValue.getExpression() ==null)?"display:none;":""%>">
 							    	<a href="#nsEditorLink"

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -23,7 +23,7 @@
     Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
     if (!(mediator instanceof CloneMediator)) {
         // todo : proper error handling
-        throw new RuntimeException("Unable to edit the mediator");
+        throw new RuntimeException("不能编辑中介");
     }
     CloneMediator cloneMediator = (CloneMediator) mediator;
     String continueParent = request.getParameter("mediator.clone.continue");
@@ -38,10 +38,9 @@
     																				equals("")) {
     		cloneMediator.setId(request.getParameter("clone.id"));
     }
-    
+
     String sequentialMed = request.getParameter("sequentialMed");
     boolean seq_med = Boolean.parseBoolean(sequentialMed);
     cloneMediator.setSequential(seq_med);
-    
-%>
 
+%>

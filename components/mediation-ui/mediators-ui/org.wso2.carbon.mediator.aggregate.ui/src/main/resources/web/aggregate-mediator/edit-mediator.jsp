@@ -14,7 +14,6 @@
   ~  See the License for the specific language governing permissions and
   ~  limitations under the License.
   --%>
-
 <%@ page import="org.wso2.carbon.mediator.aggregate.AggregateMediator" %>
 <%@ page import="org.wso2.carbon.mediator.service.ui.Mediator" %>
 <%@ page import="org.wso2.carbon.sequences.ui.util.SequenceEditorHelper" %>
@@ -34,7 +33,7 @@
     Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
     if (!(mediator instanceof AggregateMediator)) {
         // todo : proper error handling
-        throw new RuntimeException("Unable to edit the mediator");
+        throw new RuntimeException("不能编辑中介");
     }
     AggregateMediator aggregateMediator = (AggregateMediator) mediator;
 
@@ -57,7 +56,7 @@
                     <fmt:message key="mediator.aggregate.id"/>
                     </td>
                     <td><input type="text" id="mediator.aggregate.id" name="mediator.aggregate.id"
-						value='<%= aggregateMediator.getId() != null ? 
+						value='<%= aggregateMediator.getId() != null ?
 								aggregateMediator.getId(): ""%>' />
 					</td>
 					<td></td>
@@ -127,18 +126,18 @@
 												}
 												if(aggregateMediator.getMaxMessagesToComplete() != null && aggregateMediator.getMaxMessagesToComplete().getExpression() !=null){
 												%>
-												<option value="literal">Value</option>
-												<option value="expression" selected="selected">Expression</option>
+												<option value="literal">值</option>
+												<option value="expression" selected="selected">表达式</option>
 												<%
 													}else if(aggregateMediator.getMaxMessagesToComplete() != null && aggregateMediator.getMaxMessagesToComplete().getKeyValue() !=null){
 												%>
-												<option value="literal" selected="selected">Value</option>
-												<option value="expression">Expression</option>
+												<option value="literal" selected="selected">值</option>
+												<option value="expression">表达式</option>
 												<%
 													}else{
 												%>
-												<option value="literal">Value</option>
-												<option value="expression">Expression</option>
+												<option value="literal">值</option>
+												<option value="expression">表达式</option>
 												<%
 													}
 												%>
@@ -181,21 +180,21 @@
 												                                       aggregateMediator.getMinMessagesToComplete().getExpression(), "msgMinType",
 												                                       session);
 												}
-												
+
 													if(aggregateMediator.getMinMessagesToComplete() != null && aggregateMediator.getMinMessagesToComplete().getExpression() != null){
 												%>
-												<option value="literal">Value</option>
-												<option value="expression" selected="selected">Expression</option>
+												<option value="literal">值</option>
+												<option value="expression" selected="selected">表达式</option>
 												<%
 													}else if(aggregateMediator.getMinMessagesToComplete() != null && aggregateMediator.getMinMessagesToComplete().getKeyValue() != null){
 												%>
-												<option value="literal" selected="selected">Value</option>
-												<option value="expression">Expression</option>
+												<option value="literal" selected="selected">值</option>
+												<option value="expression">表达式</option>
 												<%
 													}else{
 												%>
-												<option value="literal">Value</option>
-												<option value="expression">Expression</option>
+												<option value="literal">值</option>
+												<option value="expression">表达式</option>
 												<%
 													}
 												%>
@@ -225,7 +224,7 @@
                            style="padding-left:40px"
                            onclick="showNameSpaceEditor('msgMinType')"><fmt:message key="mediator.aggregate.nameSpaces"/></a>
                     </td>
-                
+
                 </tr>
                 <tr>
                     <td>

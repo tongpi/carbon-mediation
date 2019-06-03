@@ -15,7 +15,7 @@
 ~ specific language governing permissions and limitations
 ~ under the License.
 --%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.mediator.service.ui.Mediator" %>
 <%@ page import="org.wso2.carbon.mediator.calltemplate.CallTemplateMediator" %>
 <%@ page import="org.wso2.carbon.mediator.calltemplate.util.Value" %>
@@ -32,7 +32,7 @@
         Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
         if (!(mediator instanceof CallTemplateMediator)) {
             // todo : proper error handling
-            throw new RuntimeException("Unable to edit the mediator");
+            throw new RuntimeException("不能编辑中介");
         }
         CallTemplateMediator callTemplateMediator = (CallTemplateMediator) mediator;
 
@@ -88,15 +88,15 @@
             } catch (NumberFormatException ignored) {
             }
         }
- %>           
+ %>
  <% if(error){ %>
-    CARBON.showErrorDialog("Error in provided Xpath expression parameter");
+    CARBON.showErrorDialog("提供的 Xpath 表达式参数错误");
  <%}%>
 
 <%
 } catch (Exception e) {
 %>
-	 CARBON.showErrorDialog("Error while configuring Callout template");
+	 CARBON.showErrorDialog("配置 Callout 模板时发生错误");
 <%}%>
 
 </fmt:bundle>

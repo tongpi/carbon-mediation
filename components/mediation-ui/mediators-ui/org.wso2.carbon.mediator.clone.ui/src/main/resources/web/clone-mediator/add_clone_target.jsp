@@ -15,6 +15,7 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.mediator.clone.CloneMediator" %>
 <%@ page import="org.wso2.carbon.mediator.service.ui.Mediator" %>
 <%@ page import="org.wso2.carbon.mediator.target.TargetMediator" %>
@@ -39,7 +40,7 @@
     Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
     if (!(mediator instanceof CloneMediator)) {
         // todo : proper error handling
-        throw new RuntimeException("Unable to edit the mediator");
+        throw new RuntimeException("不能编辑中介");
     }
     CloneMediator cloneMediator = (CloneMediator) mediator;
     cloneMediator.addChild(new TargetMediator());
@@ -48,4 +49,3 @@
 <script type="text/javascript">
     document.location.href = "../sequences/design_sequence.jsp?ordinal=1";
 </script>
-

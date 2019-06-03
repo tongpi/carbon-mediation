@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -42,10 +42,10 @@
 <%
 	Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
 	XPathFactory xPathFactory = XPathFactory.getInstance();
-	
+
     if (!(mediator instanceof BeanMediator)) {
         // todo : proper error handling
-        throw new RuntimeException("Unable to edit the mediator");
+        throw new RuntimeException("不能编辑中介");
     }
     BeanMediator ejbMediator = (BeanMediator) mediator;
     String clazz = request.getParameter("clazz");
@@ -57,19 +57,19 @@
     if(nullChecker(action)) {
     	ejbMediator.setAction(action);
     }
-    
+
     String var = request.getParameter("beanVar");
     if(nullChecker(var)) {
     	ejbMediator.setVar(var);
     }
-    
+
     String property = request.getParameter("property");
     if(nullChecker(property)) {
     	ejbMediator.setProperty(property);
     }
-    
-    
-    
+
+
+
 	String beanTypeExpression = request.getParameter("beanValueType");
 	boolean isBeanExpression = beanTypeExpression != null
 	&& "expression".equals(beanTypeExpression.trim());
@@ -85,7 +85,7 @@
 		ejbMediator.setValue(beanTypeVal);
 	}
 
-	
+
 
 	String targetTypeExpression = request
 			.getParameter("targetValueType");
@@ -102,6 +102,5 @@
 		}
 		ejbMediator.setTarget(targetTypeVal);
 	}
-	
-%>
 
+%>
