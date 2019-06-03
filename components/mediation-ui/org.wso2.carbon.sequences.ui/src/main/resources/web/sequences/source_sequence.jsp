@@ -14,7 +14,7 @@
   ~  See the License for the specific language governing permissions and
   ~  limitations under the License.
   --%>
-
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.mediator.service.builtin.SequenceMediator" %>
 <%@ page import="org.wso2.carbon.sequences.ui.SequenceEditorConstants" %>
 <%@ page import="org.wso2.carbon.sequences.ui.util.SequenceEditorHelper" %>
@@ -167,7 +167,7 @@
     function saveSequenceAs() {
         var key = document.getElementById('synRegKey').value;
         if (key == '') {
-            CARBON.showWarningDialog('Registry key must not be empty');
+            CARBON.showWarningDialog('注册键值不能为空');
             return false;
         }
 

@@ -14,7 +14,7 @@
   ~  See the License for the specific language governing permissions and
   ~  limitations under the License.
   --%>
-
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axiom.om.OMAttribute" %>
 <%@ page import="org.apache.axiom.om.OMElement" %>
 <%@ page import="org.apache.axiom.om.OMFactory" %>
@@ -314,13 +314,13 @@
                     jQuery('#mediator-editor-form').ajaxForm(options);
                     jQuery('#mediator-editor-form').submit();
                 }
-            } else if (mediatorSource && mediatorSource.style.display != "none") { 
-	            YAHOO.util.Event.onAvailable("mediatorSrc", 
+            } else if (mediatorSource && mediatorSource.style.display != "none") {
+	            YAHOO.util.Event.onAvailable("mediatorSrc",
 	            	function() {
 	            		document.getElementById("mediatorSrc").value = editAreaLoader.getValue("mediatorSrc");
 	            	}
-	            );              
-                
+	            );
+
                     jQuery('#mediator-source-form').ajaxForm(options);
                     jQuery('#mediator-source-form').submit();
             }
@@ -364,7 +364,7 @@
     function saveSequenceAs() {
 
         if ('<%=Encode.forJavaScriptBlock(SequenceEditorHelper.getEditingSequenceAction(session))%>' == 'anonify') {
-            CARBON.showErrorDialog('Unable to save the sequence to the synapse registry in current mode');
+            CARBON.showErrorDialog('无法在当前模式下将序列保存到synapse注册表');
             return false;
         }
 
@@ -375,7 +375,7 @@
         %>
         var key = document.getElementById('synRegKey').value;
         if (key == '') {
-            CARBON.showWarningDialog('The key value must not be empty when saving to the Synapse registry');
+            CARBON.showWarningDialog('保存到synapse注册表时，键值不能为空');
             return false;
         }
 
@@ -870,7 +870,7 @@
                                     </tr>
                                     <tr>
                                         <td><fmt:message key="sequence.save.as.key"/></td>
-                                        <td><span id="reg">conf:</span><input type="text" size="75" id="synRegKey"/></td>
+                                        <td><span id="reg">配置:</span><input type="text" size="75" id="synRegKey"/></td>
                                     </tr>
                                 </table>
                             </td>
@@ -942,5 +942,3 @@
 <%
     }
 %>
-
-

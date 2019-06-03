@@ -14,6 +14,7 @@
   ~  See the License for the specific language governing permissions and
   ~  limitations under the License.
   --%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.sequences.common.to.SequenceInfo" %>
 <%@ page import="org.wso2.carbon.sequences.ui.client.SequenceAdminClient" %>
 <%@ page import="org.wso2.carbon.sequences.ui.SequenceEditorConstants" %>
@@ -346,7 +347,7 @@
         if (key != null && key != undefined && key != "") {
             location.href = "registry_sequence.jsp?action=edit&key=" + key;
         } else {
-            CARBON.showErrorDialog("Specify the key of the Sequence to be edited");
+            CARBON.showErrorDialog("指定要编辑的序列的键");
         }
     }
 

@@ -24,7 +24,7 @@ function childMenuItemClicked(e, e2, objx) {
     var regEx = /[~!@#$%^&*()\\\/+=\:;<>'"?[\]{}|\s,]|^$/;
     var sequenceName = document.getElementById("sequence.name").value;
     if (regEx.test(sequenceName)) {
-        CARBON.showWarningDialog("Please specify a valid sequence name before adding mediators");
+        CARBON.showWarningDialog("添加中介前请指定一个有效的序列名");
         return;
     }
 
@@ -90,7 +90,7 @@ function initMediators() {
             }
 
     }
-    
+
     for (i = 0; i < addChildNodes.length; i++) {
         //Add event listners for link for add Child Nodes
         YAHOO.util.Event.addListener(addChildNodes[i], "click", addNodesCallback,
@@ -289,7 +289,7 @@ function mediatorCallback(e, obj) {
     var mediatorNodeChildren =mediatorNode.childNodes;
     for(i=0;i<mediatorNodeChildren.length;i++){
         if(YAHOO.util.Dom.hasClass(mediatorNodeChildren[i],"sequenceToolbar")) {
-           mediatorNodeChildren[i].style.display = ""; 
+           mediatorNodeChildren[i].style.display = "";
         }
     }
 }
@@ -304,7 +304,7 @@ function addNodesCallback(e,obj) {
     selectNode(document.getElementById(clickedMediatorNodeId));
     //Select the form
     if(menuCount>=2) {
-           
+
 	    oMenu.destroy();
 	    oMenu = new YAHOO.widget.Menu("basicmenu");
 	    oMenu.clearContent();
