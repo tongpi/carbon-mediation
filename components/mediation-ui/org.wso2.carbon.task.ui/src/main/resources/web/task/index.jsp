@@ -15,6 +15,7 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.synapse.task.TaskDescription" %>
 <%@ page import="org.wso2.carbon.task.ui.internal.TaskClientConstants" %>
 <%@ page import="org.wso2.carbon.task.ui.internal.TaskManagementClient" %>
@@ -85,7 +86,7 @@
                         <% if(taskData.getArtifactContainerName() != null) { %>
                         <img src="images/applications.gif">
                         <%=Encode.forHtmlContent(name)%>
-                        <% if(taskData.getIsEdited()) { %> <span style="color:grey"> ( Edited )</span><% } %>
+                        <% if(taskData.getIsEdited()) { %> <span style="color:grey"> ( 已修改 )</span><% } %>
                         <% } else { %>
                         <%=Encode.forHtmlContent(name)%>
                         <% } %>

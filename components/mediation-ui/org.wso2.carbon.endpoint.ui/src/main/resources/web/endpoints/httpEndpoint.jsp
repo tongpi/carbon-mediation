@@ -15,7 +15,7 @@
 --%>
 
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar" prefix="carbon" %>
 
@@ -204,7 +204,7 @@
                                             <td><fmt:message key="registry.key"/>
                                                 <span class="required">*</span>
                                             </td>
-                                            <td><span id="reg">conf:</span><input type="text"
+                                            <td><span id="reg">配置:</span><input type="text"
                                                                                  size="75"
                                                                                  id="synRegKey"/>
                                             </td>
@@ -235,4 +235,3 @@
 </div>
 
 </fmt:bundle>
-

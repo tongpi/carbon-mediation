@@ -13,7 +13,7 @@
   ~  See the License for the specific language governing permissions and
   ~  limitations under the License.
   --%>
-
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axiom.om.OMElement" %>
 <%@ page import="org.apache.axiom.om.util.AXIOMUtil" %>
 <%@ page import="org.wso2.carbon.endpoint.ui.endpoints.EndpointService" %>
@@ -30,7 +30,7 @@
         } catch (XMLStreamException e) {
 %>
 <script type="text/javascript">
-    CARBON.showErrorDialog("Invalid Endpoint Configuration");
+    CARBON.showErrorDialog("无效的端点配置");
 </script>
 <%
             forwardTo = (String) session.getAttribute("anonOriginator");

@@ -15,6 +15,7 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
 <%@ page import="org.wso2.carbon.CarbonError" %>
@@ -308,7 +309,7 @@
 	givenParams = givenParams.replaceAll("\\\\", "\\\\\\\\");
 	givenParams = givenParams.replaceAll("'","\\\\'");
     givenParams = givenParams.replaceAll(" xmlns=\"http://ws.apache.org/ns/synapse\"","");
-	
+
     // sets pinned servers
     String pinnedServers = "";
     String [] servers;
@@ -402,9 +403,9 @@
         } else if ((wsdlText = pd.getPublishWSDLEndpoint()) != null && !"".equals(wsdlText)) {
             publishWsdl = "ep";
         }
-        if(wsdlText != null){        
+        if(wsdlText != null){
             wsdlText = wsdlText.replaceAll("\\\\", "\\\\\\\\");
-            wsdlText = wsdlText.replaceAll("'", "&#39;");    
+            wsdlText = wsdlText.replaceAll("'", "&#39;");
         }
     }
 
@@ -466,9 +467,9 @@
     var anonOutAction = '<%=anonOutAddEdit%>';
     var anonFaultAction = '<%=anonFaultAddEdit%>';
     var pageNum = <%=pageNum.intValue()%>;
-    
+
     function init() {
-        
+
         setSelected('faultSeqOp', '<%=whichFaultSeq%>');
         setSelected('inSeqOp', '<%=whichInSeq%>');
         setSelected('outSeqOp', '<%=whichOutSeq%>');
@@ -607,7 +608,7 @@
                             return proxyi18n["invalid.wsdl.uri"];
                         }
                     } else if (wsdlUri.value == '') {
-                        return proxyi18n["invalid.wsdl.uri"];                        
+                        return proxyi18n["invalid.wsdl.uri"];
                     }
                 } else if (mode == 'reg') {
                     var wsdlKey = getElement('wsdlRegText');
@@ -925,7 +926,7 @@
         }
         return 'successful';
     }
-    
+
     function addServiceParams() {
         //check to see if there are empty fields left
         var theTable = document.getElementById('headerTable');
@@ -1173,7 +1174,7 @@
             <table class="normal">
                 <tbody>
                 <tr>
-                <td class="leftCol-small"> <% if (nameDisabled) { %><strong><fmt:message key="proxy.service.name"/>:</strong><% } else { %><fmt:message key="proxy.service.name"/><span class="required">*</span><% } %> 
+                <td class="leftCol-small"> <% if (nameDisabled) { %><strong><fmt:message key="proxy.service.name"/>:</strong><% } else { %><fmt:message key="proxy.service.name"/><span class="required">*</span><% } %>
                 </td>
                 <td align="left">
                     <% if (!nameDisabled) { %>
@@ -1251,7 +1252,7 @@
                                 <td >
 				<fmt:message key="wsdl.uri"/><br/><br/>
                                     <input type="text" name="wsdlUriText" id="wsdlUriText">
-                                    <input type="button" class="button" onclick="testWsdlUri()" value="Test URI"/>
+                                    <input type="button" class="button" onclick="testWsdlUri()" value="测试 URI"/>
                                 </td>
                             </tr>
                             <tr id="wsdlReg">
@@ -1317,7 +1318,7 @@
 
                                 <%--todo fix resource table starts here--%>
                                 <td style="vertical-align:top!important">
-                                    
+
                                 </td>
                                 <td >
                                     <input type="hidden" id="wsdlResourceList" name="wsdlResourceList">
@@ -1506,7 +1507,7 @@
 			</td>
 			</tr>
                         </table>
-                       
+
                     </div>
                     <input type="hidden" name="serviceParams"/>
                 </td>
@@ -1590,7 +1591,7 @@
                                 </tr>
                                 <tr>
                                     <td class="nopadding">
-                                        <input id="inSeqOpImp" type="radio" name="inSeqOp" value="import"
+                                        <input id="inSeqOpImp" type="radio" name="inSeqOp" value="导入"
                                                onclick="radioClicked('in', 'ImportSeq');"/>
                                     </td>
                                     <td style="vertical-align:middle;" class="nopadding"><label for="inSeqOpImp"><fmt:message key="use.existing.sequence"/></label></td>
@@ -1643,7 +1644,7 @@
                                     <% } else { %>
                                         <a href="#" class="icon-link" id="epAnonAddEdit" style="background-image: url(../admin/images/edit.gif);"
                                            onclick="anonEpAddEdit();"><%=anonEpAddEdit%></a>
-                                    <% } %>    
+                                    <% } %>
                                     </td>
                                     <td class="nopadding">&nbsp;</td>
                                     <td style="vertical-align:middle;" class="nopadding">
@@ -1705,7 +1706,7 @@
             </tr>
         </tbody>
     </table>
-</div>                                      
+</div>
 <div id="page2">
     <table width="100%" class="styledInner">
         <thead>

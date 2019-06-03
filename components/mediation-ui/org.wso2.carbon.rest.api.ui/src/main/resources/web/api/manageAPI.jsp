@@ -13,6 +13,7 @@
   ~  See the License for the specific language governing permissions and
   ~  limitations under the License.
   --%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@page import="org.wso2.carbon.CarbonConstants" %>
 <%@page import="org.wso2.carbon.rest.api.stub.types.carbon.APIData" %>
@@ -160,7 +161,7 @@
         	hostname = request.getParameter("hostname");
         	port = request.getParameter("port");
         }
-        
+
         if (apiData.getResources() != null) {
             resourceList = new ArrayList<ResourceData>(Arrays.asList(apiData.getResources()));
         } else {
@@ -194,12 +195,12 @@
             }
             resourceList = new ArrayList<ResourceData>();
         }
-        
+
         port = String.valueOf(apiData.getPort() != -1 ? apiData.getPort() : "");
         hostname = apiData.getHost() != null ? apiData.getHost() : "";
         version = apiData.getVersion() != null ? apiData.getVersion() : "";
         versionType = apiData.getVersionType() != null ? apiData.getVersionType() : "";
-        
+
         if (fromResourceSourceView) {
         	hostname = request.getParameter("hostname");
         	port = request.getParameter("port");
@@ -346,13 +347,13 @@ function getResourceNode(idSuffix) {
             "<div class=\"dot-icon\"></div>" +
             "<div id=\"resource." + idSuffix + "\" class=\"resources\">" +
             <% if (isResourceUpdatePending) { %>
-                "<a class=\"resource\" onclick=\"loadResourceData(this, true)\">Resource</a>" +
+                "<a class=\"resource\" onclick=\"loadResourceData(this, true)\">资源</a>" +
             <% } else { %>
-                "<a class=\"resource\" onclick=\"loadResourceData(this, false)\">Resource</a>" +
+                "<a class=\"resource\" onclick=\"loadResourceData(this, false)\">资源</a>" +
             <% } %>
             "<div style=\"width: 100px;\" class=\"sequenceToolbar\">" +
             "<div>" +
-            "<a class=\"deleteStyle\" onclick=\"deleteResource(" + idSuffix + ")\">Delete</a>" +
+            "<a class=\"deleteStyle\" onclick=\"deleteResource(" + idSuffix + ")\">删除</a>" +
             "</div>" +
             "</div>" +
             "</div>" +
@@ -705,7 +706,7 @@ function resourceSourceView() {
     var versionTypeElement = document.getElementById('api.version.type');
     var versionType = versionTypeElement.options[versionTypeElement.selectedIndex].text;
     apiNameValue = apiNameValue.split(":")[0];
-    
+
     if (port != null && port != "") {
     	if (!(/^\d{1,5}([ ]\d{1,5})*$/).test(port)) {
     		CARBON.showWarningDialog('<fmt:message key="api.port.invalid"/>');
@@ -716,7 +717,7 @@ function resourceSourceView() {
         versionType = "";
         version = "";
     }
-    
+
     var result = updateResource("true");
     if (result != false) {
         document.location.href = "sourceView_resource.jsp?ordinal=1&mode=" + "<%=Encode.forHtml(mode)%>" +
@@ -746,7 +747,7 @@ function sourceView() {
         versionType = "";
         version = "";
     }
-    
+
     if (port != null && port != "") {
     	if (!(/^\d{1,5}([ ]\d{1,5})*$/).test(port)) {
     		CARBON.showWarningDialog('<fmt:message key="api.port.invalid"/>');
@@ -870,13 +871,13 @@ function onSelectVersionType() {
                                 <td>
                                     <select name="build.message" id="api.version.type" onchange="onSelectVersionType()">
                                         <option value="context" <%= "context".equals(versionType) ?
-                                                "selected=\"true\"" : ""%>>context
+                                                "selected=\"true\"" : ""%>>上下文
                                         </option>
                                         <option value="url" <%= "url".equals(versionType) ?
                                                 "selected=\"true\"" : ""%>>url
                                         </option>
                                         <option value="false" <%= (versionType == null || versionType.isEmpty()) ?
-                                                "selected=\"true\"" : ""%>>none
+                                                "selected=\"true\"" : ""%>>无
                                         </option>
                                     </select>
                                 </td>

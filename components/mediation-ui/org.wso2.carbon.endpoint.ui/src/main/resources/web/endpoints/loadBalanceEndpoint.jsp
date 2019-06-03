@@ -16,7 +16,7 @@
 ~ under the License.
 -->
 
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axiom.om.OMElement" %>
 <%@ page import="org.apache.axiom.om.util.AXIOMUtil" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
@@ -134,7 +134,7 @@
                 session.removeAttribute("anonEpXML");
 %>
 <script type="text/javascript">
-    CARBON.showErrorDialog("Unable to create endpoint with given data");
+    CARBON.showErrorDialog("不能用给定的数据创建端点");
     window.location.href = "loadBalanceEndpoint.jsp";
 </script>
 <%
@@ -256,7 +256,7 @@
     <thead>
     <tr>
         <th>
-            <span style="float:left; position:relative; margin-top:2px;">Switch to source</span><a
+            <span style="float:left; position:relative; margin-top:2px;">切换到代码视图</span><a
                 href="#" onclick="switchToSource('LoadBalance','<%=isAnonymous%>','false');"
                 class="icon-link"
                 style="background-image:url(images/source-view.gif);"><fmt:message
@@ -310,8 +310,8 @@
                     <td class="leftCol-small"><fmt:message key="buildMessage"/></td>
                     <td>
                         <select name="buildMessage" id="_buildMessage">
-                            <option <%=isBuildMessage ? "selected" : ""%> value="true">True</option>
-                            <option <%=!isBuildMessage ? "selected" : ""%> value="false">False</option>
+                            <option <%=isBuildMessage ? "selected" : ""%> value="true">是</option>
+                            <option <%=!isBuildMessage ? "selected" : ""%> value="false">否</option>
                         </select>
                     </td>
                 </tr>
@@ -361,8 +361,7 @@
                     <td colspan="2">
                         <a href="#" onclick="addServiceParams('headerTable')"
                            style="background-image: url('../admin/images/add.gif');"
-                           class="icon-link">Add
-                                             Property</a>
+                           class="icon-link">添加属性</a>
                         <input type="hidden" name="endpointProperties"
                                id="endpointProperties"/>
                     </td>
@@ -448,7 +447,7 @@
                         <td><fmt:message key="registry.key"/>
                             <span class="required">*</span>
                         </td>
-                        <td><span id="reg">conf:</span><input type="text" size="75" id="synRegKey"/>
+                        <td><span id="reg">配置:</span><input type="text" size="75" id="synRegKey"/>
                         </td>
                     </tr>
                 </table>

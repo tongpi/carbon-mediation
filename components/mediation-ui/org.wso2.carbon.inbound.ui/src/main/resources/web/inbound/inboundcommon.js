@@ -9,7 +9,7 @@ function isNameValid(namestring) {
             var ch = namestring.charAt(j);
             var code = ch.charCodeAt(0);
             if ((code > 47 && code < 59) // number
-                    || (code > 64 && code < 91)// capital 
+                    || (code > 64 && code < 91)// capital
                     || (code > 96 && code < 123)// simple
                     || (code == 46) //dot
                     || (code == 95) // underscore
@@ -52,7 +52,7 @@ function forward(destinationJSP) {
 function addParam(form){
 	form.action='newInbound1.jsp?action=addParam';
     form.submit();
-    return false;	
+    return false;
 }
 
 function inboundsave1(namemsg, typemsg, form , existingList){
@@ -65,7 +65,7 @@ function inboundsave1(namemsg, typemsg, form , existingList){
          if(existingInbounds != null ){
          for(var i=0; i< existingInbounds.length;i++){
               if(name == existingInbounds[i]){
-              CARBON.showErrorDialog("Inbound endpoint already exists please use separate name");
+              CARBON.showErrorDialog("入站端点已存在，请使用单独的名称");
               return false;
               }
              }
@@ -75,18 +75,18 @@ function inboundsave1(namemsg, typemsg, form , existingList){
         return false;
     }
     form.submit();
-    return false;	
+    return false;
 }
 
 function inboundsave2(msg1,msg2,msg3,msg4,msg5,msg6,form){
     if (sequenceRequired && document.getElementById('inboundSequence').value == '') {
         CARBON.showWarningDialog(msg1);
         return false;
-    }	
+    }
     if (onErrorRequired && document.getElementById('inboundErrorSequence').value == '') {
         CARBON.showWarningDialog(msg2);
         return false;
-    }        
+    }
     if (classRequired && document.getElementById('inboundClass').value == '') {
         CARBON.showWarningDialog(msg4);
         return false;
@@ -94,7 +94,7 @@ function inboundsave2(msg1,msg2,msg3,msg4,msg5,msg6,form){
     if (intervalRequired == true && document.getElementById('interval').value == "") {
         CARBON.showWarningDialog(msg3);
         return false;
-    }    
+    }
     if (document.getElementById('interval') != null && isNaN(document.getElementById('interval').value)) {
         CARBON.showWarningDialog(msg3);
         return false;
@@ -111,7 +111,7 @@ function inboundsave2(msg1,msg2,msg3,msg4,msg5,msg6,form){
     	    if (document.getElementById(requiredParams[i]).value.trim() == '') {
     	        CARBON.showWarningDialog(msg5);
     	        return false;
-    	    }    		
+    	    }
     	}
     }
 
@@ -125,20 +125,20 @@ function inboundsave2(msg1,msg2,msg3,msg4,msg5,msg6,form){
             }
         }
     }
-    
+
     form.submit();
-    return false;	
+    return false;
 }
 
 function inboundUpdate(msg1,msg2,msg3,msg4,msg5,msg6,form){
     if (sequenceRequired && document.getElementById('inboundSequence').value == '') {
         CARBON.showWarningDialog(msg1);
         return false;
-    }	
+    }
     if (onErrorRequired && document.getElementById('inboundErrorSequence').value == '') {
         CARBON.showWarningDialog(msg2);
         return false;
-    }         
+    }
     if (classRequired && document.getElementById('inboundClass').value == '') {
         CARBON.showWarningDialog(msg4);
         return false;
@@ -157,13 +157,13 @@ function inboundUpdate(msg1,msg2,msg3,msg4,msg5,msg6,form){
         CARBON.showWarningDialog(msg6);
         return false;
     }
-    
+
     if(requiredParams != null){
     	for(var i = 0;i<requiredParams.length;i++){
     	    if (document.getElementById(requiredParams[i]).value.trim() == '') {
     	        CARBON.showWarningDialog(msg5);
     	        return false;
-    	    }    		
+    	    }
     	}
     }
 
@@ -178,7 +178,7 @@ function inboundUpdate(msg1,msg2,msg3,msg4,msg5,msg6,form){
         }
     }
     form.submit();
-    return false;	
+    return false;
 }
 
 function isContainRaw(tbody) {
@@ -285,14 +285,14 @@ function autoredioselect() {
 }
 
 function addRow(tableID) {
-	 
+
     var table = document.getElementById(tableID);
 
     var rowCount = table.rows.length;
     var row = table.insertRow((rowCount-1));
 
     iParamCount++;
-    
+
     var cell1 = row.insertCell(0);
     var element1 = document.createElement("input");
     element1.type = "text";
@@ -316,7 +316,7 @@ function deleteRow(tableID) {
 		    		var table = document.getElementById(tableID);
 		    		var rowCount = table.rows.length;
 		    		table.deleteRow((rowCount-2));
-		    		iParamCount--;	    	    	
+		    		iParamCount--;
 	    	    }
 	        }catch(e) {
 	            //alert(e);
@@ -444,7 +444,7 @@ function disableStat(inboundEndpointName) {
             handleCallback(inboundEndpointName, DISABLE);
         },
         error: function (msg) {
-            CARBON.showErrorDialog('Error occurred when disabling statistics for the inbound Endpoint :' + inboundEndpointName);
+            CARBON.showErrorDialog('禁用入站端点的统计信息时出错 :' + inboundEndpointName);
         }
     });
 }
@@ -458,7 +458,7 @@ function enableStat(inboundEndpointName) {
             handleCallback(inboundEndpointName, ENABLE);
         },
         error: function (msg) {
-            CARBON.showErrorDialog('Error occurred when enabling statistics for the inbound Endpoint :' + inboundEndpointName);
+            CARBON.showErrorDialog('启用入站端点的统计信息时出错 :' + inboundEndpointName);
         }
     });
 }
@@ -489,7 +489,7 @@ function disableTrace(inboundEndpointName) {
             document.getElementById("enableTrace" + inboundEndpointName).style.display = "";
         },
         error: function (msg) {
-            CARBON.showErrorDialog('Error occurred when disabling tracing for the inbound Endpoint :' + inboundEndpointName);
+            CARBON.showErrorDialog('禁用入站端点的跟踪信息时出错 :' + inboundEndpointName);
         }
     });
 }
@@ -506,7 +506,7 @@ function enableTrace(inboundEndpointName) {
             document.getElementById("enableStat" + inboundEndpointName).style.display = "none";
         },
         error: function (msg) {
-            CARBON.showErrorDialog('Error occurred when enabling tracing for the inbound Endpoint :' + inboundEndpointName);
+            CARBON.showErrorDialog('启用入站端点的跟踪信息时出错 :' + inboundEndpointName);
         }
     });
 }

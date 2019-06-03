@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.net.URL" %>
 <%@ page import="java.net.URI" %>
 <%@ page import="org.owasp.encoder.Encode" %>
@@ -13,11 +14,11 @@
             returnValue = "success";
 
         } catch (Exception e) {
-            returnValue = "Invalid URI specified for WSDL. The URI " + Encode.forHtmlContent(url) + " is " +
-                    "malformed or does not exist.";
+            returnValue = "指定的WSDL URL无效. URI " + Encode.forHtmlContent(url) + " 格式不正确 " +
+                    "或不存在.";
         }
     } else {
-        returnValue = "Please specify a valid URL.";
+        returnValue = "请指定有效的 URL.";
     }
 %>
 <%=returnValue%>

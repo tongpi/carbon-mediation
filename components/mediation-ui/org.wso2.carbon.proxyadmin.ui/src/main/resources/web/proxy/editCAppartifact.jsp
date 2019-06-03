@@ -50,7 +50,7 @@
         window.location.href='../proxyservices/index.jsp?header=Modify' + '&serviceName='+serviceName+'&startwiz=true';
     }
     function editCAppPS(serviceName) {
-        CARBON.showConfirmationDialog("重启或重新部署后更改不会持久化到. 你确信要编辑吗?", function() {
+        CARBON.showConfirmationDialog("重启或重新部署后更改不会持久化到CAPP. 你确信要编辑吗?", function() {
             jQuery.ajax({
                 type: 'POST',
                 success: function() {
@@ -63,7 +63,7 @@
         window.location.href='../proxyservices/index.jsp?header=Modify' + '&serviceName='+serviceName+'&startwiz=false&sourceView=true';
     }
     function editCAppProxySourceView(serviceName) {
-        CARBON.showConfirmationDialog("The changes will not persist to the CAPP after restart or redeploy. Do you want to Edit?", function() {
+        CARBON.showConfirmationDialog("重启或重新部署后更改不会持久化到CAPP. 你确信要编辑吗?", function() {
             jQuery.ajax({
                 type: 'POST',
                 success: function() {

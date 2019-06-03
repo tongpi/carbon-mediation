@@ -15,6 +15,7 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@page import="org.wso2.carbon.rest.api.stub.types.carbon.APIData"%>
 <%@page import="org.wso2.carbon.rest.api.ui.util.RestAPIConstants"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -42,16 +43,16 @@
 
     String cookie = (String) session.getAttribute(ServerConstants.ADMIN_SERVICE_COOKIE);
     RestApiAdminClient client;
-    
+
     String serviceContextPath = configContext.getServiceContextPath();
-    
+
     String serverContext = "";
     APIData[] apis = null;
 
     int pageNumber;
     int numberOfPages;
     int apiCount;
-    
+
     String pageNumberStr = request.getParameter("pageNumber");
     String apiSearchString = request.getParameter("apiSearchString");
     if (apiSearchString == null) {
@@ -66,7 +67,7 @@
     		pageNumber = Integer.parseInt(pageNumberStr);
         } catch (NumberFormatException e) {
         	response.setStatus(500);
-            CarbonUIMessage uiMsg = new CarbonUIMessage(CarbonUIMessage.ERROR, 
+            CarbonUIMessage uiMsg = new CarbonUIMessage(CarbonUIMessage.ERROR,
             		"pageNumber parameter is not an integer", e);
             session.setAttribute(CarbonUIMessage.ID, uiMsg);
 		    %>
@@ -75,7 +76,7 @@
             return;
         }
     }
-    
+
     String serviceTypeFilter = request.getParameter("serviceTypeFilter");
     if (serviceTypeFilter == null) {
         serviceTypeFilter = "ALL";
@@ -124,9 +125,9 @@
 
     //int correctServiceGroups = servicesInfo.getNumberOfCorrectServiceGroups();
     //int faultyServiceGroups = servicesInfo.getNumberOfFaultyServiceGroups();
-    
+
     boolean loggedIn = session.getAttribute(CarbonSecuredHttpContext.LOGGED_USER) != null;
-    
+
     //boolean hasDownloadableServices = false;
 %>
 
@@ -233,7 +234,7 @@
             });
         });
     }
-    
+
     function deleteApi(apiName) {
         CARBON.showConfirmationDialog("<fmt:message key="api.delete.confirmation"/> " + escape(apiName) + "?", function () {
             jQuery.ajax({
@@ -441,7 +442,7 @@
     if (apis != null) {
         /*String parameters = "serviceTypeFilter=" + serviceTypeFilter +
                 "&serviceSearchString=" + serviceSearchString;*/
-%> 
+%>
 
 <%
 	if (loggedIn && isAuthorizedToManage) {
@@ -539,7 +540,7 @@
                     <% if (apiData.getArtifactContainerName() != null) { %>
                         <img src="images/applications.gif">
                         <%=Encode.forHtmlContent(apiData.getName())%>
-                        <% if(apiData.getIsEdited()) { %> <span style="color:grey"> ( Edited )</span><% } %>
+                        <% if(apiData.getIsEdited()) { %> <span style="color:grey"> ( 已修改 )</span><% } %>
                     <% } else { %>
                         <%=Encode.forHtmlContent(apiData.getName())%>
                     <% } %>
@@ -625,9 +626,9 @@
             <td width="20px" style="text-align:left;border-left:none;border-right:none;width:100px;">
                 <div class="inlineDiv">
                     <% if (apiData.getArtifactContainerName() != null) { %>
-                        <a style="background-image:url(../admin/images/edit.gif);" class="icon-link"  onclick="editCAppApi('<%= Encode.forJavaScriptAttribute(apiData.getName()) %>')">Edit</a>
+                        <a style="background-image:url(../admin/images/edit.gif);" class="icon-link"  onclick="editCAppApi('<%= Encode.forJavaScriptAttribute(apiData.getName()) %>')">编辑</a>
                     <% } else { %>
-                        <a style="background-image:url(../admin/images/edit.gif);" class="icon-link"  onclick="editApi('<%= Encode.forJavaScriptAttribute(apiData.getName()) %>')">Edit</a>
+                        <a style="background-image:url(../admin/images/edit.gif);" class="icon-link"  onclick="editApi('<%= Encode.forJavaScriptAttribute(apiData.getName()) %>')">编辑</a>
                     <% } %>
                 </div>
             </td>
@@ -635,10 +636,10 @@
                 <div class="inlineDiv">
                     <% if (apiData.getArtifactContainerName() != null) { %>
                         <a style="color:gray;background-image:url(../admin/images/delete.gif);" class="icon-link" href="#"
-                           onclick="#">Delete</a>
+                           onclick="#">删除</a>
                     <% } else {%>
                         <a style="background-image:url(../admin/images/delete.gif);" class="icon-link" href="#"
-                           onclick="deleteApi('<%= Encode.forJavaScriptAttribute(apiData.getName()) %>')">Delete</a>
+                           onclick="deleteApi('<%= Encode.forJavaScriptAttribute(apiData.getName()) %>')">删除</a>
                     <% } %>
                 </div>
             </td>

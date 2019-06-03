@@ -13,8 +13,8 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
 --%>
-
-<%@ page contentType="text/html" pageEncoding="UTF-8" import="org.apache.axis2.context.ConfigurationContext" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIMessage" %>
@@ -50,7 +50,7 @@
         $myTabs.tabs({
             select: function(event, ui) {
                 if (!allowTabChange) {
-                    alert("Tab selection is disabled, while you are in the middle of a workflow");
+                    alert("当您处于工作流的中间时，选项卡选择被禁用");
                 }
                 return allowTabChange;
             },
@@ -281,7 +281,7 @@
                                 <% if (msData.getArtifactContainerName() != null) { %>
                                     <img src="images/applications.gif">
                                     <%=Encode.forHtmlContent(name)%>
-                                    <% if(msData.getIsEdited()) { %> <span style="color:grey"> ( Edited )</span><% } %>
+                                    <% if(msData.getIsEdited()) { %> <span style="color:grey"> ( 已修改 )</span><% } %>
                                 <% } else {%>
                                     <%=Encode.forHtmlContent(name)%>
                                 <%}%>
@@ -291,7 +291,7 @@
                                 <% if (msData.getArtifactContainerName() != null) { %>
                                     <img src="images/applications.gif">
                                     <%=Encode.forHtmlContent(name)%>
-                                <% if(msData.getIsEdited()) { %> <span style="color:grey"> ( Edited )</span><% } %>
+                                <% if(msData.getIsEdited()) { %> <span style="color:grey"> ( 已修改 )</span><% } %>
                                 <% } else {%>
                                     <%=Encode.forHtmlContent(name)%>
                                 <%}%>

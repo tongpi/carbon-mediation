@@ -14,7 +14,7 @@
  ~ limitations under the License.
 --%>
 
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axiom.om.OMElement" %>
 <%@ page import="org.apache.axiom.om.util.AXIOMUtil" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
@@ -184,7 +184,7 @@ function addRow(param1, param2, table, delFunction) {
     param2Cell.appendChild(document.createTextNode(param2));
 
     var delCell = document.createElement('td');
-    delCell.innerHTML = '<a id="deleteLink" href="#" onClick="' + delFunction + '(this.parentNode.parentNode.rowIndex)" alt="Delete" class="icon-link" style="background-image:url(../admin/images/delete.gif);">Delete</a>';
+    delCell.innerHTML = '<a id="deleteLink" href="#" onClick="' + delFunction + '(this.parentNode.parentNode.rowIndex)" alt="删除" class="icon-link" style="background-image:url(../admin/images/delete.gif);">删除</a>';
 
     var rowtoAdd = document.createElement('tr');
     rowtoAdd.appendChild(param1Cell);
@@ -339,7 +339,7 @@ function switchToSource() {
 
     function showZeroMSError() {
 
-        CARBON.showErrorDialog('<fmt:message key="cannot.add.message.Processor"/>' + 'No Message Stores defined.', gotoPrevPage);
+        CARBON.showErrorDialog('<fmt:message key="cannot.add.message.Processor"/>' + '未找到消息存储.', gotoPrevPage);
 
     }
     YAHOO.util.Event.onDOMReady(showZeroMSError);
@@ -512,7 +512,7 @@ function switchToSource() {
                                     <td><a id="deleteLink" href="#"
                                            onClick="deleteServiceParamRow(this.parentNode.parentNode.rowIndex)"
                                            alt="Delete" class="icon-link"
-                                           style="background-image:url(../admin/images/delete.gif);">Delete</a>
+                                           style="background-image:url(../admin/images/delete.gif);">删除</a>
                                     </td>
                                 </tr>
 

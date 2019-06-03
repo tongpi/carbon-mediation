@@ -17,7 +17,7 @@
  -->
 <%@page import="org.wso2.carbon.inbound.ui.internal.InboundManagementClient"%>
 <%@page import="org.wso2.carbon.inbound.ui.internal.InboundClientConstants"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar" prefix="carbon" %>
 
@@ -86,7 +86,7 @@ var existingInbounds = null;
                                 <option value="<%=InboundClientConstants.TYPE_WSO2MB%>">WSO2 MB</option>
                                 <option value="<%=InboundClientConstants.TYPE_HL7%>">HL7</option>
                                 <option value="<%=InboundClientConstants.TYPE_KAFKA%>">KAFKA</option>
-                                <option value="<%=InboundClientConstants.TYPE_CLASS%>">Custom</option>
+                                <option value="<%=InboundClientConstants.TYPE_CLASS%>">自定义</option>
                                 <option value="<%=InboundClientConstants.TYPE_MQTT%>">MQTT</option>
                                 <option value="<%=InboundClientConstants.TYPE_RABBITMQ%>">RabbitMQ</option>
                                 <option value="<%=InboundClientConstants.TYPE_WS%>">WS</option>
@@ -129,4 +129,3 @@ var existingInbounds = null;
         }
     %>
 </fmt:bundle>
-

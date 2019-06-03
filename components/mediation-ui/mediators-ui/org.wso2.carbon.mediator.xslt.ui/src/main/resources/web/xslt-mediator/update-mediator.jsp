@@ -17,7 +17,7 @@
  --%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.Map"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.mediator.service.ui.Mediator" %>
 <%@ page import="org.wso2.carbon.mediator.xslt.XSLTMediator" %>
 <%@ page import="org.wso2.carbon.mediator.service.util.MediatorProperty" %>
@@ -102,14 +102,14 @@
                     if (name != null && !"".equals(name)) {
                         String value = request.getParameter("featureValue" + i);
                         if (value != null) {
-                            xsltMediator.addFeature(name.trim(), Boolean.valueOf(value.trim()));                            
+                            xsltMediator.addFeature(name.trim(), Boolean.valueOf(value.trim()));
                         }
                     }
                 }
             } catch (NumberFormatException ignored) {
             }
         }
-        
+
         String resourceList = request.getParameter("resourceList");
 		Map<String, String> resources = new HashMap<String, String>();
 		Map<String, String> resourcesOld = xsltMediator.getResources(); //TODO need proper fix
@@ -123,15 +123,15 @@
 			}
 			xsltMediator.setResources(resources);
 		}
-		
+
 %>
 <%
-} catch (Exception e) {        
+} catch (Exception e) {
      %>
 <script type="text/javascript">
     jQuery(document).ready(function() {
-        CARBON.showErrorDialog("An error has been occurred !. Error Message : " + '<%=e.getMessage()%>');
-    });    
+        CARBON.showErrorDialog("发生错误 !. 错误信息为 : " + '<%=e.getMessage()%>');
+    });
 </script>
 <%
         return;

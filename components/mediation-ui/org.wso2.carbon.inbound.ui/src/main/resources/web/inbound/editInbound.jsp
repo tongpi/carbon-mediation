@@ -24,7 +24,7 @@
 <%@page import="java.util.Set"%>
 <%@page import="java.util.HashSet"%>
 <%@ page import="org.owasp.encoder.Encode" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar" prefix="carbon" %>
 
@@ -66,7 +66,7 @@ var kafkaSpecialParameters = null;
             InboundDescription inboundDescription = client.getInboundDescription(request.getParameter("name"));
             String inboundTypeValue = inboundDescription.getType();
             boolean isMBbased = false;
-            
+
             if (InboundClientConstants.TYPE_JMS.equalsIgnoreCase(inboundTypeValue)) {
             	if (inboundDescription.getParameters().containsKey("connectionfactory.QueueConnectionFactory")) {
             		isMBbased = true;
@@ -80,15 +80,15 @@ var kafkaSpecialParameters = null;
             		inboundDescription.getParameters().put("wso2mb.connection.url", connectionURL);
             	}
             }
-            
-            List<String>defaultParams = client.getDefaultParameters(inboundTypeValue);            
-            List<String>advParams = client.getAdvParameters(inboundTypeValue); 
+
+            List<String>defaultParams = client.getDefaultParameters(inboundTypeValue);
+            List<String>advParams = client.getAdvParameters(inboundTypeValue);
             Set<String>defaultParamNames = new HashSet<String>();
             String specialParams = client.getKAFKASpecialParameters();
             String topicListParams = client.getKAFKATopicListParameters();
             String firstSpecialParam = "";
-    %>       
-    
+    %>
+
     <form method="post" name="inboundupdateform" id="inboundupdateform"
           action="updateInbound-ajaxprocessor.jsp">
 
@@ -107,7 +107,7 @@ var kafkaSpecialParameters = null;
                     <tr>
                         <td style="width:150px"><fmt:message key="inbound.name"/></td>
                         <td align="left">
-                            <%=inboundDescription.getName()%>      
+                            <%=inboundDescription.getName()%>
                             <input name="inboundName" id="inboundName" type="hidden" value="<%=Encode.forHtmlAttribute(inboundDescription.getName())%>"/>
                         </td>
                         <td></td>
@@ -117,7 +117,7 @@ var kafkaSpecialParameters = null;
                         <td align="left">
                             <%=inboundTypeValue%>
                             <input name="inboundType" id="inboundType" type="hidden" value="<%=Encode.forHtmlAttribute(inboundDescription.getType())%>"/>
-                            <input name="inboundMode" id="inboundMode" type="hidden" value="edit"/>                                                  
+                            <input name="inboundMode" id="inboundMode" type="hidden" value="edit"/>
                         </td>
                         <td></td>
                     </tr>
@@ -136,7 +136,7 @@ var kafkaSpecialParameters = null;
 	                        <a href="#" class="registry-picker-icon-link"  onclick="showRegistryBrowser('inboundSequence','/_system/config')"><fmt:message key="inbound.sequence.registry.con"/></a>
 	                        <a href="#" class="registry-picker-icon-link"  onclick="showRegistryBrowser('inboundSequence','/_system/governance')"><fmt:message key="inbound.sequence.registry.gov"/></a>
                         </td>
-                    </tr>                    
+                    </tr>
                     <tr>
                         <td style="width:150px"><fmt:message key="inbound.error.sequence"/><span
                                 class="required">*</span></td>
@@ -153,15 +153,15 @@ var kafkaSpecialParameters = null;
                                 class="required">*</span></td>
                         <td align="left">
                             <select id="inboundSuspend" name="inboundSuspend" class="longInput">
-                               <%if(inboundDescription.isSuspend()){%>                                
-                                <option value="true" selected>true</option>  
-                                <option value="false">false</option>
+                               <%if(inboundDescription.isSuspend()){%>
+                                <option value="true" selected>是</option>
+                                <option value="false">否</option>
                                 <%} else {%>
-                                <option value="true">true</option>  
-                                <option value="false" selected>false</option>                                
-                                <%}%>              
-                            </select>                            
-                        </td>                      
+                                <option value="true">是</option>
+                                <option value="false" selected>否</option>
+                                <%}%>
+                            </select>
+                        </td>
                     </tr>
                      <% } else { %>
                    <tr>
@@ -186,10 +186,10 @@ var kafkaSpecialParameters = null;
                    </tr>
                    <% } %>
                     <% if(InboundClientConstants.TYPE_CLASS.equals(inboundDescription.getType())){ %>
-                    <script type="text/javascript">classRequired = true;</script>       
+                    <script type="text/javascript">classRequired = true;</script>
                     <tr>
                         <td style="width:150px"><fmt:message key="inbound.class"/><span class="required">*</span></td>
-                        <td align="left">                        
+                        <td align="left">
                             <input name="inboundClass" id="inboundClass" class="longInput" type="text" value="<%=Encode.forHtmlAttribute(inboundDescription.getClassImpl())%>"/>
                         </td>
                         <td></td>
@@ -216,11 +216,11 @@ var kafkaSpecialParameters = null;
                         <td align="left">
                             <select name="sequential" id="sequential">
                                 <%if("true".equals(inboundDescription.getSequential())){%>
-	                            	<option value="true" selected>true</option>
-	                            	<option value="false">false</option>
+	                            	<option value="true" selected>是</option>
+	                            	<option value="false">否</option>
 	                            <% } else {%>
-	                            	<option value="true">true</option>
-	                            	<option value="false" selected>false</option>	                            
+	                            	<option value="true">是</option>
+	                            	<option value="false" selected>否</option>
 	                            <% } %>
                             </select>
                         </td>
@@ -231,16 +231,16 @@ var kafkaSpecialParameters = null;
                         <td align="left">
                             <select name="coordination" id="coordination">
                                 <%if("true".equals(inboundDescription.getCoordination())){%>
-	                            	<option value="true" selected>true</option>
-	                            	<option value="false">false</option>
+	                            	<option value="true" selected>是</option>
+	                            	<option value="false">否</option>
 	                            <% } else {%>
-	                            	<option value="true">true</option>
-	                            	<option value="false" selected>false</option>	                            
+	                            	<option value="true">是</option>
+	                            	<option value="false" selected>否</option>
 	                            <% } %>
-                            </select>                            
+                            </select>
                         </td>
                         <td></td>
-                    </tr>                        
+                    </tr>
                     <script language="javascript">
                         function toggleInboundInterval(event){
                             if (event == "listening"){
@@ -263,17 +263,17 @@ var kafkaSpecialParameters = null;
                     </script>
 
                     <% } %>
-                    <%if(!defaultParams.isEmpty()){                     
+                    <%if(!defaultParams.isEmpty()){
                     %>
                     <script type="text/javascript">var requiredParams = new Array(<%=defaultParams.size()%>);</script>
-                    <%} %>       
+                    <%} %>
 					<%  int ctr = -1;
 					    for(String defaultParamOri : defaultParams) {
 						String [] arrParamOri = defaultParamOri.split(InboundClientConstants.STRING_SPLITTER);
 						String defaultParam = arrParamOri[0].trim();
 						defaultParamNames.add(defaultParam);
 						ctr++;
-					%> 	
+					%>
 					<script type="text/javascript">requiredParams[<%=ctr%>] = '<%=Encode.forHtml(defaultParam)%>';</script>
 	                    <tr>
 	                        <td style="width:150px"><%=Encode.forHtmlContent(defaultParam) %><span class="required">*</span></td>
@@ -295,7 +295,7 @@ var kafkaSpecialParameters = null;
 	                                <option value="<%=Encode.forHtmlAttribute(eleValue)%>" selected><%=Encode.forHtmlContent(eleValue)%></option>
 	                            <%}else{%>
 	                                <option value="<%=Encode.forHtmlAttribute(eleValue)%>"><%=Encode.forHtmlContent(eleValue)%></option>
-	                            <%}%>  	  
+	                            <%}%>
 	                            <%}%>
                                 </select>
 							<%} else{ %>
@@ -309,10 +309,10 @@ var kafkaSpecialParameters = null;
                              <%} else{ %>
                                 <input id="<%=Encode.forHtmlAttribute(defaultParam)%>" name="<%=Encode.forHtmlAttribute(defaultParam)%>" class="longInput" type="text" value="<%=Encode.forHtmlAttribute(inboundDescription.getParameters().get(defaultParam))%>"/>
                              <%} %>
-                            <%} %>                       
+                            <%} %>
 	                        </td>
 	                        <td></td>
-	                    </tr>                        
+	                    </tr>
                      <% } %>
                     <% if(InboundClientConstants.TYPE_KAFKA.equals(inboundDescription.getType())){%>
                         <tr><td colspan="3"><div id="specialFieldsForm"><table id="tblSpeInput" name="tblSpeInput" cellspacing="0" cellpadding="0" border="0">
@@ -447,18 +447,18 @@ var kafkaSpecialParameters = null;
                             }
 
 					    i++;
-					    %>                        
+					    %>
 	                    <tr>
 	                        <td style="width:150px">
 	                            <input id="paramkey<%=i%>" name="paramkey<%=i%>" class="longInput" type="text" value="<%=Encode.forHtmlAttribute(strKey)%>"/>
 	                        </td>
-	                        <td align="left">	                            	                      
+	                        <td align="left">
                                 <input id="paramval<%=i%>" name="paramval<%=i%>" class="longInput" type="text" value="<%=Encode.forHtmlAttribute(inboundDescription.getParameters().get(strKey))%>"/>
 	                        </td>
 	                        <td></td>
-	                    </tr>                        
-                     <% } %> 
-                     <% } %> 
+	                    </tr>
+                     <% } %>
+                     <% } %>
                      <script type="text/javascript">iParamCount=<%=i%>;iParamMax=<%=i%>;</script>
                      <%}else{
                      if(!advParams.isEmpty()){%>
@@ -469,7 +469,7 @@ var kafkaSpecialParameters = null;
 				                    key="show.advanced.options"/></a>
 				        </span>
 				        </td>
-				    </tr> 
+				    </tr>
 				    <%} }%>
 				    <tr>
 					    <td colspan="3">
@@ -477,8 +477,8 @@ var kafkaSpecialParameters = null;
 						    <table id="tblAdvInput" name="tblAdvInput" class="normal-nopadding" cellspacing="0" cellpadding="0" border="0">
 								<% for(String defaultParamOri : advParams) {
 									String [] arrParamOri = defaultParamOri.split(InboundClientConstants.STRING_SPLITTER);
-									String defaultParam = arrParamOri[0].trim();						
-								%> 					                       
+									String defaultParam = arrParamOri[0].trim();
+								%>
 				                    <tr>
 				                        <td style="width:150px"><%=Encode.forHtmlContent(defaultParam) %></td>
 				                        <td align="left">
@@ -491,8 +491,8 @@ var kafkaSpecialParameters = null;
 				                                <option value="<%=Encode.forHtmlAttribute(eleValue)%>" selected><%=Encode.forHtmlContent(eleValue)%></option>
 				                                <%} else {%>
 				                                <option value="<%=Encode.forHtmlAttribute(eleValue)%>"><%=Encode.forHtmlContent(eleValue)%></option>
-				                                <%} %>					                            				                                
-				                            <%}%>                                
+				                                <%} %>
+				                            <%}%>
 			                                </select>
 										<%}else{%>
                                         <%if(InboundClientConstants.TYPE_HTTPS.equals(inboundDescription.getType()) && (defaultParam.equals("truststore") || defaultParam.equals("CertificateRevocationVerifier"))){%>
@@ -505,12 +505,12 @@ var kafkaSpecialParameters = null;
 			                            <%} %>
 				                        </td>
 				                        <td></td>
-				                    </tr>                        
-			                     <% } %>						    
+				                    </tr>
+			                     <% } %>
 						    	</table>
-						    </div> 			
+						    </div>
 					    </td>
-				    </tr>                     
+				    </tr>
                     <tr>
                         <td class="buttonRow" colspan="3">
                             <input class="button" type="button"
@@ -518,13 +518,13 @@ var kafkaSpecialParameters = null;
                                    onclick="inboundUpdate('<fmt:message key="inbound.seq.cannotfound.msg"/>','<fmt:message key="inbound.err.cannotfound.msg"/>','<fmt:message key="inbound.interval.cannotfound.msg"/>','<fmt:message key="inbound.class.cannotfound.msg"/>','<fmt:message key="inbound.required.msg"/>','<fmt:message key="inbound.jms.durableSubscriberName.cannotfound.msg"/>',document.inboundupdateform); return false;"/>
                             <input class="button" type="button"
                                    value="<fmt:message key="inbound.cancel.button.text"/>"
-                                   onclick="document.location.href='index.jsp?ordinal=0';"/>                                                                   
+                                   onclick="document.location.href='index.jsp?ordinal=0';"/>
                         </td>
                         <td></td>
                     </tr>
                     </tbody>
                 </table>
-                                               
+
                 <script type="text/javascript">
                     autoredioselect();
                 </script>
@@ -545,4 +545,3 @@ var kafkaSpecialParameters = null;
         }
     %>
 </fmt:bundle>
-

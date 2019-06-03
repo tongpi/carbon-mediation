@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
 ~
 ~ WSO2 Inc. licenses this file to you under the Apache License,
@@ -15,7 +15,7 @@
 ~ specific language governing permissions and limitations
 ~ under the License.
 -->
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
@@ -50,7 +50,7 @@
         <img src="images/applications.gif">
         <% if (loggedIn) { %>
             <a href="./service_info.jsp?serviceName=<%=Encode.forHtmlAttribute(serviceName)%>"><%=Encode.forHtmlContent(name)%>
-            <% if(pd.getIsEdited()) { %> <span style="color:grey"> ( 已修改过 )</span><% } %>
+            <% if(pd.getIsEdited()) { %> <span style="color:grey"> (已修改)</span><% } %>
             </a>
         <% } else { %>
             <%=Encode.forHtmlContent(name)%>

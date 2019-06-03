@@ -14,7 +14,7 @@
   ~  See the License for the specific language governing permissions and
   ~  limitations under the License.
   --%>
-
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.ResourceBundle" %>
 <%@ page import="org.wso2.carbon.priority.executors.ui.Executor" %>
 <%@ page import="org.wso2.carbon.priority.executors.ui.Queue" %>
@@ -131,7 +131,7 @@
         cell1.appendChild(txtInp);
 
         var cell2 = row.insertCell(2);
-        cell2.innerHTML = "<a onclick=\"dbrDeleteCurrentRow(this);return false;\" class=\"delete-icon-link\">Delete</a>";
+        cell2.innerHTML = "<a onclick=\"dbrDeleteCurrentRow(this);return false;\" class=\"delete-icon-link\">删除</a>";
 
         hidden.setAttribute("value", (noTwo + 1));
     }
@@ -203,7 +203,7 @@
         var regEx = /[~!@#$%^&*()\\\/+=\:;<>'"?[\]{}|\s,]|^$/;
         var ele = document.getElementById("executor.name_1");
         if (ele && regEx.test(ele.value)) {
-            CARBON.showErrorDialog("Name is empty or contains invalid characters");
+            CARBON.showErrorDialog("名称为空或包含无效字符");
             return false;
         }
 
@@ -221,12 +221,12 @@
         for (var i = 1; i < size; i++) {
             var e1 = document.getElementById("priority" + i);
             if (e1 && e1.value == "") {
-                CARBON.showErrorDialog("Priority must be specified for a queue");
+                CARBON.showErrorDialog("必须指定队列的优先级");
                 return false;
             } else if (e1) {
                 count++;
                 if (isNaN(e1.value)) {
-                    CARBON.showErrorDialog("Priority must be a number");
+                    CARBON.showErrorDialog("优先级必须是一个数字");
                     return false;
                 }
             }
@@ -234,11 +234,11 @@
             if (isFixed) {
                 e1 = document.getElementById("capacity" + i);
                 if (e1 && e1.value == "") {
-                    CARBON.showErrorDialog("Capacity must be specified for a queue");
+                    CARBON.showErrorDialog("队列容量必须指定");
                     return false;
                 } else if (e1) {
                     if (isNaN(e1.value)) {
-                        CARBON.showErrorDialog("Capacity must be a number");
+                        CARBON.showErrorDialog("队列容量必须是数字");
                         return false;
                     }
                 }
@@ -246,25 +246,25 @@
         }
 
         if (count <= 1) {
-            CARBON.showErrorDialog("Two or more queues must be specified");
+            CARBON.showErrorDialog("至少两个队列应该被指定");
             return false;
         }
 
         ele = document.getElementById("max");
         if (ele && ele.value == "") {
-            CARBON.showErrorDialog("Max thread count is required");
+            CARBON.showErrorDialog("最大线程数必须指定");
             return false;
         }
 
         ele = document.getElementById("core");
         if (ele && ele.value == "") {
-            CARBON.showErrorDialog("Core thread count is required");
+            CARBON.showErrorDialog("核心线程数必须指定");
             return false;
         }
 
         ele = document.getElementById("keep_alive");
         if (ele && ele.value == "") {
-            CARBON.showErrorDialog("Keep-Alive thread count is required");
+            CARBON.showErrorDialog("Keep-Alive 线程数必须被指定");
             return false;
         }
 
@@ -344,8 +344,8 @@
                 </td>
                 <td align="left">
                     <select name="isFixed" id="isFixed" onchange="optionChanged()">
-                        <option value="true" <%=executor.isFixedSize() ? "selected=\"selected\"" : ""%>>true</option>
-                        <option value="false" <%=!executor.isFixedSize() ? "selected=\"selected\"" : ""%>>false</option>
+                        <option value="true" <%=executor.isFixedSize() ? "selected=\"selected\"" : ""%>>是</option>
+                        <option value="false" <%=!executor.isFixedSize() ? "selected=\"selected\"" : ""%>>否</option>
                     </select>
                 </td>
 
@@ -381,7 +381,7 @@
                     </table>
                     <div>
                         <a class="icon-link" style="background-image: url(../admin/images/add.gif);"
-                           onclick="dbrAddStmtResultsTableRow('queues', null)">Add Queue</a>
+                           onclick="dbrAddStmtResultsTableRow('queues', null)">添加队列</a>
                     </div>
                 </td>
             </tr>
@@ -447,5 +447,3 @@
 </div>
 
 </fmt:bundle>
-
-

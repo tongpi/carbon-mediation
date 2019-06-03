@@ -14,7 +14,7 @@
  ~ limitations under the License.
 --%>
 
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
@@ -181,7 +181,7 @@
         param2Cell.appendChild(document.createTextNode(param2));
 
         var delCell = document.createElement('td');
-        delCell.innerHTML = '<a id="deleteLink" href="#" onClick="' + delFunction + '(this.parentNode.parentNode.rowIndex)" alt="Delete" class="icon-link" style="background-image:url(../admin/images/delete.gif);">Delete</a>';
+        delCell.innerHTML = '<a id="deleteLink" href="#" onClick="' + delFunction + '(this.parentNode.parentNode.rowIndex)" alt="删除" class="icon-link" style="background-image:url(../admin/images/delete.gif);">删除</a>';
 
         var rowtoAdd = document.createElement('tr');
         rowtoAdd.appendChild(param1Cell);
@@ -304,7 +304,7 @@
 
                 function showZeroMSError() {
 
-                    CARBON.showErrorDialog('<fmt:message key="cannot.add.message.Processor"/>' + 'No Message Stores defined.',gotoPrevPage);
+                    CARBON.showErrorDialog('<fmt:message key="cannot.add.message.Processor"/>' + '未找到消息存储.',gotoPrevPage);
 
                 }
                 YAHOO.util.Event.onDOMReady(showZeroMSError);
@@ -345,14 +345,14 @@
                                value="<%=client.getClassName(messageStoreName)%>"/>
                         <%
                             String providerClass = client.getClassName(messageStoreName);
-                            String providerLabel = "Not Available";
+                            String providerLabel = "不可用";
 
                             if("org.apache.synapse.message.processor.impl.forwarder.ScheduledMessageForwardingProcessor".
                                     equals(providerClass.trim())) {
-                                providerLabel = "Scheduled Message Forwarding Processor";
+                                providerLabel = "定时消息转发处理器";
                             } else if ("org.apache.synapse.message.processor.impl.sampler.SamplingProcessor".
                                     equals(providerClass.trim())) {
-                                providerLabel = "Message Sampling Processor";
+                                providerLabel = "消息采样处理器";
                             } else {
                                 providerLabel = providerClass;
                             }
@@ -486,7 +486,7 @@
                                                 <td><a id="deleteLink" href="#"
                                                        onClick="deleteServiceParamRow(this.parentNode.parentNode.rowIndex)"
                                                        alt="Delete" class="icon-link"
-                                                       style="background-image:url(../admin/images/delete.gif);">Delete</a>
+                                                       style="background-image:url(../admin/images/delete.gif);">删除</a>
                                                 </td>
                                             </tr>
 

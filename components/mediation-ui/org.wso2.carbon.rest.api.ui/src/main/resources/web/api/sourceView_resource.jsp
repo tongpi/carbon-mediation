@@ -16,7 +16,7 @@
 <%@page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@page import="org.wso2.carbon.CarbonConstants" %>
 <%@page import="org.wso2.carbon.rest.api.stub.types.carbon.APIData" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.rest.api.stub.types.carbon.ResourceData" %>
 <%@ page import="org.wso2.carbon.rest.api.ui.client.RestApiAdminClient" %>
 <%@ page import="org.wso2.carbon.rest.api.ui.util.ApiEditorHelper" %>
@@ -65,9 +65,9 @@
         port = request.getParameter("port");
         version = request.getParameter("version");
         versionType = request.getParameter("versionType");
-        
+
         APIData apiData = new APIData();
-        
+
         if ("edit".equals(mode)) {
             apiData.setName(apiName);
             apiData.setContext(apiContext);
@@ -118,7 +118,7 @@
 
                             },
                             error: function() {
-                                CARBON.showInfoDialog("Could not convert resource source to resource data. ", function() {
+                                CARBON.showInfoDialog("不能转换资源代码为资源数据. ", function() {
                                     <%session.setAttribute("index", index);%>
                                     document.location.href = "manageAPI.jsp?mode=" + "<%=mode%>" + "&apiName=" + "<%=apiName%>";
                                 });
@@ -136,7 +136,7 @@
                                 						 "&hostname=" + "<%=hostname%>" + "&port=" + "<%=port%>";
                             },
                             error: function() {
-                                CARBON.showInfoDialog("Could not convert resource source to resource data. ", function() {
+                                CARBON.showInfoDialog("不能转换资源代码为资源数据. ", function() {
                                     <%session.setAttribute("index", index);%>
                                     document.location.href = "manageAPI.jsp?mode=" + "<%=mode%>" + "&apiName=" + "<%=apiName%>";
                                 });
@@ -171,7 +171,7 @@
 
                             },
                             error: function() {
-                                  CARBON.showInfoDialog("Could not convert resource source to resource data. ", function() {
+                                  CARBON.showInfoDialog("不能转换资源代码为资源数据. ", function() {
                                     <%session.setAttribute("index", index);%>
                                     document.location.href = "manageAPI.jsp?mode=" + "<%=mode%>" + "&apiName=" + "<%=apiName%>";
                                 });

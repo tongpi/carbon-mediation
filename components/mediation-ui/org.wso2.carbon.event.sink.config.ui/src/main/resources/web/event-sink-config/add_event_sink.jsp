@@ -24,7 +24,7 @@
 <%@ page import="org.wso2.carbon.utils.ServerConstants" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar" prefix="carbon" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%
     response.setHeader("Cache-Control", "no-cache");
 %>
@@ -57,7 +57,7 @@
         var receiverUrlCheck
                 = (receiverUrl.value.trim()).match(/^tcp?:\/\/\w+(\.\w+)*(:[0-9]{1,5})(,\s*tcp?:\/\/\w+(\.\w+)*(:[0-9]{1,5}))*/g);
         if (!(receiverUrlCheck == (receiverUrl.value.trim()))) {
-            CARBON.showErrorDialog("Invalid url format in Receiver url");
+            CARBON.showErrorDialog("接收器Url格式无效");
             return false;
 
         }
@@ -76,7 +76,7 @@
 
             if (action == "add") {
                 var name = document.getElementById("propertyName0").value;
-                CARBON.showConfirmationDialog("Are you sure, you want to add event sink '" + escape(name) + "'?", function () {
+                CARBON.showConfirmationDialog("确信要添加事件接收器 '" + escape(name) + "'吗?", function () {
                     jQuery.ajax({
                         type: "GET",
                         url: "../event-sink-config/update_event_sink_ajaxprocessor.jsp",
@@ -85,13 +85,13 @@
                             setTimeout(function () {
                                 window.location.href = "event_sinks_configuration.jsp?ordinal=1";
                             }, 5000);
-                            CARBON.showInfoDialog("Your Event Sink has been deployed. Please refresh this page in while to see the status of new Event Sink.");
+                            CARBON.showInfoDialog("您的事件接收器已部署。请刷新此页以查看新事件接收器的状态.");
                         }
                     });
                 });
             } else if (action == "edit") {
                 var name = document.getElementById("propertyName0").innerHTML.trim();
-                CARBON.showConfirmationDialog("Are you sure, you want to update event sink '" + escape(name) + "'?", function () {
+                CARBON.showConfirmationDialog("确信要更新事件接收器 '" + escape(name) + "'吗?", function () {
                     jQuery.ajax({
                         type: "GET",
                         url: "../event-sink-config/update_event_sink_ajaxprocessor.jsp",
@@ -100,7 +100,7 @@
                             setTimeout(function () {
                                 window.location.href = "event_sinks_configuration.jsp?ordinal=1";
                             }, 1000);
-                            CARBON.showInfoDialog("Your Event Sink has been updated. Please refresh this page in while to see the status of updated Event Sink.");
+                            CARBON.showInfoDialog("您的事件接收器已更新。请刷新此页以查看新事件接收器的状态.");
                         }
                     });
                 });
@@ -113,12 +113,12 @@
         var receiverUrlCheck = (url.trim()).match(/^tcp?:\/\/\w+(\.\w+)*(:[0-9]{1,5})(,\s*tcp?:\/\/\w+(\.\w+)*(:[0-9]{1,5}))*/g);
         var authenticationUrlCheck = (url.trim()).match(/^ssl?:\/\/\w+(\.\w+)*(:[0-9]{1,5})/g);
         if (url == '') {
-            CARBON.showErrorDialog("server url cannot be empty");
+            CARBON.showErrorDialog("服务器 url不能为空");
         } else if (receiverUrlCheck == null && protocol == "tcp") {
-            CARBON.showErrorDialog("Incomplete url or invalid protocol, Please provide correct url");
+            CARBON.showErrorDialog("不完整的 url 或无效的协议, 请指定正确的 url");
             return false;
         } else if (authenticationUrlCheck == null && protocol == "ssl") {
-            CARBON.showErrorDialog("Incomplete url or invalid protocol, Please provide correct url");
+            CARBON.showErrorDialog("不完整的 url 或无效的协议, 请指定正确的 url");
             return false;
         } else {
             var receivedUrl = /^(.*:)\/\/([A-Za-z0-9\-\.]+)(:([0-9]+))?(.*)$/i;
@@ -128,12 +128,12 @@
             var serverPort = receivedUrl.exec(url)[4];
             if (protocol == "tcp") {
                 if (!(receiverUrlCheck == (url.trim())) && !(commProtocol == "tcp:")) {
-                    CARBON.showErrorDialog("Invalid url format in Receiver url");
+                    CARBON.showErrorDialog("接收器url格式无效");
                     return false;
                 }
             } else {
                 if (!(authenticationUrlCheck == (url.trim())) && !(commProtocol == "ssl:")) {
-                    CARBON.showErrorDialog("Invalid url format in authentication url");
+                    CARBON.showErrorDialog("认证url格式无效");
                     return false;
                 }
             }
@@ -145,9 +145,9 @@
                     if (data != null && data != "") {
                         var result = data.replace(/\n+/g, '');
                         if (result == "true") {
-                            CARBON.showInfoDialog("Successfully connected to Analytics Server.");
+                            CARBON.showInfoDialog("成功连接到分析服务器.");
                         } else if (result == "false") {
-                            CARBON.showErrorDialog("Analytics Server cannot be connected!")
+                            CARBON.showErrorDialog("分析服务器连接失败!")
                         }
                     }
                 }
@@ -273,7 +273,7 @@
                                                id="propertyReceiverUrl0"
 
                                                value="<%=eventSink.getReceiverUrlSet()%>"/>
-                                        <input id="testReceiverAddress" name="testReceiverAddress" type="button" class="button" onclick="testURL(document.getElementById('propertyReceiverUrl0').value, 'tcp')" value="Test Server">
+                                        <input id="testReceiverAddress" name="testReceiverAddress" type="button" class="button" onclick="testURL(document.getElementById('propertyReceiverUrl0').value, 'tcp')" value="测试连接">
                                     </td>
                                 </tr>
                                 <tr>
@@ -283,7 +283,7 @@
                                                id="propertyAuthenticatorUrl0"
 
                                                value="<%=eventSink.getAuthenticationUrlSet()%>"/>
-                                        <input id="testAuthenticatorAddress" name="testAuthenticatorAddress" type="button" class="button" onclick="testURL(document.getElementById('propertyAuthenticatorUrl0').value, 'ssl')" value="Test Server">
+                                        <input id="testAuthenticatorAddress" name="testAuthenticatorAddress" type="button" class="button" onclick="testURL(document.getElementById('propertyAuthenticatorUrl0').value, 'ssl')" value="测试连接">
                                     </td>
                                 </tr>
                                 <%
@@ -303,12 +303,12 @@
             <td>
                 <div style="margin-top:30px;margin-left: 25px;margin-right:30px;display: inline;">
                                     <span><a onClick='javaScript:configureEventSink();' style='background-image:
-                                        url(images/save-button.gif);' class='icon-link addIcon'>Save</a></span>
+                                        url(images/save-button.gif);' class='icon-link addIcon'>保存</a></span>
 
                 </div>
                 <div style="margin-top:30px;display: inline;">
                                     <span><a href="event_sinks_configuration.jsp?ordinal=1" style='background-image:
-                                        url(../admin/images/cancel.gif);' class='icon-link addIcon'>Cancel</a></span>
+                                        url(../admin/images/cancel.gif);' class='icon-link addIcon'>取消</a></span>
 
                 </div>
             </td>

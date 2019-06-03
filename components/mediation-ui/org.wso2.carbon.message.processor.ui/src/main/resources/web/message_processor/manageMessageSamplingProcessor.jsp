@@ -14,7 +14,7 @@
  ~ limitations under the License.
 --%>
 
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axiom.om.OMElement" %>
 <%@ page import="org.apache.axiom.om.util.AXIOMUtil" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
@@ -133,11 +133,11 @@
 	    	}
     	}catch(e){
     		CARBON.showErrorDialog('Invalid ' + '<fmt:message key="interval"/>');
-    		return true;    		
+    		return true;
     	}
     	return false;
     }
-    
+
     function addServiceParams() {
         addServiceParameter("interval", document.getElementById('retry_interval').value);
         addServiceParameter("concurrency", document.getElementById('sampling_concurrency').value);
@@ -258,7 +258,7 @@
 
     function showZeroMSError() {
 
-        CARBON.showErrorDialog('<fmt:message key="cannot.add.message.Processor"/>' + 'No Message Stores defined.', gotoPrevPage);
+        CARBON.showErrorDialog('<fmt:message key="cannot.add.message.Processor"/>' + '未找到消息存储.', gotoPrevPage);
 
     }
     YAHOO.util.Event.onDOMReady(showZeroMSError);
@@ -309,7 +309,7 @@
                         <input name="Provider" id="Provider" type="hidden"
                                value="org.apache.synapse.message.processor.impl.sampler.SamplingProcessor"/>
                         <%
-                            String providerLabel = "Message Sampling Processor";
+                            String providerLabel = "消息采样处理器";
                         %>
                         <label id="Provider_label" for="Provider"><%=providerLabel%>
                         </label>
@@ -383,15 +383,15 @@
                             <% if (null!=processorData && processorData.getParams() != null &&
                                    !processorData.getParams().isEmpty() && (processorData.getParams().get("is.active") != null)) {
                                 if (Boolean.valueOf(processorData.getParams().get("is.active"))) { %>
-                                <option value="false">Deactivate</option>
-                                <option value="true" selected>Activate</option>
+                                <option value="false">停用</option>
+                                <option value="true" selected>启用</option>
                             <% } else { %>
-                                <option value="false" selected>Deactivate</option>
-                                <option value="true">Activate</option>
+                                <option value="false" selected>停用</option>
+                                <option value="true">启用</option>
                             <% } %>
                             <% } else { %>
-                                <option value="false">Deactivate</option>
-                                <option value="true" selected>Activate</option>
+                                <option value="false">停用</option>
+                                <option value="true" selected>启用</option>
                             <% } %>
                         </select>
                     </td>

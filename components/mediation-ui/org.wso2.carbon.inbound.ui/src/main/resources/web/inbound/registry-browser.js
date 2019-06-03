@@ -16,7 +16,7 @@ function showRegistryBrowserWithoutLocalEntries(id, path) {
 function showMediationResourceTree(id, path) {
     if ($('local-registry-placeholder')) {
         $('local-registry-placeholder').innerHTML = '<table class="styledLeft"><tbody><tr>' +
-                                                    '<td class="leftCol-small" style="border-right:none"><br/>Local Registry</td>' +
+                                                    '<td class="leftCol-small" style="border-right:none"><br/>本地注册表</td>' +
                                                     '<td style="border-left:none">' +
                                                     '<div id="local-registry-workArea" name="local-registry-workArea" style="margin-top:5px;margin-bottom:5px;"></div>' +
                                                     '</td></tr></tbody></table>';

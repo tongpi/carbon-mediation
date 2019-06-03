@@ -15,6 +15,7 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.proxyadmin.ui.client.ProxyServiceAdminClient" %>
 <%@ page import="org.wso2.carbon.utils.ServerConstants" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
@@ -124,7 +125,7 @@
 
     <script type="text/javascript">
         function designView(){
-            document.getElementById("srcTextArea").value = editAreaLoader.getValue("srcTextArea");            
+            document.getElementById("srcTextArea").value = editAreaLoader.getValue("srcTextArea");
             document.sourceForm.action = "sourceToData.jsp?return=index.jsp&header=<%=Encode.forJavaScriptBlock(header)%>&originator=source.jsp";
             document.sourceForm.submit();
         }
@@ -150,7 +151,7 @@
     });
     </script>
     <div id="middle">
-        <h2><%=Encode.forHtmlContent(header)%> Proxy Service</h2>
+        <h2><%=Encode.forHtmlContent(header)%> 代理服务</h2>
         <div id="workArea">
             <form id="form1" name="sourceForm" method="post" action="">
                 <table cellspacing="0" cellpadding="0" border="0" class="styledLeft noBorders">

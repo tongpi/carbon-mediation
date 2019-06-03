@@ -13,8 +13,8 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
 --%>
-
-<%@ page contentType="text/html" pageEncoding="UTF-8" import="org.apache.axis2.context.ConfigurationContext" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIMessage" %>
@@ -49,7 +49,7 @@
         $myTabs.tabs({
             select: function(event, ui) {
                 if (!allowTabChange) {
-                    alert("Tab selection is disabled, while you are in the middle of a workflow");
+                    alert("流程直接环节选项卡选择被禁用");
                 }
                 return allowTabChange;
             },
@@ -299,7 +299,7 @@
                 <% if (mspData.getArtifactContainerName() != null) { %>
                     <img src="images/applications.gif">
                     <%=Encode.forHtmlContent(mspData.getName())%>
-                    <% if(mspData.getIsEdited()) { %> <span style="color:grey"> ( Edited )</span><% } %>
+                    <% if(mspData.getIsEdited()) { %> <span style="color:grey"> ( 已修改 )</span><% } %>
                 <% } else { %>
                     <%=mspData.getName()%>
                 <% } %>
@@ -469,7 +469,7 @@
 
         <tr>
             <td style="width:155px;">
-                <a 
+                <a
                    href="manageMessageForwardingProcessor.jsp"  class="icon-link"
                    style="background: url(../admin/images/add.gif)  no-repeat;">
                     <fmt:message key="scheduled.message.forwarding.processor"/>
@@ -493,7 +493,7 @@
 
         <tr>
             <td style="width:155px;">
-                <a 
+                <a
                    href="manageMessageSamplingProcessor.jsp" class="icon-link"
                    style="background: url(../admin/images/add.gif)  no-repeat;">
                     <fmt:message key="message.sampling.processor"/>
@@ -505,7 +505,7 @@
         </tr>
         <tr>
             <td style="width:155px;">
-                <a 
+                <a
                    href="manageCustomMessageProcessor.jsp" class="icon-link"
                    style="background: url(../admin/images/add.gif) no-repeat;">
                     <fmt:message key="custom.message.processor"/>

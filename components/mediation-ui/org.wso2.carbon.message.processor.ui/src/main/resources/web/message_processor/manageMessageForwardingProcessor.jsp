@@ -14,7 +14,7 @@
  ~ limitations under the License.
 --%>
 
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axiom.om.OMElement" %>
 <%@ page import="org.apache.axiom.om.util.AXIOMUtil" %>
 
@@ -90,13 +90,13 @@
             form.TargetEndpoint.focus();
             return false;
         }
-        
+
         if (!isNumber(form.retry_interval)) {
             CARBON.showWarningDialog('<fmt:message key="number.field.cannot.be.minus"/>')
             form.retry_interval.focus();
             return false;
         }
-        
+
         if (!isNumber(form.client_retry_interval)) {
             CARBON.showWarningDialog('<fmt:message key="number.field.cannot.be.minus"/>')
             form.client_retry_interval.focus();
@@ -114,13 +114,13 @@
             form.client_retry_interval.focus();
             return false;
         }
-        
+
         if (IsEmpty(form.max_redelivery_attempts) && form.max_delivery_drop.value.trim() == "Enabled") {
             CARBON.showWarningDialog('<fmt:message key="drop.message.Error.empty"/>')
             form.max_redelivery_attempts.focus();
             return false;
         }
-        
+
         if (form.max_redelivery_attempts.value.trim() < 1 && form.max_delivery_drop.value.trim() == "Enabled") {
             CARBON.showWarningDialog('<fmt:message key="drop.message.Error.less.than.one"/>')
             form.max_redelivery_attempts.focus();
@@ -151,7 +151,7 @@
 
         return false;
     }
-    
+
     function isNumber(aTextField) {
         if (aTextField.value.trim() >= 0) {
         	return true;
@@ -310,7 +310,7 @@
 
     function showZeroMSError() {
 
-        CARBON.showErrorDialog('<fmt:message key="cannot.add.message.Processor"/>' + 'No Message Stores defined.', gotoPrevPage);
+        CARBON.showErrorDialog('<fmt:message key="cannot.add.message.Processor"/>' + '未找到消息存储.', gotoPrevPage);
 
     }
     YAHOO.util.Event.onDOMReady(showZeroMSError);
@@ -373,7 +373,7 @@
                         <input name="Provider" id="Provider" type="hidden"
                                value="org.apache.synapse.message.processor.impl.forwarder.ScheduledMessageForwardingProcessor"/>
                         <%
-                            String providerLabel = "Scheduled Message Forwarding Processor";
+                            String providerLabel = "定时消息转发处理器";
                         %>
                         <label id="Provider_label" for="Provider"><%=providerLabel%>
                         </label>
@@ -437,15 +437,15 @@
                                        !processorData.getParams().isEmpty() &&
                                        (processorData.getParams().get("is.active") != null)) {
                                      if (Boolean.valueOf(processorData.getParams().get("is.active"))) { %>
-                                        <option value="false">Deactivate</option>
-                                        <option value="true" selected>Activate</option>
+                                        <option value="false">停用</option>
+                                        <option value="true" selected>启用</option>
                                      <% } else { %>
-                                        <option value="false" selected>Deactivate</option>
-                                        <option value="true">Activate</option>
+                                        <option value="false" selected>停用</option>
+                                        <option value="true">启用</option>
                                      <% } %>
                                 <% } else { %>
-                                    <option value="false">Deactivate</option>
-                                    <option value="true" selected>Activate</option>
+                                    <option value="false">停用</option>
+                                    <option value="true" selected>启用</option>
                                 <% } %>
                             </select>
                         </td>
@@ -490,15 +490,15 @@
                                 <% if (null != processorData && processorData.getParams() != null) {
                                       if (!processorData.getParams().isEmpty() && (processorData.getParams().get("max.delivery.drop") != null)
                                             && (processorData.getParams().get("max.delivery.drop")).toString().equals("Enabled")) { %>
-                                         <option value="Disabled">Disabled</option>
-                                         <option value="Enabled" selected>Enabled</option>
+                                         <option value="Disabled">禁用</option>
+                                         <option value="Enabled" selected>启用</option>
                                    <% } else { %>
-                                        <option value="Disabled" selected>Disabled</option>
-                                        <option value="Enabled">Enabled</option>
+                                        <option value="Disabled" selected>禁用</option>
+                                        <option value="Enabled">启用</option>
                                    <% } %>
                                 <% } else { %>
-                                        <option value="Disabled" selected>Disabled</option>
-                                        <option value="Enabled">Enabled</option>
+                                        <option value="Disabled" selected>禁用</option>
+                                        <option value="Enabled">启用</option>
                                 <% } %>
                             </select>
                         </td>
@@ -549,9 +549,9 @@
 
                             <a href="#" class="registry-picker-icon-link"  onclick="showRegistryBrowser('message_processor_reply_sequence','/_system/config')"><fmt:message key="processor.conf.registry.browser"/></a>
                        		<a href="#" class="registry-picker-icon-link"  onclick="showRegistryBrowser('message_processor_reply_sequence','/_system/governance')"><fmt:message key="processor.gov.registry.browser"/></a>
-                
+
                         </td>
-                    
+
                     </tr>
                     <tr>
                         <td><fmt:message key="message.processor.fault.sequence"/></td>
@@ -564,7 +564,7 @@
                              <a href="#" class="registry-picker-icon-link"  onclick="showRegistryBrowser('message_processor_fault_sequence','/_system/config')"><fmt:message key="processor.conf.registry.browser"/></a>
                        		<a href="#" class="registry-picker-icon-link"  onclick="showRegistryBrowser('message_processor_fault_sequence','/_system/governance')"><fmt:message key="processor.gov.registry.browser"/></a>
                          </td>
-               
+
                     </tr>
                     <tr>
                         <td><fmt:message key="message.processor.deactivate.sequence"/></td>

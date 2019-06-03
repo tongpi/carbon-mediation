@@ -22,8 +22,8 @@
 <%@page import="java.lang.Long"%>
 <%@page import="org.wso2.carbon.inbound.ui.internal.InboundManagementClient"%>
 <%@page import="org.wso2.carbon.inbound.ui.internal.InboundClientConstants"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar"
 	prefix="carbon"%>
@@ -140,7 +140,7 @@
 		%>
     <script type="text/javascript">
         jQuery(document).ready(function () {
-            CARBON.showErrorDialog('Cannot add inbound endpoint. Maybe name or port is already in use.', function () {
+            CARBON.showErrorDialog('无法添加入站端点。可能名称或端口已在使用中.', function () {
                 goBackTwoPages();
             }, function () {
                 goBackTwoPages();

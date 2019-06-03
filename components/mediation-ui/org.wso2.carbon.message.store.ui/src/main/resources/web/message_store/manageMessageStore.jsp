@@ -14,7 +14,7 @@
  ~ limitations under the License.
 --%>
 
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
@@ -166,7 +166,7 @@
         param2Cell.appendChild(document.createTextNode(param2));
 
         var delCell = document.createElement('td');
-        delCell.innerHTML = '<a id="deleteLink" href="#" onClick="' + delFunction + '(this.parentNode.parentNode.rowIndex)" alt="Delete" class="icon-link" style="background-image:url(../admin/images/delete.gif);">Delete</a>';
+        delCell.innerHTML = '<a id="deleteLink" href="#" onClick="' + delFunction + '(this.parentNode.parentNode.rowIndex)" alt="删除" class="icon-link" style="background-image:url(../admin/images/delete.gif);">删除</a>';
 
         var rowtoAdd = document.createElement('tr');
         rowtoAdd.appendChild(param1Cell);
@@ -303,18 +303,18 @@
                 <option selected="true"
                         value="org.apache.synapse.message.store.impl.memory.InMemoryStore"
                         onclick="showHideCustomInput(false)">
-                    In Memory Message Store
+                    内存消息存储
                 </option>
                 <option value="org.apache.synapse.message.store.impl.jms.JmsStore"
                         onclick="showHideCustomInput(false)">
-                    JMS Message Store
+                    JMS 消息存储
                 </option>
                 <option value="org.apache.synapse.message.store.impl.rabbitmq.RabbitMQStore"
                         onclick="showHideCustomInput(false)">
-                    RabbitMQ Message Store
+                    RabbitMQ 消息存储
                 </option>
                 <option value="custom.store" onclick="showHideCustomInput(true)">
-                    Custom
+                    自定义
                 </option>
             </select>
         </td>
@@ -404,7 +404,7 @@
                                     <td><a id="deleteLink" href="#"
                                            onClick="deleteServiceParamRow(this.parentNode.parentNode.rowIndex)"
                                            alt="Delete" class="icon-link"
-                                           style="background-image:url(../admin/images/delete.gif);">Delete</a>
+                                           style="background-image:url(../admin/images/delete.gif);">删除</a>
                                     </td>
                                 </tr>
 

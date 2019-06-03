@@ -14,7 +14,7 @@
  ~ limitations under the License.
 --%>
 
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axiom.om.OMElement" %>
 <%@ page import="org.apache.axiom.om.util.AXIOMUtil" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
@@ -388,11 +388,11 @@
                                <%
                                 if ((null != messageStore) && (messageStore.getParams().get("store.producer.guaranteed.delivery.enable") != null) && (messageStore.getParams().get("store.producer.guaranteed.delivery.enable").equals("true"))) {
                                %>
-                                    <option selected="selected" value="true">True</option>
-                                    <option value="false">False</option>
+                                    <option selected="selected" value="true">是</option>
+                                    <option value="false">否</option>
                                <%} else {%>
-                                    <option value="true">True</option>
-                                    <option selected="selected" value="false">False</option>
+                                    <option value="true">是</option>
+                                    <option selected="selected" value="false">否</option>
                                 <%}%>
                             </select>
                         </td>

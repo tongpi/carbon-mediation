@@ -14,6 +14,7 @@
   ~  See the License for the specific language governing permissions and
   ~  limitations under the License.
   --%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.sequences.common.to.SequenceInfo" %>
 <%@ page import="org.wso2.carbon.mediation.templates.ui.TemplateAdminClientAdapter" %>
 <%@ page import="org.wso2.carbon.mediation.templates.ui.TemplateEditorConstants" %>
@@ -384,7 +385,7 @@
         if (key != null && key != undefined && key != "") {
             location.href = "../sequences/registry_sequence.jsp?action=edit&key=" + key;
         } else {
-            CARBON.showErrorDialog("Specify the key of the Sequence to be edited");
+            CARBON.showErrorDialog("指定要编辑的序列的键");
         }
     }
 
@@ -552,7 +553,7 @@
                         <% if (sequence.getArtifactContainerName() != null) { %>
                             <img src="images/applications.gif">
                             <%= Encode.forHtmlContent(sequence.getName()) %>
-                            <% if(sequence.getIsEdited()) { %> <span style="color:grey"> ( Edited )</span><% } %>
+                            <% if(sequence.getIsEdited()) { %> <span style="color:grey"> ( 已修改 )</span><% } %>
                         <% } else {%>
                             <%= Encode.forHtmlContent(sequence.getName()) %>
                         <% } %>
@@ -777,7 +778,7 @@
                     <% if (endpoint.getArtifactContainerName() != null) { %>
                         <img src="images/applications.gif">
                         <%= Encode.forHtmlContent(endpoint.getTemplateName()) %>
-                        <% if(endpoint.getIsEdited()) { %> <span style="color:grey"> ( Edited )</span><% } %>
+                        <% if(endpoint.getIsEdited()) { %> <span style="color:grey"> ( 已修改 )</span><% } %>
                     <% } else {%>
                         <%= Encode.forHtmlContent(endpoint.getTemplateName()) %>
                     <% } %>

@@ -16,7 +16,7 @@
 ~  See the License for the specific language governing permissions and
 ~  limitations under the License.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar" prefix="carbon" %>
 <%@ taglib uri="http://www.owasp.org/index.php/Category:OWASP_CSRFGuard_Project/Owasp.CsrfGuard.tld" prefix="csrf" %>
@@ -71,7 +71,7 @@
         authenticatorUrlTD.innerHTML = "<input type='text' name='propertyAuthenticatorUrl" + i + "' id='propertyAuthenticatorUrl" + i + "'" +
                 " />";
         var deleteTD = document.createElement("td");
-        deleteTD.innerHTML = "<a href='#' class='delete-icon-link' onclick='deleteproperty(" + i + ");return false;'>" + ["Delete"] + "</a>";
+        deleteTD.innerHTML = "<a href='#' class='delete-icon-link' onclick='deleteproperty(" + i + ");return false;'>" + ["删除"] + "</a>";
 
         propertyRaw.appendChild(nameTD);
         propertyRaw.appendChild(usernameTD);
@@ -114,7 +114,7 @@
     function deleteproperty(i) {
         var eventSinkName = document.getElementById("propertyName" + i).innerHTML.trim();
 
-        CARBON.showConfirmationDialog("Are you sure, you want to delete event sink '" + escape(eventSinkName) + "'?", function () {
+        CARBON.showConfirmationDialog("确信要删除事件接收器 '" + escape(eventSinkName) + "'吗?", function () {
             jQuery.ajax({
                 type: "POST",
                 url: "../event-sink-config/update_event_sink_ajaxprocessor.jsp",
@@ -274,7 +274,7 @@
                                     </td>
                                     <td><a href="#" class="edit-icon-link"
                                            onclick="editEveSinkWithPost('add_event_sink.jsp?<csrf:tokenname/>=<csrf:tokenvalue/>',<%=i%>);return false;
-                                        ">Edit</a></td>
+                                        ">编辑</a></td>
 
                                     <td><a href="#" class="delete-icon-link"
                                            onclick="deleteproperty(<%=i%>);return false;"><fmt:message
@@ -298,7 +298,7 @@
                     <td>
                         <div style="margin-top:10px;">
                             <a class="add-icon-link"
-                               href="add_event_sink.jsp?action=add">Add Event Sink</a>
+                               href="add_event_sink.jsp?action=add">添加事件接收器</a>
                         </div>
                     </td>
                 </tr>

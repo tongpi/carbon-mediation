@@ -15,6 +15,7 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
@@ -172,24 +173,24 @@
             try {
                 proxyName = request.getParameter("proxyName");
                 if (proxyName == null || proxyNameRegex.matcher(proxyName).find()) {
-                    throw new Exception("The proxy service name is empty or contains invalid characters");
+                    throw new Exception("代理服务名称为空或包含无效字符");
                 }
 
                 wsdlURL = request.getParameter("mainWsdlURL");
                 if (wsdlURL == null || "".equals(wsdlURL)) {
-                    throw new Exception("The WSDL URL has not been specified");
+                    throw new Exception("WSDL URL 未指定");
                 }
 
                 URL url = new URL(wsdlURL);
 
                 wsdlService = request.getParameter("wsdlService");
                 if (wsdlService == null || "".equals(wsdlService)) {
-                    throw new Exception("The WSDL service has not been specified");
+                    throw new Exception("WSDL 服务还未指定");
                 }
 
                 wsdlPort = request.getParameter("wsdlPort");
                 if (wsdlPort == null || "".equals(wsdlPort)) {
-                    throw new Exception("The WSDL port has not been specified");
+                    throw new Exception("WSDL端口未指定");
                 }
 
                 publishSame = request.getParameter("publishSameWsdl") != null;
@@ -283,7 +284,7 @@
                                     <td><fmt:message key="wsdl.uri"/><span class="required">*</span></td>
                                     <td>
                                         <input id="main_wsdl_url" type="text" name="mainWsdlURL" size="60"/>
-                                        <button id="testMainConnBtn" onclick="testWsdlURIForEndpoint(); return false;" class="button">Test URI</button>
+                                        <button id="testMainConnBtn" onclick="testWsdlURIForEndpoint(); return false;" class="button">测试 URI</button>
                                     </td>
                                 </tr>
                                 <tr>

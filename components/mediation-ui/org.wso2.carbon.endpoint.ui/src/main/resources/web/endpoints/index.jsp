@@ -15,8 +15,8 @@
 ~ specific language governing permissions and limitations
 ~ under the License.
 -->
-<%@page contentType="text/html" pageEncoding="UTF-8"
-        import="org.apache.axis2.context.ConfigurationContext" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
 <%@ page import="org.wso2.carbon.endpoint.stub.types.service.EndpointMetaData" %>
 <%@ page import="org.wso2.carbon.endpoint.ui.client.EndpointAdminClient" %>
@@ -210,7 +210,7 @@ function handleSwitchOnOffCallback(action, endpointName) {
 
 function goBack(orginiator) {
     if (orginiator == null) {
-        alert('Error: Origin not found');
+        alert('错误: 来源未找到');
         return false;
     }
     document.location.href = orginiator + '?cancelled=true';
@@ -273,8 +273,8 @@ function deleteDynamicEndpoint(key) {
 }
 
 function confirmForceDelete(endpointName, msg) {
-    CARBON.showConfirmationDialog('This endpoint is a dependency for following items!<br/><br/>'
-                                          + msg + '<br/>Force delete?', function() {
+    CARBON.showConfirmationDialog('此端点是下列项的依赖项!<br/><br/>'
+                                          + msg + '<br/>强行删除?', function() {
         $.ajax({
                    type: 'POST',
                    url: 'ajaxprocessors/deleteEndpoint-ajaxprocessor.jsp',
@@ -292,8 +292,8 @@ function editEndpoint(endpointType, endPointName) {
 }
 
 function editCAppEndpoint(endpointType, endPointName) {
-    CARBON.showConfirmationDialog("The changes will not persist to the CAPP after restart or redeploy. " +
-            "Do you want to Edit?", function() {
+    CARBON.showConfirmationDialog("该变更不会被持久化保存到CAPP，在重新启动或重新部署会丢失. " +
+            "你却需要修改吗?", function() {
         $.ajax({
             type: 'POST',
             success: function() {
@@ -308,7 +308,7 @@ function editDynamicEndpoint(key) {
     if (key != null && key != undefined && key != "") {
         location.href = "dynamicEndpoint.jsp?anonEpAction=edit&key=" + key;
     } else {
-        CARBON.showErrorDialog("Specify the key of the Endpoint to be edited");
+        CARBON.showErrorDialog("指定要编辑的端点的键");
     }
 }
 
@@ -620,7 +620,7 @@ function resetVars() {
                     <span href="#">
                         <img src="images/applications.gif">
                         <%= Encode.forHtmlContent(endpoint.getName())%>
-                        <% if(endpoint.getIsEdited()) { %> <span style="color:grey"> ( Edited )</span><% } %>
+                        <% if(endpoint.getIsEdited()) { %> <span style="color:grey"> ( 已修改 )</span><% } %>
                     </span>
                 <% } else { %>
                     <span href="#"><%= Encode.forHtmlContent(endpoint.getName())%></span>
@@ -630,7 +630,7 @@ function resetVars() {
                     <span href="#">
                         <img src="images/applications.gif">
                             <%= Encode.forHtmlContent(endpoint.getName())%>
-                            <% if(endpoint.getIsEdited()) { %> <span style="color:grey"> ( Edited )</span><% } %>
+                            <% if(endpoint.getIsEdited()) { %> <span style="color:grey"> ( 已修改 )</span><% } %>
                     </span>
                 <% } else { %>
                     <span href="#"><%= Encode.forHtmlContent(endpoint.getName())%></span>
@@ -840,7 +840,7 @@ function resetVars() {
         </tr>
         </thead>
         <tbody>
-        <% for (String endpoint : dynamicEndpoints) { 
+        <% for (String endpoint : dynamicEndpoints) {
         	String epXML = client.getDynamicEndpoint(endpoint);
         	if(epXML == null){
         		continue;

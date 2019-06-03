@@ -16,7 +16,7 @@
 <%@page import="org.wso2.carbon.rest.api.ui.util.ApiEditorHelper" %>
 <%@page import="org.wso2.carbon.rest.api.stub.types.carbon.APIData" %>
 <%@page import="org.wso2.carbon.rest.api.stub.types.carbon.ResourceData" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.ResourceBundle" %>
 <%@ page import="org.wso2.carbon.rest.api.ui.client.RestApiAdminClient" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
@@ -107,18 +107,18 @@
                 doc.async = "false";
                 var hasParse = doc.loadXML(docStr);
                 if (!hasParse) {
-                    CARBON.showErrorDialog('Invalid Configuration');
+                    CARBON.showErrorDialog('配置无效');
                     return false;
                 }
             } catch (e) {
-                CARBON.showErrorDialog('Invalid Configuration');
+                CARBON.showErrorDialog('配置无效');
                 return false;
             }
         } else {
             var parser = new DOMParser();
             var doc = parser.parseFromString(docStr, "text/xml");
             if (doc.documentElement.nodeName == "parsererror") {
-                CARBON.showErrorDialog('Invalid Configuration');
+                CARBON.showErrorDialog('配置无效');
                 return false;
             }
         }

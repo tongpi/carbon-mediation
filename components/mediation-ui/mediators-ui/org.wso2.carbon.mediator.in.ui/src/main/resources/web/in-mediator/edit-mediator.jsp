@@ -26,7 +26,7 @@
     Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
     if (!(mediator instanceof InMediator)) {
         // todo : proper error handling
-        throw new RuntimeException("Unable to edit the mediator");
+        throw new RuntimeException("不能编辑中介");
     }
 %>
 

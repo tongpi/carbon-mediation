@@ -5,7 +5,7 @@ function isNameValid(namestring) {
             var ch = namestring.charAt(j);
             var code = ch.charCodeAt(0);
             if ((code > 47 && code < 59) // number
-                    || (code > 64 && code < 91)// capital 
+                    || (code > 64 && code < 91)// capital
                     || (code > 96 && code < 123)// simple
                     || (code == 46) //dot
                     || (code == 95) // underscore
@@ -238,7 +238,7 @@ function editRow(name, group) {
 
 function editCAppRow(name, group) {
 
-    CARBON.showConfirmationDialog("The changes will not persist to the CAPP after restart or redeploy. Do you want to Edit?", function() {
+    CARBON.showConfirmationDialog("重启或重部署后所做的变更不会被持久化到CAPP. 要继续编辑吗?", function() {
         $.ajax({
             type: 'POST',
             success: function() {
@@ -299,7 +299,3 @@ function goBackOnePage() {
 function autoredioselect() {
     settrigger(document.getElementById("taskTrigger_hidden").value);
 }
-
-
-
-

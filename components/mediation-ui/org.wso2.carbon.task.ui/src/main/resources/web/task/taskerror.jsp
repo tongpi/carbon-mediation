@@ -15,7 +15,7 @@
  * limitations under the License.
 --%>
 <%--<%@ page isErrorPage="true" %>--%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -37,7 +37,7 @@
                 StackTraceElement[] trace = cause.getStackTrace();
             %>
 
-            <div> Error : <%=errorMsg%>
+            <div> 错误 : <%=errorMsg%>
             </div>
             <div>
                 <% if (trace.length > 0) {
@@ -56,7 +56,7 @@
                     String errorMsg = request.getParameter(TaskClientConstants.ERROR_MSG);
                     if (errorMsg != null) {
                 %>
-                <div> Error : <%=errorMsg%>
+                <div> 错误 : <%=errorMsg%>
                 </div>
                 <%
                 } else {
@@ -70,5 +70,3 @@
 
     </div>
 </fmt:bundle>
-
-

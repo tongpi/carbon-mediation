@@ -14,6 +14,7 @@
   ~  See the License for the specific language governing permissions and
   ~  limitations under the License.
   --%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.ResourceBundle" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIMessage" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
@@ -41,7 +42,7 @@
 <script type="text/javascript">
 
     function deleteExecutor(name) {
-        CARBON.showConfirmationDialog('Are you sure you want to delete the executor ' + escape(name) + '?', function () {
+        CARBON.showConfirmationDialog('确信要删除执行器 ' + escape(name) + '吗?', function () {
             jQuery.ajax({
                 type: "POST",
                 url: "delete_executor-ajaxprocessor.jsp",

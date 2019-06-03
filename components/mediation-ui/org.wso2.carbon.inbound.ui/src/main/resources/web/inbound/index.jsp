@@ -15,6 +15,7 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.inbound.ui.internal.InboundClientConstants"%>
 <%@ page import="org.wso2.carbon.inbound.ui.internal.InboundDescription"%>
 <%@ page import="org.wso2.carbon.inbound.ui.internal.InboundManagementClient" %>
@@ -82,13 +83,13 @@
                             <div id="disableStat<%= inboundDescription.getName()%>">
                                 <a href="#" onclick="disableStat('<%= inboundDescription.getName() %>')"
                                    class="icon-link"
-                                   style="background-image:url(../admin/images/static-icon.gif);">Disable Statistics</a>
+                                   style="background-image:url(../admin/images/static-icon.gif);">禁用统计</a>
                             </div>
                             <div id="enableStat<%= inboundDescription.getName()%>" style="display:none;">
                                 <a href="#" onclick="enableStat('<%= inboundDescription.getName() %>')"
                                    class="icon-link"
-                                   style="background-image:url(../admin/images/static-icon-disabled.gif);">Enable
-                                    Statistics</a>
+                                   style="background-image:url(../admin/images/static-icon-disabled.gif);">启用
+                                    统计</a>
                             </div>
                         </div>
                     </td>
@@ -98,13 +99,13 @@
                             <div id="enableStat<%= inboundDescription.getName()%>">
                                 <a href="#" onclick="enableStat('<%=inboundDescription.getName()%>')"
                                    class="icon-link"
-                                   style="background-image:url(../admin/images/static-icon-disabled.gif);">Enable
-                                    Statistics</a>
+                                   style="background-image:url(../admin/images/static-icon-disabled.gif);">启用
+                                    统计</a>
                             </div>
                             <div id="disableStat<%= inboundDescription.getName()%>" style="display:none">
                                 <a href="#" onclick="disableStat('<%=inboundDescription.getName()%>')"
                                    class="icon-link"
-                                   style="background-image:url(../admin/images/static-icon.gif);">Disable Statistics</a>
+                                   style="background-image:url(../admin/images/static-icon.gif);">禁用统计</a>
                             </div>
                         </div>
                     </td>
@@ -116,13 +117,13 @@
                             <div id="disableTrace<%= inboundDescription.getName()%>">
                                 <a href="#" onclick="disableTrace('<%= inboundDescription.getName() %>')"
                                    class="icon-link"
-                                   style="background-image:url(../admin/images/trace-icon.gif);">Disable Tracing</a>
+                                   style="background-image:url(../admin/images/trace-icon.gif);">禁用跟踪</a>
                             </div>
                             <div id="enableTrace<%= inboundDescription.getName()%>" style="display:none;">
                                 <a href="#" onclick="enableTrace('<%= inboundDescription.getName() %>')"
                                    class="icon-link"
-                                   style="background-image:url(../admin/images/trace-icon-disabled.gif);">Enable
-                                    Tracing</a>
+                                   style="background-image:url(../admin/images/trace-icon-disabled.gif);">启用
+                                    跟踪</a>
                             </div>
                         </div>
                     </td>
@@ -132,13 +133,13 @@
                             <div id="enableTrace<%= inboundDescription.getName()%>">
                                 <a href="#" onclick="enableTrace('<%=inboundDescription.getName()%>')"
                                    class="icon-link"
-                                   style="background-image:url(../admin/images/trace-icon-disabled.gif);">Enable
-                                    Tracing</a>
+                                   style="background-image:url(../admin/images/trace-icon-disabled.gif);">启用
+                                    跟踪</a>
                             </div>
                             <div id="disableTrace<%= inboundDescription.getName()%>" style="display:none">
                                 <a href="#" onclick="disableTrace('<%=inboundDescription.getName()%>')"
                                    class="icon-link"
-                                   style="background-image:url(../admin/images/trace-icon.gif);">Disable Tracing</a>
+                                   style="background-image:url(../admin/images/trace-icon.gif);">禁用跟踪</a>
                             </div>
                         </div>
                     </td>

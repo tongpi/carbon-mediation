@@ -13,9 +13,8 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"
-        import="org.apache.axis2.context.ConfigurationContext" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
 <%@ page import="org.wso2.carbon.message.processor.ui.MessageProcessorAdminServiceClient" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
@@ -68,7 +67,7 @@
             params = params.trim();
         }
 
-        
+
         String entry = null;
 
         StringBuilder messageProcessorXml = new StringBuilder();
@@ -98,16 +97,16 @@
                 String[] pair = part.split("#");
                 String pName = pair[0];
                 String value = pair[1];
-                
+
                 if (pName.equalsIgnoreCase("axis2.repo") && value.length() > 0){
                     client.validateAxis2ClientRepo(value);
                 }
-                
+
                 messageProcessorXml.append("<ns1:parameter name=\"").append(pName.trim()).append("\" >").
                         append(value.trim()).append("</ns1:parameter>");
 
             }
-            
+
         }
         messageProcessorXml.append("</ns1:messageProcessor>");
         return messageProcessorXml.toString().trim();
@@ -135,7 +134,7 @@
         String msg = e.getMessage();
         String errMsg = msg.replaceAll("\\'", " ");
         String pageName = request.getParameter("pageName");
-		
+
 %>
 <script type="text/javascript">
     //function backtoForm(){
@@ -145,7 +144,7 @@
 
             history.go(-1);
         }
-        CARBON.showErrorDialog('Invalid value is given to the Axis2 Client Repo', gotoPage);
+        CARBON.showErrorDialog('无效的值被指定给Axis2 Client Repo', gotoPage);
     });
     //}
 
@@ -154,8 +153,8 @@
 <%
 return;
     }
-    
-    
+
+
     if ( ((String) session.getAttribute("edit" + name)) != null) {
         try {
             client.modifyMessageProcessor(ss.toString());
