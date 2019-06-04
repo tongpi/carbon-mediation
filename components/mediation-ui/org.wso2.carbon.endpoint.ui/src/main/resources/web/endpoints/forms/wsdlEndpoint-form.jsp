@@ -408,7 +408,7 @@
                    value="<%=wsdlURI%>" size="50"/>
             <input id="testAddress" name="testAddress" type="button" class="button"
                    onclick="testWSDLConnection(document.getElementById('uriWSDLVal').value)"
-                   value="Test URI"/>
+                   value="<fmt:message key="test.url"/>"/>
         </td>
     </tr>
     <tr>
