@@ -26,7 +26,7 @@ public class DataMapperMediatorService extends AbstractMediatorService {
     }
 
     public String getDisplayName() {
-        return "DataMapper";
+        return "数据映射";
     }
 
     public String getLogicalName() {

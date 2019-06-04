@@ -29,7 +29,7 @@ public class EnrichMediatorService extends AbstractMediatorService {
     }
 
     public String getDisplayName() {
-        return "Enrich";
+        return "补充完善数据";
     }
 
     public String getLogicalName() {

@@ -29,7 +29,7 @@ public class CommandMediatorService extends AbstractMediatorService {
     }
 
     public String getDisplayName() {
-        return "Command";
+        return "命令";
     }
 
     public String getLogicalName() {
@@ -42,5 +42,5 @@ public class CommandMediatorService extends AbstractMediatorService {
 
     public Mediator getMediator() {
         return new CommandMediator();
-    }    
+    }
 }

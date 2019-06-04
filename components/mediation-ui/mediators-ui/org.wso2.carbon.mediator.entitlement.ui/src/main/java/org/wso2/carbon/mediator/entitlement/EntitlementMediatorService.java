@@ -30,7 +30,7 @@ public class EntitlementMediatorService extends AbstractMediatorService {
     }
 
     public String getDisplayName() {
-        return "Entitlement";
+        return "权限";
     }
 
     public String getLogicalName() {

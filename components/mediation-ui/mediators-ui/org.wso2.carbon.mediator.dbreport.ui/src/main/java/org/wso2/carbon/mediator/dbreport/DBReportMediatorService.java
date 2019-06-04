@@ -29,7 +29,7 @@ public class DBReportMediatorService extends AbstractMediatorService {
     }
 
     public String getDisplayName() {
-        return "DBReport";
+        return "数据库报表";
     }
 
     public String getLogicalName() {

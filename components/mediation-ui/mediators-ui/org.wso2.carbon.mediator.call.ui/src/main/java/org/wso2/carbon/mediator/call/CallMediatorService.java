@@ -30,7 +30,7 @@ public class CallMediatorService extends AbstractMediatorService {
     }
 
     public String getDisplayName() {
-        return "Call";
+        return "调用";
     }
 
     public String getLogicalName() {

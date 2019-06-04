@@ -26,7 +26,7 @@ public class ConditionalRouterMediatorService extends AbstractMediatorService {
     }
 
     public String getDisplayName() {
-        return "Conditional Router";
+        return "条件路由";
     }
 
     public String getLogicalName() {

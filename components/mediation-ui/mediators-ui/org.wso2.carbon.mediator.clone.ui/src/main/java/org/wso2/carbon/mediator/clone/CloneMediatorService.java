@@ -29,7 +29,7 @@ public class CloneMediatorService extends AbstractMediatorService {
     }
 
     public String getDisplayName() {
-        return "Clone";
+        return "克隆";
     }
 
     public String getLogicalName() {

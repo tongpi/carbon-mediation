@@ -29,7 +29,7 @@ public class DBLookupMediatorService extends AbstractMediatorService {
     }
 
     public String getDisplayName() {
-        return "DBLookup";
+        return "数据库查找";
     }
 
     public String getLogicalName() {

@@ -29,7 +29,7 @@ public class AggregateMediatorService extends AbstractMediatorService {
     }
 
     public String getDisplayName() {
-        return "Aggregate";
+        return "聚合";
     }
 
     public String getLogicalName() {
@@ -42,5 +42,5 @@ public class AggregateMediatorService extends AbstractMediatorService {
 
     public Mediator getMediator() {
         return new AggregateMediator();
-    }  
+    }
 }

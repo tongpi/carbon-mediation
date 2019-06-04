@@ -34,7 +34,7 @@ public class ConditionalRouteMediatorService extends AbstractMediatorService {
     }
 
     public String getDisplayName() {
-        return "Conditional Route";
+        return "条件路由";
     }
 
     public String getLogicalName() {

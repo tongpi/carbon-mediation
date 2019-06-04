@@ -34,7 +34,7 @@ public class CallTemplateService extends AbstractMediatorService {
     }
 
     public String getDisplayName() {
-        return "Call Template";
+        return "调用模板";
     }
 
     public String getLogicalName() {

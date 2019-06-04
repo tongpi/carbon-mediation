@@ -42,7 +42,7 @@ public class CacheMediatorService extends AbstractMediatorService {
 	 * @return display name in the add mediator menu of the mediator
 	 */
     public String getDisplayName() {
-        return "Cache";
+        return "缓存";
     }
 
 	/**
