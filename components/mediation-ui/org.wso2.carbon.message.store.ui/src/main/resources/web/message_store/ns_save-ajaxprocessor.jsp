@@ -18,7 +18,7 @@
 <%@ page import="org.wso2.carbon.sequences.ui.util.SequenceEditorHelper" %>
 <%@ page import="org.wso2.carbon.sequences.ui.util.ns.NameSpacesInformation" %>
 <%@ page import="org.wso2.carbon.sequences.ui.util.ns.NameSpacesInformationRepository" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 
 <%!
     private static final String SYNAPSE_NS = "http://ws.apache.org/ns/synapse";
@@ -28,7 +28,7 @@
     String currentID = request.getParameter("currentID");
     String name = request.getParameter("name");
     if (currentID == null || "".equals(currentID)) {
-        throw new RuntimeException("'currentID' parameter cannot be found");
+        throw new RuntimeException("'currentID' 参数不能被找到");
     }
 
     NameSpacesInformationRepository repository = (NameSpacesInformationRepository) session.getAttribute(

@@ -15,7 +15,7 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.mediator.service.ui.Mediator" %>
 <%@ page import="org.wso2.carbon.mediator.switchm.SwitchCaseMediator" %>
 <%@ page import="org.wso2.carbon.sequences.ui.util.SequenceEditorHelper" %>
@@ -25,7 +25,7 @@
     Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
     if (!(mediator instanceof SwitchCaseMediator)) {
         // todo : proper error handling
-        throw new RuntimeException("Unable to update the mediator");
+        throw new RuntimeException("不能编辑中介");
     }
 
     SwitchCaseMediator switchCaseMediator = (SwitchCaseMediator) mediator;

@@ -1,7 +1,6 @@
 
 <%@page import="org.apache.synapse.commons.evaluators.config.EvaluatorFactory"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -34,7 +33,7 @@
 
 	if (!(mediator instanceof URLRulesMediator)) {
 
-		throw new RuntimeException("Unable to edit the mediator");
+		throw new RuntimeException("不能编辑中介");
 	}
 	URLRulesMediator urlRulesMediator = (URLRulesMediator) mediator;
 	if (urlRulesMediator.getActions() != null) {
@@ -79,7 +78,7 @@
 		try {
 			actionCount = Integer.parseInt(actionCountParameter);
 		} catch (NumberFormatException e) {
-			throw new RuntimeException("Invalid number format");
+			throw new RuntimeException("无效的数字格式");
 		}
 
 		for (int i = 0; i < actionCount; i++) {

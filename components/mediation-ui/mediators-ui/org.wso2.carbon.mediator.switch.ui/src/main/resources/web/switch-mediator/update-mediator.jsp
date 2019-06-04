@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%--
  ~ Copyright (c) 2005-2010, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
@@ -35,7 +35,7 @@
     Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
     if (!(mediator instanceof SwitchMediator)) {
         // todo : proper error handling
-        throw new RuntimeException("Unable to update the mediator");
+        throw new RuntimeException("不能更新中介");
     }
 
     SwitchMediator switchMediator = (SwitchMediator) mediator;

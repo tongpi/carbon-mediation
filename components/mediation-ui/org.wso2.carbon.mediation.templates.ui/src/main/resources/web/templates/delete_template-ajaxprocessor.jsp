@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -61,7 +61,7 @@
         try {
             adminClient.deleteTemplate(templateName);
         } catch (Exception e) {
-            String msg = "Could not delete template: " + e.getMessage();
+            String msg = "不能删除模板: " + e.getMessage();
             CarbonUIMessage.sendCarbonUIMessage(msg, CarbonUIMessage.ERROR, request);
         }
     }
@@ -71,7 +71,7 @@
         try {
             adminClient.deleteTemplate(templateName);
         } catch (Exception e) {
-            String msg = "Could not delete template: " + e.getMessage();
+            String msg = "不能删除模板: " + e.getMessage();
             CarbonUIMessage.sendCarbonUIMessage(msg, CarbonUIMessage.ERROR, request);
         }
     }

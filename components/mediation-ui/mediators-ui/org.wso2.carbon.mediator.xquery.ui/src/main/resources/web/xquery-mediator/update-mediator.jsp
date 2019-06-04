@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -31,7 +31,7 @@
 
         if (!(mediator instanceof XQueryMediator)) {
             // todo : proper error handling
-            throw new RuntimeException("Unable to edit the mediator");
+            throw new RuntimeException("不能编辑中介");
         }
         XQueryMediator xqueryMediator = (XQueryMediator) mediator;
 
@@ -123,7 +123,7 @@
 %>
 <script type="text/javascript">
     jQuery(document).ready(function() {
-        CARBON.showErrorDialog("An error has been occurred !. Error Message : " + '<%=e.getMessage()%>');
+        CARBON.showErrorDialog("发生错误 !. 错误信息 : " + '<%=e.getMessage()%>');
     });
 </script>
 <%

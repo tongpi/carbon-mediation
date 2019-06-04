@@ -15,7 +15,7 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.Map"%>
 <%@ page import="org.wso2.carbon.mediator.service.ui.Mediator" %>
@@ -32,7 +32,7 @@
     Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
     if (!(mediator instanceof ValidateMediator)) {
         // todo : proper error handling
-        throw new RuntimeException("Unable to edit the mediator");
+        throw new RuntimeException("不能编辑中介");
     }
     ValidateMediator validateMediator = (ValidateMediator) mediator;
 
@@ -46,7 +46,7 @@
         try {
             keyCount = Integer.parseInt(keyCountParameter.trim());
         } catch (NumberFormatException e) {
-            throw new RuntimeException("Invalid number format");
+            throw new RuntimeException("无效的数字格式");
         }
         for (int i = 0; i < keyCount; i++) {
 
@@ -94,7 +94,7 @@
         try {
             featureCount = Integer.parseInt(featureCountParameter);
         } catch (NumberFormatException e) {
-            throw new RuntimeException("Invalid number format");
+            throw new RuntimeException("无效的数字格式");
         }
         // avoid duplications
         validateMediator.getFeatures().clear();
