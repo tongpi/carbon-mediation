@@ -13,8 +13,8 @@
 ~  See the License for the specific language governing permissions and
 ~  limitations under the License.
 --%>
-<%@page contentType="text/html" pageEncoding="UTF-8"
-        import="org.apache.axiom.om.OMElement" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="org.apache.axiom.om.OMElement" %>
 <%@ page import="org.apache.axiom.om.util.AXIOMUtil" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.apache.synapse.config.xml.endpoints.TemplateFactory" %>
@@ -53,7 +53,7 @@
     String endpointAction = (String) session.getAttribute("endpointAction");
     String origin = (String) session.getAttribute("origin");
     String templateAdd = (String) session.getAttribute("templateAdd");
-    
+
     String uriTemplate = (String) session.getAttribute("uriTemplate");
     String httpMethod = (String) session.getAttribute("httpMethod");
 
@@ -165,7 +165,7 @@
             session.removeAttribute("anonEpXML");
 %>
 <script type="text/javascript">
-    CARBON.showErrorDialog("Unable to create endpoint with given data");
+    CARBON.showErrorDialog("不能用给定的数据创建端点");
     window.location.href = "httpEndpoint.jsp";
 </script>
 <%
@@ -185,7 +185,7 @@
     String httpEpName = "";
     String endpointUriTemplate = "";
     String validAddressURL = "";
-    
+
     boolean isGet = false, isPost = false, isPatch = false, isPut = false, isDelete = false,
             isHead = false, isOptions = false;
 
@@ -200,7 +200,7 @@
     int retryDelayTimeOut = 0;
     boolean isNeverTimeout = true, isDiscardMessage = false, isFaultSequence = false;
     long actionDuration = 0;
-    
+
     String description = "";
     String properties = "";
 

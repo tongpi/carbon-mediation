@@ -466,7 +466,7 @@ public class EndpointAdminClient {
     public void addDynamicEndpoint(String key, String epName) throws Exception {
         try {
             if (!stub.addDynamicEndpoint(key, epName)) {
-                throw new Exception("Endpoint \'" + key + "\' is already found in Registry");
+                throw new Exception("端点 \'" + key + "\' 在注册表中已经存在");
             }
         } catch (Exception e) {
             handleFault(e);

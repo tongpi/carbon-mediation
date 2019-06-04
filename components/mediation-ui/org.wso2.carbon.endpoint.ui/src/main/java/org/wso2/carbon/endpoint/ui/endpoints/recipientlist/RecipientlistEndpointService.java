@@ -33,11 +33,11 @@ public class RecipientlistEndpointService implements EndpointService {
     }
 
     public String getDescription() {
-        return "Defines the list of endpoints a message will be routed to";
+        return "定义消息将路由到的端点列表";
     }
 
     public String getDisplayName() {
-        return "Recipient List Group";
+        return "接收者列表组";
     }
 
     public boolean isStatisticsAvailable() {

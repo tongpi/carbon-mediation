@@ -33,11 +33,11 @@ public class FailoverEndpointService implements EndpointService {
     }
 
     public String getDescription() {
-        return "Defines the endpoints that the service will try to connect to in case of a failure. This will take place in a round robin manner";
+        return "定义在发生故障时服务将尝试连接到的端点。这将以循环方式进行";
     }
 
     public String getDisplayName() {
-        return "Failover Group";
+        return "故障转移组";
     }
 
     public boolean isStatisticsAvailable() {

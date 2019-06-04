@@ -104,23 +104,23 @@ public class EndpointConfigurationHelper {
             } catch (MalformedURLException e) {
                 returnValue = "malformed";
             } catch (ConnectException e) {
-                returnValue = "Cannot establish connection to the provided address.";
+                returnValue = "无法建立到所提供地址的连接.";
             } catch (UnknownServiceException e) {
                 returnValue = "unknown_service";
             } catch (SSLHandshakeException e) {
                 returnValue = "ssl_error";
             } catch (Exception e) {
-                returnValue = "Cannot establish connection to the provided address";
+                returnValue = "无法建立到所提供地址的连接";
             }
 
         } else {
-            returnValue = "Invalid address specified.";
+            returnValue = "指定的地址无效.";
         }
         //we cannot validate address EP other than HTTP and HTTPS. Also check for ':' in first few chars to distinguish
         // unsupported protocol and missing protocol identifier(malformed)
         if (url != null && !url.toUpperCase().startsWith("HTTP") && !url.toUpperCase().startsWith("HTTPS")) {
             if (url.contains(":") && url.indexOf(':') < 6) {
-                returnValue = "unsupported";
+                returnValue = "不支持";
             }
         }
         return returnValue;
@@ -141,11 +141,11 @@ public class EndpointConfigurationHelper {
                 returnValue = "unknown";
             } catch (ConnectException e) {
                 // A HTTP 500 may result in an error here - But the address is considered valid
-                returnValue = "Cannot establish connection to the provided address";
+                returnValue = "无法建立到所提供地址的连接";
             } catch (SSLHandshakeException e) {
                 returnValue = "ssl_error";
             } catch (Exception e) {
-                returnValue = "Cannot establish connection to the provided address";
+                returnValue = "无法建立到所提供地址的连接";
             }
         }
         return returnValue;

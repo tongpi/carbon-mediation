@@ -15,6 +15,7 @@
 ~ specific language governing permissions and limitations
 ~ under the License.
 -->
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.endpoint.ui.endpoints.Endpoint" %>
 <%@ page import="org.wso2.carbon.endpoint.ui.endpoints.EndpointStore" %>
 <%@ page import="org.wso2.carbon.endpoint.ui.endpoints.ListEndpoint" %>
@@ -83,7 +84,7 @@
                                  onclick="treeColapse(this)"
                                  id="treeColapser"></div>
                             <div class="childEndpoints" id="childEndpoint-00">
-                                <a class="root-endpoint">root</a>
+                                <a class="root-endpoint">根节点</a>
                                 <div class="endpointToolbar"
                                      style="width:100px;">
                                     <div>

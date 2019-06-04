@@ -78,7 +78,7 @@ function directToSubmitDynamicEndpointPage() {
                     success: function(msg) {
                         var msgString = trimStr(msg.toString())
                         var index = msgString.indexOf('<div>');
-                        if (msgString.indexOf('<div>Error:') == index) {
+                        if (msgString.indexOf('<div>错误:') == index) {
                             CARBON.showErrorDialog(msgString.substring(index + 17));
                         } else {
                             location.href = msgString.substring(index + 17);
@@ -120,7 +120,7 @@ function directToSubmitPage() {
                         var msgString = trimStr(msg.toString())
                         var index = msgString.indexOf('<div>');
 
-                        if (msgString.indexOf('<div>Error:') == index) {
+                        if (msgString.indexOf('<div>错误:') == index) {
                             CARBON.showErrorDialog(msgString.substring(index + 17));
                         } else {
                             location.href = msgString.substring(index + 17);

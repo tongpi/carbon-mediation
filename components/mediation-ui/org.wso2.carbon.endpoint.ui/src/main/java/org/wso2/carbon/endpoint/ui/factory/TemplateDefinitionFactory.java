@@ -104,8 +104,8 @@ public class TemplateDefinitionFactory extends EndpointDefinitionFactory{
                     definition.setAddressingVersion(version.getAttributeValue());
                     TemplateMappingsPopulator.populateMapping(instance, TemplateParameterContainer.EndpointDefKey.addressingVersion, version.getAttributeValue());
                 } else {
-                    handleException("Unknown value for the addressing version. Possible values " +
-                            "for the addressing version are 'final' and 'submission' only.");
+                    handleException("未知的地址版本. 地址版本的只能取值为 " +
+                            " 'final' 活 'submission' .");
                 }
             }
 
@@ -172,10 +172,9 @@ public class TemplateDefinitionFactory extends EndpointDefinitionFactory{
                             }
                         }
                     } catch (NumberFormatException e) {
-                        handleException("Endpoint timeout duration expected as a " +
-                                "number but was not a number");
+                        handleException("端点超时持续时间应为数字，但不是数字");
                     }catch (JaxenException e) {
-                        handleException("Couldn't assign dynamic endpoint timeout as Synapse expression");
+                        handleException("无法将动态端点超时分配为synapse表达式");
                     }
                 }
             }
@@ -190,8 +189,8 @@ public class TemplateDefinitionFactory extends EndpointDefinitionFactory{
                     definition.setTimeoutAction(SynapseConstants.DISCARD_AND_FAULT);
                 //if value is not even a template mapping handle as exception
                 } else if(!TemplateMappingsPopulator.populateMapping(instance, TemplateParameterContainer.EndpointDefKey.timeoutAction, actionString)) {
-                    handleException("Invalid timeout action, action : "
-                            + actionString + " is not supported");
+                    handleException("无效的超时操作, 操作 : "
+                            + actionString + " 不被支持");
                 }
             }
         }
@@ -214,8 +213,8 @@ public class TemplateDefinitionFactory extends EndpointDefinitionFactory{
                     try {
                         definition.addTimeoutErrorCode(Integer.parseInt(s));
                     } catch (NumberFormatException e) {
-                        handleException("The timeout error codes should be specified " +
-                            "as valid numbers separated by commas : " + timeoutCodes.getText(), e);
+                        handleException("超时错误吗应该被指定 " +
+                            "以逗号分隔的有效数字 : " + timeoutCodes.getText(), e);
                     }
                 }
             }
@@ -230,8 +229,7 @@ public class TemplateDefinitionFactory extends EndpointDefinitionFactory{
                     definition.setRetriesOnTimeoutBeforeSuspend(
                         Integer.parseInt(retriesBeforeSuspend.getText().trim()));
                 } catch (NumberFormatException e) {
-                    handleException("The retries before suspend [for timeouts] should be " +
-                        "specified as a valid number : " + retriesBeforeSuspend.getText(), e);
+                    handleException("挂起[超时]之前的重试次数应指定为有效数字 : " + retriesBeforeSuspend.getText(), e);
                 }
             }
 
@@ -244,8 +242,7 @@ public class TemplateDefinitionFactory extends EndpointDefinitionFactory{
                     definition.setRetryDurationOnTimeout(
                         Integer.parseInt(retryDelay.getText().trim()));
                 } catch (NumberFormatException e) {
-                    handleException("The retry delay for timeouts should be specified " +
-                        "as a valid number : " + retryDelay.getText(), e);
+                    handleException("超时的重试延迟应指定为有效数字 : " + retryDelay.getText(), e);
                 }
             }
         }
@@ -263,8 +260,7 @@ public class TemplateDefinitionFactory extends EndpointDefinitionFactory{
                         1000 * Long.parseLong(suspendDurationOnFailure.getText().trim()));
                 definition.setSuspendProgressionFactor((float) 1.0);
             } catch (NumberFormatException e) {
-                handleException("The initial suspend duration should be specified " +
-                    "as a valid number : " + suspendDurationOnFailure.getText(), e);
+                handleException("初始挂起持续时间应指定为有效数字 : " + suspendDurationOnFailure.getText(), e);
             }
         }
 
@@ -286,8 +282,7 @@ public class TemplateDefinitionFactory extends EndpointDefinitionFactory{
                     try {
                         definition.addSuspendErrorCode(Integer.parseInt(s));
                     } catch (NumberFormatException e) {
-                        handleException("The suspend error codes should be specified " +
-                            "as valid numbers separated by commas : " + suspendCodes.getText(), e);
+                        handleException("应将挂起错误代码指定为用逗号分隔的有效数字 : " + suspendCodes.getText(), e);
                     }
                 }
             }
@@ -301,8 +296,7 @@ public class TemplateDefinitionFactory extends EndpointDefinitionFactory{
                     definition.setInitialSuspendDuration(
                         Integer.parseInt(initialDuration.getText().trim()));
                 } catch (NumberFormatException e) {
-                    handleException("The initial suspend duration should be specified " +
-                        "as a valid number : " + initialDuration.getText(), e);
+                    handleException("初始挂起持续时间应指定为有效数字 : " + initialDuration.getText(), e);
                 }
             }
 
@@ -315,8 +309,7 @@ public class TemplateDefinitionFactory extends EndpointDefinitionFactory{
                     definition.setSuspendProgressionFactor(
                         Float.parseFloat(progressionFactor.getText().trim()));
                 } catch (NumberFormatException e) {
-                    handleException("The suspend duration progression factor should be specified " +
-                        "as a valid float : " + progressionFactor.getText(), e);
+                    handleException("应将挂起持续时间累进系数指定为有效的浮点数 : " + progressionFactor.getText(), e);
                 }
             }
 
@@ -329,8 +322,7 @@ public class TemplateDefinitionFactory extends EndpointDefinitionFactory{
                     definition.setSuspendMaximumDuration(
                         Long.parseLong(maximumDuration.getText().trim()));
                 } catch (NumberFormatException e) {
-                    handleException("The maximum suspend duration should be specified " +
-                        "as a valid number : " + maximumDuration.getText(), e);
+                    handleException("最大挂起持续时间应指定为有效数字 : " + maximumDuration.getText(), e);
                 }
             }
         }
@@ -352,8 +344,7 @@ public class TemplateDefinitionFactory extends EndpointDefinitionFactory{
                     try {
                         definition.addRetryDisabledErrorCode(Integer.parseInt(s));
                     } catch (NumberFormatException e) {
-                        handleException("The suspend error codes should be specified as valid " +
-                                "numbers separated by commas : "
+                        handleException("应将挂起错误代码指定为用逗号分隔的有效数字 : "
                                 + retryDisabledErrorCodes.getText(), e);
                     }
                 }

@@ -89,11 +89,11 @@ public class ListEndpointDesignerHelper {
 
         if (endpoint instanceof ListEndpoint) {
             html += "<div><a class=\"addChildStyle\">"
-                    + "Add Child" + "</a></div>"
+                    + "添加子项" + "</a></div>"
                     + "<div class=\"endpointSep\">&nbsp;</div>";
 
             html += "<div><a class=\"deleteStyle\">"
-                    + "delete" + "</a></div>";
+                    + "删除" + "</a></div>";
 
             html += "</div></div>";
 
@@ -124,7 +124,7 @@ public class ListEndpointDesignerHelper {
             }
         } else {
             html += "<div><a class=\"deleteStyle\">"
-                    + "delete" + "</a></div>";
+                    + "删除" + "</a></div>";
             html += "</div></div>";
 
             if (!last) {
@@ -142,8 +142,7 @@ public class ListEndpointDesignerHelper {
         if (endpointService != null) {
             return endpointService.getEndpoint();
         } else {
-            throw new RuntimeException("Couldn't find the endpoint information in the " +
-                                       "endpoint store for the endpoint with logical name " + endpointName);
+            throw new RuntimeException("在端点存储中找不到端点信息： " + endpointName);
         }
     }
 

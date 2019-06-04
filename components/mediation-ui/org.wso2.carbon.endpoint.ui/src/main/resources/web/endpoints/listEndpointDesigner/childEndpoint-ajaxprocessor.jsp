@@ -62,7 +62,7 @@
                      onclick="treeColapse(this)"
                      id="treeColapser"></div>
                 <div class="childEndpoints" id="childEndpoint-00">
-                    <a class="root-endpoint">root</a>
+                    <a class="root-endpoint">根节点</a>
                     <div class="endpointToolbar"
                          style="width:100px;">
                         <div>
@@ -97,4 +97,3 @@
         <% } %>
     </div>
 </fmt:bundle>
-

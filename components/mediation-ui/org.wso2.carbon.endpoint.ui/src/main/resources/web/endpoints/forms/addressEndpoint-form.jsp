@@ -13,8 +13,8 @@
 ~  See the License for the specific language governing permissions and
 ~  limitations under the License.
 --%>
-<%@page contentType="text/html" pageEncoding="UTF-8"
-        import="org.apache.axiom.om.OMElement" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="org.apache.axiom.om.OMElement" %>
 <%@ page import="org.apache.axiom.om.util.AXIOMUtil" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.apache.synapse.config.xml.endpoints.TemplateFactory" %>
@@ -122,7 +122,7 @@
             }
         }
     } catch (Exception e) {
-        String msg = "Unable to get Address Endpoint data: " + e.getMessage();
+        String msg = "不能得到地址端点数据: " + e.getMessage();
         CarbonUIMessage.sendCarbonUIMessage(msg, CarbonUIMessage.ERROR, request);
     }
 } else if (origin != null && !"".equals(origin)) {
@@ -162,7 +162,7 @@
             session.removeAttribute("anonEpXML");
 %>
 <script type="text/javascript">
-    CARBON.showErrorDialog("Unable to create endpoint with given data");
+    CARBON.showErrorDialog("不能使用给定数据创建端点");
     window.location.href = "addressEndpoint.jsp";
 </script>
 <%

@@ -33,11 +33,11 @@ public class AddressEndpointService implements EndpointService{
     }
 
     public String getDescription() {
-        return "Defines the direct URL of the service";
+        return "定义服务的直接URL";
     }
 
     public String getDisplayName() {
-        return "Address Endpoint";
+        return "地址端点";
     }
 
     public boolean isStatisticsAvailable() {

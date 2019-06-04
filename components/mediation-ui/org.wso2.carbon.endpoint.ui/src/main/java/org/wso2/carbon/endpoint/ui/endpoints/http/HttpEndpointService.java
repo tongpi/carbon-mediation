@@ -33,11 +33,11 @@ public class HttpEndpointService implements EndpointService {
     }
 
     public String getDescription() {
-        return "Defines a URI Template based REST Service endpoint";
+        return "定义基于URI模板的REST服务端点";
     }
 
     public String getDisplayName() {
-        return "HTTP Endpoint";
+        return "HTTP 端点";
     }
 
     public boolean isStatisticsAvailable() {

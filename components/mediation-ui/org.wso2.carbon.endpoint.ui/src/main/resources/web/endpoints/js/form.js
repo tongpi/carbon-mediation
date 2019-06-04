@@ -158,7 +158,7 @@ $.fn.ajaxSubmit = function(options) {
         var form = $form[0];
 
         if ($(':input[@name=submit]', form).length) {
-            alert('Error: Form elements must not be named "submit".');
+            alert('错误: 表单元素不能命名为 "submit".');
             return;
         }
 

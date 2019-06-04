@@ -33,11 +33,11 @@ public class TemplateEndpointService implements EndpointService {
     }
 
     public String getDescription() {
-        return "Defines a template endpoint that can parameterfy endpoints ";
+        return "定义可以参数化的模板端点";
     }
 
     public String getDisplayName() {
-        return "Template Endpoint";
+        return "模板端点";
     }
 
     public boolean isStatisticsAvailable() {

@@ -33,11 +33,11 @@ public class LoadBalanceEndpointService implements EndpointService {
     }
 
     public String getDescription() {
-        return "Defines groups of endpoints for replicated services.The incoming requests will be directed to these endpoints in a round robin manner. These endpoints automatically handle the fail-over cases as well ";
+        return "定义复制服务的端点组。传入请求将以循环方式定向到这些端点。这些端点也自动处理故障转移情况";
     }
 
     public String getDisplayName() {
-        return "Load Balance Endpoint";
+        return "负载均衡端点";
     }
 
     public boolean isStatisticsAvailable() {

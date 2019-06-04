@@ -32,11 +32,11 @@ public class DefaultEndpointService implements EndpointService {
     }
 
     public String getDescription() {
-        return "Defines additional configuration for the default target";
+        return "为默认目标定义附加配置";
     }
 
     public String getDisplayName() {
-        return "Default Endpoint";
+        return "缺省端点";
     }
 
     public boolean isStatisticsAvailable() {

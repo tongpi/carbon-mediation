@@ -34,11 +34,11 @@ public class WsdlEndpointService implements EndpointService {
     }
 
     public String getDescription() {
-        return "Defines the WSDL, Service and Port ";
+        return "定义 WSDL, 服务和端口";
     }
 
     public String getDisplayName() {
-        return "WSDL Endpoint";
+        return "WSDL 端点";
     }
 
     public boolean isStatisticsAvailable() {

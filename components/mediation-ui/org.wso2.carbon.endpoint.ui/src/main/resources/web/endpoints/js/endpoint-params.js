@@ -89,7 +89,7 @@ function addRowForSP(param1, param2, param3, tableName, delFunction) {
     inputElem.appendChild(option);
 
     var delCell = document.createElement('td');
-    delCell.innerHTML = '<a id="deleteLink" onClick="' + delFunction + '(this.parentNode.parentNode.rowIndex,\''+tableName+'\')" alt="Delete" class="icon-link" style="background-image:url(../admin/images/delete.gif);">Delete</a>';
+    delCell.innerHTML = '<a id="deleteLink" onClick="' + delFunction + '(this.parentNode.parentNode.rowIndex,\''+tableName+'\')" alt="删除" class="icon-link" style="background-image:url(../admin/images/delete.gif);">删除</a>';
 
     var rowtoAdd = document.createElement('tr');
     rowtoAdd.appendChild(param1Cell);
@@ -111,7 +111,7 @@ function addRow(param1, param2, table, delFunction) {
     param2Cell.appendChild(document.createTextNode(param2));
 
     var delCell = document.createElement('td');
-    delCell.innerHTML = '<a id="deleteLink" href="#" onClick="' + delFunction + '(this.parentNode.parentNode.rowIndex)" alt="Delete" class="icon-link" style="background-image:url(../admin/images/delete.gif);">Delete</a>';
+    delCell.innerHTML = '<a id="deleteLink" href="#" onClick="' + delFunction + '(this.parentNode.parentNode.rowIndex)" alt="删除" class="icon-link" style="background-image:url(../admin/images/delete.gif);">删除</a>';
 
     var rowtoAdd = document.createElement('tr');
     rowtoAdd.appendChild(param1Cell);
@@ -135,7 +135,7 @@ function isParamAlreadyExist(paramName) {
 }
 
 function deleteEndpointParamRow(index,tableName) {
-    CARBON.showConfirmationDialog('This will delete the parameter. Sure to delete? Click Yes to confirm', function() {
+    CARBON.showConfirmationDialog('将要删除参数. 确定要删除吗? ', function() {
         document.getElementById(tableName).deleteRow(index);
         if (document.getElementById(tableName).rows.length == 1) {
             document.getElementById(tableName).style.display = 'none';
