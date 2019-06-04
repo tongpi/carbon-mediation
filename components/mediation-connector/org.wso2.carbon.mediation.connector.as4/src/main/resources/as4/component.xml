@@ -20,11 +20,11 @@
     <subComponents> 
 		<component name="send" >
 	    		<file>send-template.xml</file>
-	    		<description>Send AS4 Message</description>
+	    		<description>发送 AS4 消息</description>
 		</component>
 		<component name="receive">
 			<file>receive-template.xml</file>
-			<description>Receive AS4 Message</description>
+			<description>接收 AS4 消息</description>
 		</component>
     </subComponents>    
 </component>

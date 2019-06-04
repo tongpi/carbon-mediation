@@ -19,7 +19,7 @@
 
     <ManagementPermissions>
         <ManagementPermission>
-            <DisplayName>Priority Executor</DisplayName>
+            <DisplayName>优先执行器</DisplayName>
             <ResourceId>/permission/admin/configure/priorityexecutors</ResourceId>
         </ManagementPermission>
     </ManagementPermissions>

@@ -18,7 +18,7 @@
 <component xmlns="http://products.wso2.org/carbon">
     <ManagementPermissions>
         <ManagementPermission>
-            <DisplayName>Manage</DisplayName>
+            <DisplayName>管理</DisplayName>
             <ResourceId>/permission/admin/manage/artifacts</ResourceId>
         </ManagementPermission>
     </ManagementPermissions>

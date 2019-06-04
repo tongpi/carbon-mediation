@@ -19,7 +19,7 @@
 
     <ManagementPermissions>
         <ManagementPermission>
-            <DisplayName>Configure ntask integration</DisplayName>
+            <DisplayName>配置 ntask 集成</DisplayName>
             <ResourceId>/permission/admin/configure/medntask</ResourceId>
         </ManagementPermission>
     </ManagementPermissions>

@@ -19,15 +19,15 @@
 
     <ManagementPermissions>
         <ManagementPermission>
-            <DisplayName>Connectors</DisplayName>
+            <DisplayName>连接器</DisplayName>
             <ResourceId>/permission/admin/manage/connectors</ResourceId>
         </ManagementPermission>
         <ManagementPermission>
-            <DisplayName>list</DisplayName>
+            <DisplayName>列表</DisplayName>
             <ResourceId>/permission/admin/manage/connectors/list</ResourceId>
         </ManagementPermission>
         <ManagementPermission>
-            <DisplayName>add</DisplayName>
+            <DisplayName>添加</DisplayName>
             <ResourceId>/permission/admin/manage/connectors/add</ResourceId>
         </ManagementPermission>
     </ManagementPermissions>

@@ -19,7 +19,7 @@
 
     <ManagementPermissions>
         <ManagementPermission>
-            <DisplayName>Schedule Tasks</DisplayName>
+            <DisplayName>计划任务</DisplayName>
             <ResourceId>/permission/admin/configure/tasks</ResourceId>
         </ManagementPermission>
     </ManagementPermissions>

@@ -19,7 +19,7 @@
 
     <ManagementPermissions>
         <ManagementPermission>
-            <DisplayName>Inbound Endpoints</DisplayName>
+            <DisplayName>入站端点</DisplayName>
             <ResourceId>/permission/admin/configure/inbound</ResourceId>
         </ManagementPermission>
     </ManagementPermissions>
