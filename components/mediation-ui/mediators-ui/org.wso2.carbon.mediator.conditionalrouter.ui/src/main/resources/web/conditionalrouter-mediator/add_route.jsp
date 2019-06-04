@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 
 <%--
 ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
@@ -25,7 +25,7 @@
     Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
 
     if (!(mediator instanceof ConditionalRouterMediator)) {
-        throw new RuntimeException("Unable to edit the mediator : Add route");
+        throw new RuntimeException("不能编辑中介 : 添加路由");
     }
     ConditionalRouterMediator routerMediator = (ConditionalRouterMediator) mediator;
     session.removeAttribute("anonEpXML");

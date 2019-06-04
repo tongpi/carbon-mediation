@@ -17,7 +17,7 @@
  --%>
 <%@page import="org.apache.synapse.mediators.Value"%>
 <%@page import="org.wso2.carbon.mediator.fastXSLT.ui.FastXSLTMediator"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.mediator.service.ui.Mediator" %>
 <%@ page import="org.wso2.carbon.sequences.ui.util.SequenceEditorHelper" %>
 <%@ page import="org.wso2.carbon.sequences.ui.util.ns.XPathFactory" %>
@@ -27,7 +27,7 @@
         if (!(mediator instanceof FastXSLTMediator)) {
             // todo : proper error handling
             System.out.println("Updating Error....");
-            throw new RuntimeException("Unable to edit the mediator");
+            throw new RuntimeException("不能编辑中介");
         }
         FastXSLTMediator xsltMediator = (FastXSLTMediator) mediator;
         xsltMediator.setXsltKey(null);
@@ -60,7 +60,7 @@
      %>
 <script type="text/javascript">
     jQuery(document).ready(function() {
-        CARBON.showErrorDialog("An error has been occurred !. Error Message : " + '<%=e.getMessage()%>');
+        CARBON.showErrorDialog("发生错误 !. 错误信息 : " + '<%=e.getMessage()%>');
     });
 </script>
 <%

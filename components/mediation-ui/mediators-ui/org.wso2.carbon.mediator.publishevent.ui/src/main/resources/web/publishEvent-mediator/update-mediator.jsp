@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 
 <%--
 ~  Copyright (c) 2014, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
@@ -34,7 +34,7 @@
     Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
     if (!(mediator instanceof PublishEventMediator)) {
         // todo : proper error handling
-        throw new RuntimeException("Unable to edit the mediator");
+        throw new RuntimeException("不能编辑中介");
     }
     PublishEventMediator publishEventMediator = (PublishEventMediator) mediator;
 
@@ -91,9 +91,9 @@
 
             ((PublishEventMediator) mediator).setMetaProperties(metaProperties);
         } catch (NumberFormatException ignored) {
-            throw new RuntimeException("Invalid number format");
+            throw new RuntimeException("无效的数字格式");
         } catch (Exception exception) {
-            throw new RuntimeException("Invalid Path Expression");
+            throw new RuntimeException("无效的Path表达式");
         }
     }
 
@@ -139,9 +139,9 @@
 
             ((PublishEventMediator) mediator).setCorrelationProperties(correlationProperties);
         } catch (NumberFormatException ignored) {
-            throw new RuntimeException("Invalid number format");
+            throw new RuntimeException("无效的数字格式");
         } catch (Exception exception) {
-            throw new RuntimeException("Invalid Path Expression");
+            throw new RuntimeException("无效的 Path 表达式");
         }
     }
 
@@ -187,9 +187,9 @@
 
             ((PublishEventMediator) mediator).setPayloadProperties(payloadProperties);
         } catch (NumberFormatException ignored) {
-            throw new RuntimeException("Invalid number format");
+            throw new RuntimeException("无效的数字格式");
         } catch (Exception exception) {
-            throw new RuntimeException("Invalid Path Expression");
+            throw new RuntimeException("无效的 Path 表达式");
         }
     }
 
@@ -235,9 +235,9 @@
 
             ((PublishEventMediator) mediator).setArbitraryProperties(arbitraryProperties);
         } catch (NumberFormatException ignored) {
-            throw new RuntimeException("Invalid number format");
+            throw new RuntimeException("无效的数字格式");
         } catch (Exception exception) {
-            throw new RuntimeException("Invalid Path Expression");
+            throw new RuntimeException("无效的 Path 表达式");
         }
     }
 

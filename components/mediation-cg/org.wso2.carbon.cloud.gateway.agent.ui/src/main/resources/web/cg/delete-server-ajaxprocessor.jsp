@@ -14,7 +14,7 @@
 ~  limitations under the License.
 --%>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
@@ -46,7 +46,7 @@
             csgAdminClient.removeCGServer(serverName);
         }
     } catch (AxisFault axisFault) {
-        String msg = "Cloud not delete the CSG server '" + serverName + "'";
+        String msg = "不能删除 CSG 服务器 '" + serverName + "'";
         CarbonUIMessage.sendCarbonUIMessage(msg, CarbonUIMessage.ERROR, request);
 %>
 <script type="text/javascript">

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%--
   ~  Copyright (c) 2008, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
@@ -14,7 +14,7 @@
   ~  See the License for the specific language governing permissions and
   ~  limitations under the License.
   --%>
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+
 <%@ page import="java.util.ResourceBundle" %>
 <%@ page import="org.wso2.carbon.priority.executors.ui.Executor" %>
 <%@ page import="org.wso2.carbon.priority.executors.ui.Queue" %>

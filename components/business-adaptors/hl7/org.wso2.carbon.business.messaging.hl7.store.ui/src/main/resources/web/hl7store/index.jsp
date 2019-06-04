@@ -89,7 +89,7 @@
         $myTabs.tabs({
             select: function(event, ui) {
                 if (!allowTabChange) {
-                    alert("流程中间环节截止选项卡被选择");
+                    alert("流程中间环节禁止选项卡被选择");
                 }
                 return allowTabChange;
             },

@@ -17,7 +17,7 @@
   under the License.
 
 --%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
@@ -68,7 +68,7 @@
             userName = CGUtils.getStringProperty(CGConstant.CG_USER_NAME, CGConstant.DEFAULT_CG_USER);
         }
     } catch (AxisFault axisFault) {
-        CarbonUIMessage.sendCarbonUIMessage("Cloud not retrieve the CSG server" + serverName + "info",
+        CarbonUIMessage.sendCarbonUIMessage("不能获取 CSG 服务器 " + serverName + " 的信息",
                 CarbonUIMessage.ERROR, request);
 %>
 <script type="text/javascript">

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.mediator.payloadfactory.PayloadFactoryMediator" %>
 <%@ page import="org.wso2.carbon.mediator.service.ui.Mediator" %>
 <%@ page import="org.wso2.carbon.sequences.ui.util.SequenceEditorHelper" %>
@@ -10,7 +10,7 @@
     Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
     if (!(mediator instanceof PayloadFactoryMediator)) {
         CarbonUIMessage.sendCarbonUIMessage(
-                "Unable to edit the mediator, expected: payloadFactoryMediator, found: " +
+                "不能编辑中介, 期望: payloadFactoryMediator, 发现的是: " +
                 mediator.getTagLocalName(), CarbonUIMessage.ERROR, request);
 %>
 <jsp:include page="../dialog/display_messages.jsp"/>
@@ -62,8 +62,8 @@
 
             arg.setEvaluator(evaluator);
         } else {
-            CarbonUIMessage.sendCarbonUIMessage("Invalid argument type is found for payloadFactory " +
-                                                "mediator", CarbonUIMessage.ERROR, request);
+            CarbonUIMessage.sendCarbonUIMessage("payloadFactory中介中出现无效的参数类型" +
+                                                "", CarbonUIMessage.ERROR, request);
 %>
 <jsp:include page="../dialog/display_messages.jsp"/>
 <%

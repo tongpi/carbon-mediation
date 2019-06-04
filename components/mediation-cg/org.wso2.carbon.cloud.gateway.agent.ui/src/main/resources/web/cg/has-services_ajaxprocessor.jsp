@@ -17,7 +17,7 @@
   under the License.
 
 --%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIMessage" %>
@@ -51,7 +51,7 @@
 
 	} catch (Exception e) {
 		CarbonUIMessage.sendCarbonUIMessage(
-				"Unable to complete the request",
+				"不能完成该请求",
 				CarbonUIMessage.ERROR, request);
 	}
 %>

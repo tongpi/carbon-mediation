@@ -17,7 +17,7 @@
   under the License.
 
 --%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
@@ -43,7 +43,7 @@
         
         
     } catch (AxisFault axisFault) {
-        String msg = "Cloud not retrieve the CSG service endpoint reference list";
+        String msg = "不能获取 CSG 服务端点引用列表";
         CarbonUIMessage.sendCarbonUIMessage(msg, CarbonUIMessage.ERROR, request);
 
 %>

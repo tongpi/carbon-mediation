@@ -17,7 +17,7 @@
   under the License.
 
 --%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
@@ -54,8 +54,7 @@
                 } else if (autoMaticMode.equals("manual")) {
                     client.publish(serviceName, serverName, false);
                 } else {
-                    throw new RuntimeException("Although the action is set to 'publish' the mode is neither manual nor " +
-                            "automatic, it is '" + autoMaticMode + "'");
+                    throw new RuntimeException("虽然操作设置为'发布'，但模式既不是手动的，也不是自动的, 是 '" + autoMaticMode + "'");
                 }
             }
         } else if (CGConstant.CG_SERVICE_ACTION_UNPUBLISH.equals(action)) {  // just unpublish
@@ -69,8 +68,8 @@
             client.unPublish(serviceName, publishedServer);
             client.publish(serviceName, publishedServer, false);
         } else {
-            throw new RuntimeException("Can not change the state of the service, '" + serviceName + "," +
-                    "'unknown action '" + action + "' detected!");
+            throw new RuntimeException("不能改变服务的状态, '" + serviceName + "," +
+                    "'未知的操作 '" + action + "' 被检测到!");
         }
         returnValue = "successful";
     } catch (Exception e) {

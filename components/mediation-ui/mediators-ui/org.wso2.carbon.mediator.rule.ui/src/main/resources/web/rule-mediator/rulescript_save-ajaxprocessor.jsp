@@ -17,12 +17,12 @@
  -->
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Map" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 
 <%
     String ruleScriptID = request.getParameter("scriptID");
     if (ruleScriptID == null || "".equals(ruleScriptID)) {
-        throw new RuntimeException("'scriptID' parameter cannot be found");
+        throw new RuntimeException("'scriptID' 参数未找到");
     }
     String ruleScript = request.getParameter("scriptxml");
 

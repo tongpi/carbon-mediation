@@ -15,7 +15,7 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  --%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 
 <%@ page import="org.wso2.carbon.mediator.fault.FaultMediator" %>
 <%@ page import="org.wso2.carbon.mediator.fault.ui.util.FaultUtil" %>
@@ -26,7 +26,7 @@
 <%
     Mediator mediator = SequenceEditorHelper.getEditingMediator(request, session);
     if (!(mediator instanceof FaultMediator)) {
-        CarbonUIMessage.sendCarbonUIMessage("Unable to edit the mediator", CarbonUIMessage.ERROR, request);
+        CarbonUIMessage.sendCarbonUIMessage("不能编辑中介", CarbonUIMessage.ERROR, request);
 %>
 <script type="text/javascript">
     location.href = "../admin/error.jsp";
