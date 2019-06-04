@@ -13,8 +13,8 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
 --%>
-
-<%@ page contentType="text/html" pageEncoding="UTF-8" import="org.apache.axis2.context.ConfigurationContext" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
@@ -89,7 +89,7 @@
             $myTabs.tabs({
                 select: function(event, ui) {
                     if (!allowTabChange) {
-                        alert("Tab selection is disabled, while you are in the middle of a workflow");
+                        alert("流程中间环节禁止选项卡被选择");
                     }
                     return allowTabChange;
                 },
@@ -123,14 +123,14 @@
 
                 <table class="styledLeft" id="userTable" width="100%">
                     <tbody id="messageEdit">
-                        <tr><td>Store</td><td><a href="index.jsp?store=<%=message.getStoreName()%>"><%=message.getStoreName()%></a></td><td></td></tr>
-                        <tr><td>Timestamp</td><td><%=message.getDate()%></td><td></td></tr>
+                        <tr><td>存储</td><td><a href="index.jsp?store=<%=message.getStoreName()%>"><%=message.getStoreName()%></a></td><td></td></tr>
+                        <tr><td>时间戳</td><td><%=message.getDate()%></td><td></td></tr>
                         <tr class="shortRow"></tr>
-                        <tr><td>Message ID</td><td><%=message.getMessageId()%></td><td></td></tr>
-                        <tr><td>Control ID</td><td><%=message.getControlId()%></td><td></td></tr>
+                        <tr><td>消息 ID</td><td><%=message.getMessageId()%></td><td></td></tr>
+                        <tr><td>控制 ID</td><td><%=message.getControlId()%></td><td></td></tr>
                         <tr class="shortRow"></tr>
-                        <tr><td>ER7 Encoding</td><td><textarea id="rawMessage" class="er7TextArea"><%=message.getRawMessage()%></textarea></td><td><button id="btnRawMessage">Update</button></td></tr>
-                        <tr><td>XML Encoding</td><td><textarea id="xmlMessage" class="xmlTextArea"><%=dtd + "\n" + StringEscapeUtils.escapeXml(message.getEnvelope())%></textarea></td><td><button id="btnXmlMessage">Update</button></td></tr>
+                        <tr><td>ER7 编码</td><td><textarea id="rawMessage" class="er7TextArea"><%=message.getRawMessage()%></textarea></td><td><button id="btnRawMessage">更新</button></td></tr>
+                        <tr><td>XML 编码</td><td><textarea id="xmlMessage" class="xmlTextArea"><%=dtd + "\n" + StringEscapeUtils.escapeXml(message.getEnvelope())%></textarea></td><td><button id="btnXmlMessage">更新</button></td></tr>
                     </tbody>
                 </table>
 
@@ -139,8 +139,8 @@
                         <td style="width: 118px;"></td>
 
                         <td>
-                            Select Proxy: <select id="proxyList"></select>
-                            <button id="btnSend">Send</button>
+                            选择代理: <select id="proxyList"></select>
+                            <button id="btnSend">发送</button>
                         </td>
                     </tr>
                 </table>

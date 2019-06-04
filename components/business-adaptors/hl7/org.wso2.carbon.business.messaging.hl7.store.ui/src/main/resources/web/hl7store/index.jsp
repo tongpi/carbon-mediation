@@ -13,8 +13,8 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
 --%>
-
-<%@ page contentType="text/html" pageEncoding="UTF-8" import="org.apache.axis2.context.ConfigurationContext" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
@@ -89,7 +89,7 @@
         $myTabs.tabs({
             select: function(event, ui) {
                 if (!allowTabChange) {
-                    alert("Tab selection is disabled, while you are in the middle of a workflow");
+                    alert("流程中间环节截止选项卡被选择");
                 }
                 return allowTabChange;
             },
@@ -114,7 +114,7 @@
     <div id="workArea" style="background-color:#FFFFFF;">
 
         <% if(storeNames == null) { %>
-        There are no HL7 message stores.
+        未找到 HL7 消息存储.
         <% } else { %>
         <div id="controls">
             <table class="styledLeft" id="controlTable" width="100%">
@@ -122,7 +122,7 @@
                     <tr>
                         <td style="border-right:0px;">
                             <div class="select">
-                                <label>Store:
+                                <label>存储:
                                 <select id="store">
                                     <%
                                         for(String name: storeNames) {
@@ -133,15 +133,15 @@
                                     %>
                                 </select>
                                 </label>
-                                <button id="btnStore">View</button>
+                                <button id="btnStore">查看</button>
                             </div>
                         </td>
                         <td style="border-right:0px;border-left:0px;">
                             <div class="search">
-                                <label>Search: <input id="txtSearch" type="text" class="search" /></label><button id="btnSearch">Search</button>
+                                <label>搜索: <input id="txtSearch" type="text" class="search" /></label><button id="btnSearch">搜索</button>
                             </div>
                         </td>
-                        <td class="rightAlign" style="border-left:0px;"><span id="purgeMessages" class="pageLink">Purge Messages</span></td>
+                        <td class="rightAlign" style="border-left:0px;"><span id="purgeMessages" class="pageLink">清除消息</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -149,11 +149,11 @@
 
         <div id="storeTable">
             <div id="loadingDiv" style="text-align:center; padding:20px;">
-                Loading...  <img src="images/load.gif" />
+                加载中...  <img src="images/load.gif" />
             </div>
             <table class="styledLeft" id="messageTable" width="100%">
                 <thead>
-                <tr><th>Timestamp</th><th>Message ID</th><th>Control ID</th><th>Raw Message</th><th>Actions</th></tr>
+                <tr><th>时间戳</th><th>消息 ID</th><th>控制 ID</th><th>原始消息</th><th>操作</th></tr>
                 </thead>
                 <tbody id="storeTableBody"></tbody>
             </table>
@@ -165,10 +165,10 @@
                 <tr>
                     <td style="border-right:0px;">
                         <div class="search">
-                            <label>Filter: <input id="txtFilter" type="text" class="search" /></label><button id="btnFilter">Filter</button>
+                            <label>筛选: <input id="txtFilter" type="text" class="search" /></label><button id="btnFilter">筛选</button>
                         </div>
                     </td>
-                    <td class="rightAlign" style="border-left:0px;"> <span id="prevPage" class="pageLink"><< Previous Page</span> | <span id="currentPage">1</span> of <span id="totalPages"></span> | <span id="nextPage" class="pageLink">Next Page >></span></td>
+                    <td class="rightAlign" style="border-left:0px;"> <span id="prevPage" class="pageLink"><< 上一页</span> | <span id="currentPage">1</span> 共 <span id="totalPages"></span> | <span id="nextPage" class="pageLink">下一页 >></span></td>
                 </tr>
                 </tbody>
             </table>
