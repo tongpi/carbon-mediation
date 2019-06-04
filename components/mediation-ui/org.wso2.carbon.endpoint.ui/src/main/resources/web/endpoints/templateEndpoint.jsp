@@ -264,7 +264,7 @@
                 </td>
                 <td>
                     <select name="templateSelector" id="templateSelector" onchange="onTemplateSelectionChange()">
-                        <option value="default">Select From Templates</option>
+                        <option value="default"><fmt:message key="select.from.templates"/></option>
                         <%
                             if (templateNameList != null) {
                                 for (String templateName : templateNameList) {%>
