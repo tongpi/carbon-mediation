@@ -290,26 +290,27 @@ public class TaskManagementClient {
     private static void validateTaskDescription(TaskDescription description) {
 
         if (description == null) {
-            handleException("Task Description can not be found.");
+            handleException("找不到任务描述。");
         }
     }
 
     private static void validateTaskElement(OMElement taskElement) {
 
         if (taskElement == null) {
-            handleException("Task Description OMElement can not be found.");
+//            handleException("Task Description OMElement can not be found.");
+            handleException("找不到任务描述OM元素。");
         }
     }
 
     private static void validateName(String name) {
         if (name == null || "".equals(name)) {
-            handleException("Name is null or empty");
+            handleException("名称不能为空");
         }
     }
 
     private static void validateGroup(String name) {
         if (name == null || "".equals(name)) {
-            handleException("Group is null or empty");
+            handleException("组不能为空");
         }
     }
 

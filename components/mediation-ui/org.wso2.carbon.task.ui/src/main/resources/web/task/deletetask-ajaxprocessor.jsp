@@ -31,12 +31,12 @@
 
                 String name = request.getParameter("taskName");
                 if (name == null || "".equals(name)) {
-                    throw new ServletException("Task name is empty");
+                    throw new ServletException("任务名为空");
                 }
 
                 String group = request.getParameter("taskGroup");
                 if (group == null || "".equals(group)) {
-                    throw new ServletException("Task group is empty");
+                    throw new ServletException("任务组为空");
                 }
 
                 client = TaskManagementClient.getInstance(config, session);
