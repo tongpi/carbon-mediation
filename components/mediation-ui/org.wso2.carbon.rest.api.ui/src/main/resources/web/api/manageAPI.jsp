@@ -107,7 +107,7 @@
 				try {
 					apiData = client.getApiByName(apiName);
 				} catch (Exception e) {
-					String msg = "Unable to get API data: "
+					String msg = "不能得到API数据: "
 							+ e.getMessage();
 					CarbonUIMessage.sendCarbonUIMessage(msg,
 							CarbonUIMessage.ERROR, request);
@@ -124,7 +124,7 @@
 				try {
 					apiData = client.getApiByName(apiName);
 				} catch (Exception e) {
-					String msg = "Unable to get API data: "
+					String msg = "不能得到API数据: "
 							+ e.getMessage();
 					CarbonUIMessage.sendCarbonUIMessage(msg,
 							CarbonUIMessage.ERROR, request);
@@ -137,7 +137,7 @@
                     try {
                         apiData = client.getApiByName(apiName);
                     } catch (Exception e) {
-                        String msg = "Unable to get API data: "
+                        String msg = "不能得到API数据: "
                                 + e.getMessage();
                         CarbonUIMessage.sendCarbonUIMessage(msg,
                                 CarbonUIMessage.ERROR, request);
