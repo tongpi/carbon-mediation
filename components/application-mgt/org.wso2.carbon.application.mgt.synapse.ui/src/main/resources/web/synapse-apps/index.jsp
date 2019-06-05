@@ -15,6 +15,7 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIMessage" %>
 <%@ page import="java.util.ResourceBundle" %>
 <%@ page import="org.wso2.carbon.utils.ServerConstants" %>
@@ -64,8 +65,8 @@
 <script type="text/javascript">
 
     function editCAppArtifact(url) {
-        CARBON.showConfirmationDialog("The changes will not persist to the CAPP after restart or redeploy. " +
-                                      "Do you want to Edit?", function () {
+        CARBON.showConfirmationDialog("重启或重部署后更改不会被持久化到CAPP. " +
+                                      "要继续处理吗?", function () {
             $.ajax({
                        type: 'POST',
                        success: function () {
