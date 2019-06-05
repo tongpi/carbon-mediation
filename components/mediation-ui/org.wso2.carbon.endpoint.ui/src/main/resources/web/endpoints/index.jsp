@@ -917,7 +917,7 @@ function resetVars() {
                    href="<%=endpointService.getUIPageName()%>Endpoint.jsp"
                         <% } %>
                    style="background-image: url(../admin/images/add.gif);">
-                    <%=Encode.forHtmlContent(endpointService.getDisplayName())%> Template
+                    <%=Encode.forHtmlContent(endpointService.getDisplayName())%><fmt:message key="template"/>
                 </a>
             </td>
             <td>
