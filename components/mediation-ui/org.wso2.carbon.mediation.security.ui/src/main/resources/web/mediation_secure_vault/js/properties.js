@@ -284,7 +284,9 @@ function validateEmptySV(fld, fldName) {
 	var error = "";
 	fld.value = fld.value.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
 	if (fld.value.length == 0) {
-		error = "The required field " + fldName + " is not filled";
+		// error = "The required field " + fldName + " is not filled";
+		error = org_wso2_carbon_mediation_secure_vault_ui_jsi18n["the.required.field"] + " " + fldName + " " +
+		org_wso2_carbon_mediation_secure_vault_ui_jsi18n["is.not.filled"];
 	}
 	return error;
 }
@@ -294,7 +296,8 @@ function validateForInputSV(fld, fldName) {
   	// This regex includes patterns for characters which should not include in the vault key
 	var illegalChars = /[~!@#$%^&*()\\\/+=\:;<>'"?[\]{}|\s,]/;
 	if (illegalChars.test(fld.value)) {
-		error = "The " + fldName + " has illegal characters";
+		// error = "The " + fldName + " has illegal characters";
+		error = fldName + " " + org_wso2_carbon_mediation_secure_vault_ui_jsi18n["has.illegal.characters"];
 	}
 	return error;
 }

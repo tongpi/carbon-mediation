@@ -50,7 +50,7 @@
 <fmt:bundle basename="org.wso2.carbon.endpoint.ui.i18n.Resources">
 <carbon:breadcrumb
         label="endpoints"
-        resourceBundle="org.wso2.carbon.newendpoint.ui.i18n.Resources"
+        resourceBundle="org.wso2.carbon.endpoint.ui.i18n.Resources"
         topPage="true"
         request="<%=request%>"/>
 
