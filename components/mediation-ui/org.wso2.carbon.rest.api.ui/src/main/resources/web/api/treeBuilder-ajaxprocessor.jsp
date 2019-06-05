@@ -13,6 +13,7 @@
   ~  See the License for the specific language governing permissions and
   ~  limitations under the License.
   --%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="org.wso2.carbon.rest.api.stub.types.carbon.ResourceData"%>
 <%@page import="java.util.List"%>
@@ -38,12 +39,12 @@
      onclick="treeColapse(this)">
 </div>
 <div id="api.root" class="resources">
-    <a class="root-endpoint">Root</a>
+    <a class="root-endpoint">根</a>
 
     <div class="sequenceToolbar"
          style="width:100px;" onclick="addResource()">
         <div>
-            <a class="addChildStyle">Add Resource</a>
+            <a class="addChildStyle">添加资源</a>
         </div>
     </div>
 </div>
@@ -51,18 +52,18 @@
 <%
 	for(int i=0; i<resourceList.size(); i++){%>
 		<div id="<%="branch." + i%>" class="branch-node"></div>
-		<ul id="<%="ul." + i%>" class="child-list"> 
+		<ul id="<%="ul." + i%>" class="child-list">
 	  	<li>
 			<div class="dot-icon"></div>
 			<div id="<%="resource." + i%>" class="resources">
                 <% if (isResourceUpdatePending) { %>
-                    <a class="resource" onclick="loadResourceData(this, true)">Resource</a>
+                    <a class="resource" onclick="loadResourceData(this, true)">资源</a>
                 <% } else { %>
-                    <a class="resource" onclick="loadResourceData(this, false)">Resource</a>
+                    <a class="resource" onclick="loadResourceData(this, false)">资源</a>
                 <% } %>
 				<div style="width: 100px;" class="sequenceToolbar">
 					<div>
-						<a class="deleteStyle" onclick="<%="deleteResource(" + i + ")"%>">Delete</a>
+						<a class="deleteStyle" onclick="<%="deleteResource(" + i + ")"%>">删除</a>
 					</div>
 				</div>
 			</div>
