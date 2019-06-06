@@ -203,9 +203,9 @@
                         <h2>
                             <%
                                 if (action.equals("add")) {
-                                    out.print("Add Event Sink");
+                                    out.print("添加事件接收器");
                                 } else {
-                                    out.print("Edit Event Sink");
+                                    out.print("编辑事件接收器");
                                 }
                             %>
                         </h2>
