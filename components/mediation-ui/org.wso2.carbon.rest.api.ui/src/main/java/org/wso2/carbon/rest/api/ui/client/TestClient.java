@@ -228,7 +228,7 @@ boolean loggedin = new AuthWrapper().login(AuthAdminServiceClient.HOST_NAME,
         if (adminCookie != null) {
             System.out.println("logged in to the back-end server successfully....");
         } else {
-            throw new RuntimeException("could not login to the back-end server.... /n  aborting...");
+            throw new RuntimeException("无法登录到后端服务器.... /n  正在中止...");
         }
 
         TestClient restAPIClient = new TestClient(testAPIMappings, resourceMappings, handlerMappings,

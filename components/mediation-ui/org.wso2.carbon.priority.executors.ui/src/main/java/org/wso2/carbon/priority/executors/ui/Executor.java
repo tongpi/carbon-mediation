@@ -98,7 +98,7 @@ public class Executor {
             // create the queue configuration
             this.queues = createQueues(queueQName, queuesEle, isFixedSize);
         } else {
-            handlerException("Queues configuration is mandatory");
+            handlerException("必须存在队列配置");
         }
 
         OMElement threadsEle = e.getFirstChildWithName(threadsQName);
@@ -196,13 +196,13 @@ public class Executor {
             if (priority != null) {
                 p = Integer.parseInt(priority);
             } else {
-                handlerException("Priority must be specified");
+                handlerException("必须指定优先级");
             }
 
             if (size != null) {
                 s = Integer.parseInt(size);
             } else if (isFixedSize) {
-                handlerException("Queues should have a " + ExecutorConstants.SIZE);
+                handlerException("队列应该有一个" + ExecutorConstants.SIZE);
             }
 
             Queue queue;

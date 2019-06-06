@@ -254,8 +254,8 @@
             <%
                 }
                 if (msName == null || messageId == null) {
-                    CarbonUIMessage.sendCarbonUIMessage("Error while accessing the Message Store",
-                            CarbonUIMessage.ERROR, request, new Exception("Error while accessing the Message Store"));
+                    CarbonUIMessage.sendCarbonUIMessage("访问消息存储时出错",
+                            CarbonUIMessage.ERROR, request, new Exception("访问消息存储时出错"));
                 }
             %>
 

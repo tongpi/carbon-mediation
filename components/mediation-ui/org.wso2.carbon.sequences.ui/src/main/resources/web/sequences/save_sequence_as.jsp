@@ -60,7 +60,7 @@
             //set name of sequence as registry path of the sequence
             sequenceName = sequenceKey;
             if (sequenceKey == null || "".equals(sequenceKey)) {
-                session.setAttribute("sequence.warn.message", "Registry key value must not be null or empty");
+                session.setAttribute("sequence.warn.message", bundle.getString("registry.key.not.null"));
             %>
                 <script type="text/javascript">
                     document.location.href = '<%= errorPage %>';

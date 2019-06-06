@@ -68,7 +68,7 @@
 
             history.go(-1);
         }
-        CARBON.showErrorDialog('Can not resend Messages' + '<%=errMsg%>', gotoPage);
+        CARBON.showErrorDialog('无法重新发送消息' + '<%=errMsg%>', gotoPage);
     });
 </script>
 

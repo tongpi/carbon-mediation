@@ -28,13 +28,13 @@
     String currentID = request.getParameter("currentID");
     if (currentID == null || "".equals(currentID)) {
         //TODO
-        throw new RuntimeException("'currentID' parameter cannot be found");
+        throw new RuntimeException("无法找到'currentID'参数");
     }
     String divID = request.getParameter("divID");
 
     if (divID == null || "".equals(divID)) {
         //TODO
-        throw new RuntimeException("'divID' parameter cannot be found");
+        throw new RuntimeException("无法找到'divID'参数");
     }
 
     String linkID = request.getParameter("linkID");

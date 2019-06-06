@@ -69,7 +69,7 @@ public class TaskManagementHelper {
         if (name == null || "".equals(name)) {
             name = request.getParameter("taskName_hidden");
             if (name == null || "".equals(name)) {
-                handleException("Name cannot be null or empty");
+                handleException("名称不能为空");
             }
         }
 
@@ -77,13 +77,13 @@ public class TaskManagementHelper {
         if (group == null || "".equals(group)) {
             group = request.getParameter("taskGroup_hidden");
             if (group == null || "".equals(group)) {
-                handleException("Task group cannot be null or empty");
+                handleException("任务组不能为空");
             }
         }
 
         String taskClass = request.getParameter("taskClass");
         if (taskClass == null || "".equals(taskClass)) {
-            handleException("Task Class cannot be null or empty");
+            handleException("任务类不能为空");
         }
 
         TaskDescription taskDescription = new TaskDescription();
@@ -103,7 +103,7 @@ public class TaskManagementHelper {
                         taskDescription.setInterval(Long.parseLong(interval.trim()) * 1000);
                         taskDescription.setIntervalInMs(true);
                     } catch (NumberFormatException e) {
-                        handleException("Invalid value for interval (Expected type is long) : " +
+                        handleException("无效的间隔值（类型应为长整型）：" +
                                 interval);
                     }
 
@@ -114,7 +114,7 @@ public class TaskManagementHelper {
                     try {
                         taskDescription.setCount(Integer.parseInt(count.trim()));
                     } catch (NumberFormatException e) {
-                        handleException("Invalid value for Count (Expected type is int) : " +
+                        handleException("无效的数量（类型应为整型）：" +
                                 count);
                     }
                 }
@@ -125,11 +125,12 @@ public class TaskManagementHelper {
                 if (cron != null && !"".equals(cron)) {
                     taskDescription.setCronExpression(cron.trim());
                 } else {
-                    handleException("Cron expression cannot be empty for cron trigger");
+//                    handleException("Cron expression cannot be empty for cron trigger");
+                    handleException("cron触发器的Cron表达式不能为空");
                 }
             }
         } else {
-            handleException("No Trigger has been selected");
+            handleException("未选择触发器");
         }
 
         String pinnedServers = request.getParameter("pinnedServers");
@@ -202,8 +203,9 @@ public class TaskManagementHelper {
                                 try {
                                     propElem.addChild(createOMElement(value.trim()));
                                 } catch (Throwable e) {
-                                    handleException("Invalid XML has been provided " +
-                                            "for property : " + propName);
+//                                    handleException("Invalid XML has been provided " +
+//                                            "for property : " + propName);
+                                    handleException("为属性：" + propName + "，提供了无效的XML");
                                 }
                                 taskDescription.setXmlProperty(propElem);
                             }
@@ -211,7 +213,7 @@ public class TaskManagementHelper {
                     }
                 }
             } catch (NumberFormatException ignored) {
-                handleException("Invalid number of properties " + propertyCount);
+                handleException("无效的属性数量：" + propertyCount);
             }
         }
         return taskDescription;
@@ -231,12 +233,12 @@ public class TaskManagementHelper {
                                                      TaskManagementClient client,
                                                      String name, String group) throws Exception {
         if (name == null || "".equals(name)) {
-            handleException("Task Name cannot be empty");
+            handleException("任务名不能为空");
         } 
         name = name.trim();
         TaskDescription taskDescription = client.getTaskDescription(name, group);
         if (taskDescription == null) {
-            handleException("No task description for name :" + name);
+            handleException("没有名为" + name + "的任务描述");
         }
         return taskDescription;
     }
@@ -311,7 +313,8 @@ public class TaskManagementHelper {
         documentBuilder.setEntityResolver(new EntityResolver() {
             @Override
             public InputSource resolveEntity(String publicId, String systemId) throws SAXException, IOException {
-                throw new SAXException("Possible XML External Entity (XXE) attack. Skipping entity resolving");
+//                throw new SAXException("Possible XML External Entity (XXE) attack. Skipping entity resolving");
+                throw new SAXException("可能存在XML外部实体（XXE）攻击。跳过实体解析");
             }
         });
         return documentBuilder;

@@ -106,12 +106,12 @@
             try {
                 proxyName = request.getParameter("proxyName");
                 if (proxyName == null || proxyNameRegex.matcher(proxyName).find()) {
-                    throw new Exception("The proxy service name is empty or contains invalid characters");
+                    throw new Exception("代理服务名称为空或包含无效字符");
                 }
 
                 policy = request.getParameter("secPolicyRegText");
                 if (policy == null || "".equals(policy)) {
-                    throw new Exception("The security policy has not been specified");
+                    throw new Exception("未指定安全策略");
                 }
 
                 String backendServerURL = CarbonUIUtil.getServerURL(config.getServletContext(), session);

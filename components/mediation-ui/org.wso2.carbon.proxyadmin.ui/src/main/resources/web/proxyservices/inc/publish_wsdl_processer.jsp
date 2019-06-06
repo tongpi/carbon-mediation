@@ -40,7 +40,7 @@
                     proxy.setWsdlDef(inlineTxt);
                 } else {
                     request.setAttribute("proxyCreationError",
-                            "The Inline WSDL content has not been provided");
+                            "尚未提供内联WSDL内容");
                 }
             } else if ("uri".equals(wsdlMode)) {
                 String uri = request.getParameter("wsdlUriText");
@@ -51,12 +51,12 @@
                         proxy.setWsdlURI(url.toString());
                     } catch (MalformedURLException e) {
                         request.setAttribute("proxyCreationError",
-                            "The WSDL URI provided is malformed");
+                            "提供的WSDL URI格式不正确");
                     }
 
                 } else {
                     request.setAttribute("proxyCreationError",
-                            "The WSDL URI has not been provided");
+                            "未提供WSDL URI");
                 }
             } else if ("reg".equals(wsdlMode)) {
                 String registryKey = request.getParameter("wsdlRegText");
@@ -65,7 +65,7 @@
                     proxy.setWsdlKey(registryKey);
                 } else {
                     request.setAttribute("proxyCreationError",
-                            "The registry key for the WSDL has not been provided");
+                            "尚未提供WSDL的注册表项");
                 }
             } else if ("ep".equals(wsdlMode)){
                 String epKey = request.getParameter("wsdlEPText");

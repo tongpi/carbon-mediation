@@ -64,7 +64,7 @@ public class SequenceEditorHelper {
         try {
             elem = XMLUtils.toOM(getSecuredDocumentBuilder(true).parse(new ByteArrayInputStream((xml.getBytes()))).getDocumentElement());
         } catch (Exception e) {
-            throw new SequenceEditorException("Couldn't parse the sequence source as XML", e);
+            throw new SequenceEditorException("无法将序列源解析为XML", e);
         }
         return elem;
     }
@@ -364,8 +364,7 @@ public class SequenceEditorHelper {
         if (mediatorInfo != null) {
             return mediatorInfo.getMediator();
         } else {
-            throw new RuntimeException("Couldn't find the mediator information in the " +
-                                       "mediator store for the mediator with logical name " + mediatorName);
+            throw new RuntimeException("无法在中介储存中找到逻辑名称为" + mediatorName + "的中介信息");
         }
     }
 
@@ -555,7 +554,7 @@ public class SequenceEditorHelper {
         documentBuilder.setEntityResolver(new EntityResolver() {
             @Override
             public InputSource resolveEntity(String publicId, String systemId) throws SAXException, IOException {
-                throw new SAXException("Possible XML External Entity (XXE) attack. Skipping entity resolving");
+                throw new SAXException("可能存在XML外部实体（XXE）攻击。跳过实体解析");
             }
         });
         return documentBuilder;

@@ -95,7 +95,7 @@
         try {
             proxyName = request.getParameter("proxyName");
             if (proxyName == null || proxyNameRegex.matcher(proxyName).find()) {
-                throw new Exception("The proxy service name is empty or contains invalid characters");
+                throw new Exception("代理服务名称为空或包含无效字符");
             }
 
             xsltKey = request.getParameter("reqXsltKey");
@@ -104,7 +104,7 @@
             if (transformResponses) {
                 responseXsltKey = request.getParameter("resXsltKey");
                 if (responseXsltKey == null || "".equals(responseXsltKey)) {
-                    throw new Exception("XSLT for the responses has not been specified");
+                    throw new Exception("未指定响应的XSLT");
                 }
             }
 

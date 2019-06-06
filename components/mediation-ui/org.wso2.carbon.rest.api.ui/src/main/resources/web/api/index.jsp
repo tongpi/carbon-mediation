@@ -68,7 +68,7 @@
         } catch (NumberFormatException e) {
         	response.setStatus(500);
             CarbonUIMessage uiMsg = new CarbonUIMessage(CarbonUIMessage.ERROR,
-            		"pageNumber parameter is not an integer", e);
+            		"页码参数不是一个整数", e);
             session.setAttribute(CarbonUIMessage.ID, uiMsg);
 		    %>
 		    <jsp:include page="../admin/error.jsp"/>
