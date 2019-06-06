@@ -74,7 +74,7 @@ public class ProxyAdminClientUtils {
         documentBuilder.setEntityResolver(new EntityResolver() {
             @Override
             public InputSource resolveEntity(String publicId, String systemId) throws SAXException, IOException {
-                throw new SAXException("Possible XML External Entity (XXE) attack. Skipping entity resolving");
+                throw new SAXException("可能存在XML外部实体（XXE）攻击。跳过实体解析");
             }
         });
         return documentBuilder;
