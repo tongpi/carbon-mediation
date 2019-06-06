@@ -85,7 +85,7 @@
 
             history.go(-1);
         }
-        CARBON.showErrorDialog('Can not resend Edited Message' + '<%=errMsg%>', gotoPage);
+        CARBON.showErrorDialog('无法重新发送已编辑的消息' + '<%=errMsg%>', gotoPage);
     });
 </script>
 
@@ -111,7 +111,7 @@
 
             history.go(-1);
         }
-        CARBON.showErrorDialog('Can not resend Message' + '<%=errMsg%>', gotoPage);
+        CARBON.showErrorDialog('无法重新发送消息' + '<%=errMsg%>', gotoPage);
     });
 </script>
 

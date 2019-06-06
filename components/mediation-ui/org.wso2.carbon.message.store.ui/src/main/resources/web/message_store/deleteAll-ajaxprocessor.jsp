@@ -70,7 +70,7 @@
 
             history.go(-1);
         }
-        CARBON.showErrorDialog('Can not delete All Message' + '<%=errMsg%>', gotoPage);
+        CARBON.showErrorDialog('无法删除全部消息' + '<%=errMsg%>', gotoPage);
     });
 </script>
 

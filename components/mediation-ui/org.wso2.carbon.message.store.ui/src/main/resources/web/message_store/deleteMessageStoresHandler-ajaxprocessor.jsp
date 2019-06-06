@@ -51,7 +51,7 @@
             try {
                     client.deleteMessageStore(msName);
             } catch (Exception e) {
-                String msg = "Could not delete Message Store : " + e.getMessage();
+                String msg = "无法删除消息存储：" + e.getMessage();
                 CarbonUIMessage.sendCarbonUIMessage(msg, CarbonUIMessage.ERROR, request);
             }
 

@@ -275,7 +275,7 @@
 
 
                     } else {
-                        throw new Exception("Error while accessing Message Stores ");
+                        throw new Exception("访问消息存储时出错");
                     }
 
                     // Hide messages in details div when JDBC Message Store is used
@@ -304,9 +304,9 @@
             <%
                 }
                 if (messageStoreName == null) {
-                    CarbonUIMessage.sendCarbonUIMessage("Error while accessing the Message Store",
+                    CarbonUIMessage.sendCarbonUIMessage("访问消息存储时出错",
                             CarbonUIMessage.ERROR, request,
-                            new Exception("Error while accessing the Message Store"));
+                            new Exception("访问消息存储时出错"));
                 }
             %>
 

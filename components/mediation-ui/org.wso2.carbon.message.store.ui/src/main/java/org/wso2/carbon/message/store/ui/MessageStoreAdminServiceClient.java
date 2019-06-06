@@ -207,7 +207,7 @@ public class MessageStoreAdminServiceClient {
             if (name != null) {
                 messageInfos = stub.getPaginatedMessages(name, pageNumber);
             } else {
-                handleException("Error Can't get messages form Message Store " + name);
+                handleException("错误！无法从消息存储库'" + name + "'中获取消息 ");
             }
         } catch (Exception e) {
             handleException(e);
@@ -222,7 +222,7 @@ public class MessageStoreAdminServiceClient {
             if (name != null) {
                 size = stub.getSize(name);
             } else {
-                handleException("Error Can't get Message Store size for Message store" + name);
+                handleException("错误！无法获取邮件储存'" + name + "'的邮件储存大小");
             }
         } catch (Exception e) {
             handleException(e);
@@ -239,7 +239,7 @@ public class MessageStoreAdminServiceClient {
             if (name != null) {
                 envelope = stub.getEnvelope(name, messageId);
             } else {
-                handleException("Error Can't access Message store" + name);
+                handleException("错误！无法访问消息存储库'" + name + "'");
             }
         } catch (Exception e) {
             handleException(e);
@@ -257,7 +257,7 @@ public class MessageStoreAdminServiceClient {
                 assert xml != null;
                 data = new MessageStoreData(xml);
             } else {
-                handleException("Error Can't access Message store" + name);
+                handleException("错误！无法访问消息存储库'" + name + "'");
             }
         } catch (Exception e) {
             handleException(e);
@@ -272,7 +272,7 @@ public class MessageStoreAdminServiceClient {
             if (name != null) {
                 stub.deleteAllMessages(name);
             } else {
-                handleException("Error Can't delete all messages from Message store" + name);
+                handleException("错误！无法删除消息存储区'" + name + "'中的所有消息");
             }
         } catch (Exception e) {
             handleException(e);
@@ -285,7 +285,7 @@ public class MessageStoreAdminServiceClient {
             if (name != null) {
                 stub.deleteMessage(name, messageId);
             } else {
-                handleException("Error accessing Message store" + name);
+                handleException("访问邮件存储'" + name + "'时出错");
             }
         } catch (Exception e) {
             handleException(e);
@@ -297,7 +297,7 @@ public class MessageStoreAdminServiceClient {
             if (name != null) {
                 stub.deleteFirstMessages(name);
             } else {
-                handleException("Error accessing Message store" + name);
+                handleException("访问邮件存储'" + name + "'时出错");
             }
         } catch (Exception e) {
             handleException(e);
@@ -310,7 +310,7 @@ public class MessageStoreAdminServiceClient {
             if (name != null) {
                 className = stub.getClassName(name);
             } else {
-                handleException("Error accessing Message store" + name);
+                handleException("访问邮件存储'" + name + "'时出错");
             }
         } catch (Exception e) {
             handleException(e);
