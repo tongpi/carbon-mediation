@@ -65,7 +65,7 @@ public class MessageProcessorAdminServiceClient {
             if (xml != null) {
                 stub.addMessageProcessor(xml);
             } else {
-                handleException("Error Can't add message processor. Error in the configuration " + xml);
+                handleException("错误！无法添加消息处理器。配置'" + xml +"'错误");
             }
         } catch (Exception e) {
             handleException(e);
@@ -78,7 +78,7 @@ public class MessageProcessorAdminServiceClient {
             if (xml != null) {
                 stub.modifyMessageProcessor(xml);
             } else {
-                handleException("Error Can't change message processor. Error in the configuration " + xml);
+                handleException("错误！无法更改消息处理器。配置'" + xml + "'错误");
             }
         } catch (Exception e) {
             handleException(e);
@@ -91,7 +91,7 @@ public class MessageProcessorAdminServiceClient {
             if (name != null) {
                 stub.deleteMessageProcessor(name);
             } else {
-                handleException("Error Can't delete Message Processor " + name);
+                handleException("错误！无法删除'" + name + "'消息处理器");
             }
         } catch (Exception e) {
             handleException(e);
@@ -178,7 +178,7 @@ public class MessageProcessorAdminServiceClient {
                 assert xml != null;
                 data = new MessageProcessorData(xml);
             } else {
-                handleException("Error Can't access Message processor" + name);
+                handleException("错误！无法访问'" + name + "'消息处理器");
             }
         } catch (Exception e) {
             handleException(e);
@@ -193,7 +193,7 @@ public class MessageProcessorAdminServiceClient {
             if (name != null) {
                 className = stub.getClassName(name);
             } else {
-                handleException("Error accessing Message processor" + name);
+                handleException("错误！访问消息处理器'" + name + "'出错");
             }
         } catch (Exception e) {
             handleException(e);

@@ -73,11 +73,11 @@
         StringBuilder messageProcessorXml = new StringBuilder();
 
         if (provider == null || provider.equals("")) {
-            throw new Exception("Provider can't be Empty");
+            throw new Exception("提供者不能为空");
         } else {
 
             if (store == null || "".equals(store.trim())) {
-                    throw new Exception("Message Store can't be Empty");
+                    throw new Exception("消息存储不能为空");
             } else {
                 messageProcessorXml.append("<ns1:messageProcessor name=\"");
                 messageProcessorXml.append(name.trim()).append("\"" + " ").append("class=\"").append(provider.trim());

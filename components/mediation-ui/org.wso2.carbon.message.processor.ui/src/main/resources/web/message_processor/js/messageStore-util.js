@@ -6,18 +6,18 @@ function isValidXml(docStr) {
             doc.async = "false";
             var hasParse = doc.loadXML(docStr);
             if (!hasParse) {
-                CARBON.showErrorDialog('Invalid Configuration');
+                CARBON.showErrorDialog('无效配置');
                 return false;
             }
         } catch (e) {
-            CARBON.showErrorDialog('Invalid Configuration');
+            CARBON.showErrorDialog('无效配置');
             return false;
         }
     } else {
         var parser = new DOMParser();
         var doc = parser.parseFromString(docStr, "text/xml");
         if (doc.documentElement.nodeName == "parsererror") {
-            CARBON.showErrorDialog('Invalid Configuration');
+            CARBON.showErrorDialog('无效配置');
             return false;
         }
     }

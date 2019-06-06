@@ -57,7 +57,7 @@
                     client.activate(processorName);
                 }
             } catch (Throwable e) {
-                String msg = "Could not Deactivate/Activate Message Processor : " + e.getMessage();
+                String msg = "无法激活/取消激活消息处理器：" + e.getMessage();
                 CarbonUIMessage.sendCarbonUIMessage(msg, CarbonUIMessage.ERROR, request);
             }
 

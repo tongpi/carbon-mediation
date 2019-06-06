@@ -51,7 +51,7 @@
             try {
                     client.deleteMessageProcessor(processorName);
             } catch (Exception e) {
-                String msg = "Could not delete Message Processor : " + e.getMessage();
+                String msg = "无法删除消息处理器：" + e.getMessage();
                 CarbonUIMessage.sendCarbonUIMessage(msg, CarbonUIMessage.ERROR, request);
             }
 
