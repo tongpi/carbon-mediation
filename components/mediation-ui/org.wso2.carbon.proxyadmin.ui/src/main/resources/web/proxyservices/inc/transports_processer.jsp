@@ -34,7 +34,7 @@
 
         if (!transportsFound) {
             request.setAttribute("proxyCreationError",
-                        "At least one transport must be specified for a proxy service");   
+                        "必须至少为代理服务指定一个传输");
         }
     }
 %>

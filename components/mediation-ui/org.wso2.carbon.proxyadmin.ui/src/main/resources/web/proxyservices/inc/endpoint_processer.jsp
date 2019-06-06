@@ -33,10 +33,10 @@
                     URI url = new URI(targetURL);
                     proxy.setEndpointXML("<endpoint xmlns=\"http://ws.apache.org/ns/synapse\"><address uri=\"" + Encode.forHtmlAttribute(url.toString()) + "\"/></endpoint>");
                 } catch (URISyntaxException e) {
-                    request.setAttribute("proxyCreationError", "The target URL provided is malformed");
+                    request.setAttribute("proxyCreationError", "提供的目标网址格式不正确");
                 }
             } else {
-                request.setAttribute("proxyCreationError", "The target URL has not been provided");
+                request.setAttribute("proxyCreationError", "尚未提供目标网址");
             }
             
         } else if ("predef".equals(mode)) {
@@ -44,7 +44,7 @@
             if (endpointName != null && !"".equals(endpointName)) {
                 proxy.setEndpointKey(endpointName);
             } else {
-                request.setAttribute("proxyCreationError", "The target endpoint name is not provided");
+                request.setAttribute("proxyCreationError", "未提供目标端点名称");
             }
 
         } else if ("reg".equals(mode)) {
@@ -52,7 +52,7 @@
             if (regKey != null && !"".equals(regKey)) {
                 proxy.setEndpointKey(regKey);
             } else {
-                request.setAttribute("proxyCreationError", "The registry key for the dynamic endpoint is not provided");
+                request.setAttribute("proxyCreationError", "未提供动态端点的注册表项");
             }
 
         }
