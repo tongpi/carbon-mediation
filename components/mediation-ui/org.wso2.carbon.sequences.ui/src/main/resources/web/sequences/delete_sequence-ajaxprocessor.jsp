@@ -53,7 +53,7 @@
                     doForceDelete(sequenceAdminClient, sequenceName, request);
                 }
             } catch (Exception e) {
-                String msg = "Could not delete sequence: " + e.getMessage();
+                String msg = "无法删除序列：" + e.getMessage();
                 CarbonUIMessage.sendCarbonUIMessage(msg, CarbonUIMessage.ERROR, request);
             }
         } else {
@@ -71,7 +71,7 @@
         try {
             adminClient.deleteSequence(sequenceName);
         } catch (Exception e) {
-            String msg = "Could not delete sequence: " + e.getMessage();
+            String msg = "无法删除序列" + e.getMessage();
             CarbonUIMessage.sendCarbonUIMessage(msg, CarbonUIMessage.ERROR, request);
         }
     }

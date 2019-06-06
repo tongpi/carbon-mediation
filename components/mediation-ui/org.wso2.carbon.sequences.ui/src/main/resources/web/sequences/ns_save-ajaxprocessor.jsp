@@ -24,7 +24,7 @@
     String currentID = request.getParameter("currentID");
     if (currentID == null || "".equals(currentID)) {
         //TODO
-        throw new RuntimeException("'currentID' parameter cannot be found");
+        throw new RuntimeException("无法找到'currentID'参数");
     }
 
     NameSpacesInformationRepository repository = (NameSpacesInformationRepository) session.getAttribute(

@@ -16,6 +16,7 @@
 
 package org.wso2.carbon.sequences.ui.util.ns;
 
+import edu.umd.cs.findbugs.annotations.SuppressWarnings;
 import org.apache.axiom.om.xpath.AXIOMXPath;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -53,7 +54,7 @@ public class XPathFactory {
             addNameSpaces(xPath, id, httpSession);
             return xPath;
         } catch (JaxenException e) {
-            String msg = "Error creating a XPath from text : " + source;
+            String msg = "从文本" + source + "创建XPath时出错";
             throw new RuntimeException(msg, e);
         }
     }
@@ -67,7 +68,7 @@ public class XPathFactory {
             addNameSpaces(xPath, id, httpSession);
             return xPath;
         } catch (JaxenException e) {
-            String msg = "Error creating a XPath from text : " + source;
+            String msg = "从文本" + source + "创建XPath时出错";
             throw new RuntimeException(msg, e);
         }
     }
@@ -105,9 +106,9 @@ public class XPathFactory {
             try {
                 xPath.addNamespace(prefix, nsURI);
             } catch (JaxenException je) {
-                String msg = "Error adding declared name space with prefix : "
-                        + prefix + "and uri : " + nsURI
-                        + " to the xPath : " + xPath;
+                String msg = "将带有前缀："
+                        + prefix + "和uri：" + nsURI
+                        + "的声明名称空间添加到" + xPath + "时出错";
                 throw new RuntimeException(msg, je);
             }
         }

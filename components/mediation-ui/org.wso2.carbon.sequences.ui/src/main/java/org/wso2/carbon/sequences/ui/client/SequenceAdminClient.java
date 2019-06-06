@@ -83,7 +83,7 @@ public class SequenceAdminClient implements EditorUIClient {
                 seqInfo.setIsEdited(info.getIsEdited());
             }
         } catch (Exception e) {
-            handleException("Couldn't retrieve the information of the sequences", e);
+            handleException("无法检索到序列信息", e);
         }
 
         if (sequences.size() > 0) {
@@ -127,7 +127,7 @@ public class SequenceAdminClient implements EditorUIClient {
                 }
             }
         } catch (Exception e) {
-            handleException("Couldn't retrieve the information of the sequences", e);
+            handleException("无法检索到序列信息", e);
         }
 
         if (sequences.size() > 0) {
@@ -140,7 +140,7 @@ public class SequenceAdminClient implements EditorUIClient {
         try {
             return sequenceAdminStub.getSequencesCount();
         } catch (Exception e) {
-            handleException("Couldn't retrieve the sequence element count", e);
+            handleException("无法检索到序列元素数", e);
         }
         return 0;
     }
@@ -149,8 +149,7 @@ public class SequenceAdminClient implements EditorUIClient {
         try {
             element = sequenceAdminStub.getSequence(sequenceName).getFirstElement();
         } catch (Exception e) {
-            handleException("Couldn't retrieve the sequence element with name '"
-                    + sequenceName + "'", e);
+            handleException("无法检索到名为'" + sequenceName + "'的序列元素", e);
         }
         return element;
     }
@@ -160,8 +159,8 @@ public class SequenceAdminClient implements EditorUIClient {
         try {
             sequenceAdminStub.saveSequence(sequenceElem);
         } catch (Exception e) {
-            handleException("Error in saving the sequence with the configuration '"
-                    + sequenceElem + "'", e);
+            handleException("使用这个配置保存序列'"
+                    + sequenceElem + "'时出错", e);
         }
     }
 
@@ -171,16 +170,15 @@ public class SequenceAdminClient implements EditorUIClient {
             sequenceElem = sequence.serialize(null);
             sequenceAdminStub.addSequence(sequenceElem);
         } catch (NullPointerException e) {
-            handleException("Error in adding the sequence with the configuration '" + sequenceElem + "' : Please make" +
-                    " sure to click the update button after configuring a mediator.", e);
+            handleException("使用这个配置添加序列'" + sequenceElem + "'时出错：请确定配置中介后再点击更新按钮。", e);
         } catch (Exception e) {
-            if (e.getMessage().toString().toLowerCase().contains("this name already exists".toLowerCase())) {
+            if (e.getMessage().toString().toLowerCase().contains("这个名称已经存在".toLowerCase())) {
                 //Error Related to name already exits
                 throw new SequenceEditorException(e.getMessage(), e);
 
             } else {
-                handleException("Error in adding the sequence with the configuration '"
-                        + sequenceElem + "'. " + e.getMessage(), e);
+                handleException("使用这个配置添加序列'"
+                        + sequenceElem + "'时出错。" + e.getMessage(), e);
             }
         }
     }
@@ -191,8 +189,8 @@ public class SequenceAdminClient implements EditorUIClient {
         try {
             sequenceAdminStub.addDynamicSequence(key, sequenceElem);
         } catch (Exception e) {
-            handleException("Error in adding dynamic sequence with configuration '"
-                    + sequenceElem + "' to the registry with key '" + key + "'", e);
+            handleException("使用秘钥'" + key + "'将带有配置'"
+                    + sequenceElem + "'的动态序列添加到注册表时出错" , e);
         }
     }
 
@@ -201,7 +199,7 @@ public class SequenceAdminClient implements EditorUIClient {
         try {
             dynamicSequence = sequenceAdminStub.getDynamicSequence(key);
         } catch (Exception e) {
-            handleException("Couldn't get dynamic sequence with key '" + key + "'", e);
+            handleException("无法通过秘钥'" + key + "'获得动态序列", e);
         }
         return dynamicSequence;
     }
@@ -212,8 +210,7 @@ public class SequenceAdminClient implements EditorUIClient {
         try {
             sequenceAdminStub.saveDynamicSequence(key, sequenceElem);
         } catch (Exception e) {
-            handleException("Error in saving dynamic sequence with configuration '"
-                    + sequenceElem + "' for key '" + key + "'", e);
+            handleException("使用配置'" + sequenceElem + "'为秘钥'" + key + "'保存动态序列时出错", e);
         }
     }
 
@@ -222,7 +219,7 @@ public class SequenceAdminClient implements EditorUIClient {
         try {
             state = sequenceAdminStub.enableTracing(sequenceName);
         } catch (Exception e) {
-            handleException("Couldn't enable tracing for the sequence '"
+            handleException("无法跟踪序列'"
                     + sequenceName + "'", e);
         }
         return state;
@@ -233,7 +230,7 @@ public class SequenceAdminClient implements EditorUIClient {
         try {
             state = sequenceAdminStub.disableTracing(sequenceName);
         } catch (Exception e) {
-            handleException("Couldn't disable tracing for the sequence '"
+            handleException("无法禁用跟踪序列'"
                     + sequenceName + "'", e);
         }
         return state;
@@ -244,8 +241,7 @@ public class SequenceAdminClient implements EditorUIClient {
         try {
             state = sequenceAdminStub.enableStatistics(sequenceName);
         } catch (Exception e) {
-            handleException("Couldn't enable statistics for the sequence '"
-                    + sequenceName + "'", e);
+            handleException("无法启用序列'" + sequenceName + "'的统计信息", e);
         }
         return state;
     }
@@ -255,8 +251,8 @@ public class SequenceAdminClient implements EditorUIClient {
         try {
             state = sequenceAdminStub.disableStatistics(sequenceName);
         } catch (Exception e) {
-            handleException("Couldn't disable statistics for the sequence '"
-                    + sequenceName + "'", e);
+            handleException("无法禁用序列'"
+                    + sequenceName + "'的统计信息", e);
         }
         return state;
     }
@@ -265,7 +261,7 @@ public class SequenceAdminClient implements EditorUIClient {
         try {
             sequenceAdminStub.deleteSequence(sequenceName);
         } catch (Exception e) {
-            handleException("Couldn't delete the sequence '" + sequenceName + "'", e);
+            handleException("无法删除序列'" + sequenceName + "'", e);
         }
     }
 
@@ -274,7 +270,7 @@ public class SequenceAdminClient implements EditorUIClient {
         try {
             localRegistryKeys = sequenceAdminStub.getEntryNamesString();
         } catch (Exception e) {
-            handleException("Couldn't get local registry Keys", e);
+            handleException("无法获得本地注册表密钥", e);
         }
         return localRegistryKeys;
     }
@@ -285,7 +281,7 @@ public class SequenceAdminClient implements EditorUIClient {
             OMElement sequenceElem = sequence.serialize(null);
             sequenceAdminStub.updateDynamicSequence(key, sequenceElem);
         } catch (Exception e) {
-            handleException("Couldn't update sequence with key '" + key + "'", e);
+            handleException("无法使用秘钥'" + key + "'更新序列", e);
         }
     }
 
@@ -293,7 +289,7 @@ public class SequenceAdminClient implements EditorUIClient {
         try {
             sequenceAdminStub.deleteDynamicSequence(key);
         } catch (Exception e) {
-            handleException("Couldn't delete sequence with key '" + key + "'", e);
+            handleException("无法使用秘钥'" + key + "'删除序列", e);
         }
     }
 
@@ -313,7 +309,7 @@ public class SequenceAdminClient implements EditorUIClient {
                 sequences.add(seqInfo);
             }
         } catch (Exception e) {
-            handleException("Couldn't retrieve the information of the sequences", e);
+            handleException("无法检索到序列的信息", e);
         }
 
         if (sequences.size() > 0) {
@@ -340,7 +336,7 @@ public class SequenceAdminClient implements EditorUIClient {
                 }
             }
         } catch (Exception e) {
-            handleException("Couldn't retrieve the information of the sequences", e);
+            handleException("无法检索到序列的信息", e);
         }
 
         if (sequences.size() > 0) {
@@ -353,7 +349,7 @@ public class SequenceAdminClient implements EditorUIClient {
         try {
             return sequenceAdminStub.getDynamicSequenceCount();
         } catch (Exception e) {
-            handleException("Couldn't retrieve the dynamic sequence element count", e);
+            handleException("无法检索动态序列的元素数", e);
         }
         return 0;
     }
@@ -371,7 +367,7 @@ public class SequenceAdminClient implements EditorUIClient {
                 return dependents;
             }
         } catch (Exception e) {
-            handleException("Couldn't get the dependents for the sequence : " + sequence, e);
+            handleException("无法获取序列'" + sequence + "'的依赖", e);
         }
         return null;
     }
@@ -402,7 +398,7 @@ public class SequenceAdminClient implements EditorUIClient {
             sequenceAdminStub.deleteSelectedSequence(SequenceNames);
 
         } catch (Exception e) {
-            handleException("Couldn't delete Selected sequences ", e);
+            handleException("无法删除所选序列", e);
         }
     }
     /**
@@ -414,7 +410,7 @@ public class SequenceAdminClient implements EditorUIClient {
         try {
             sequenceAdminStub.deleteAllSequence();
         } catch (Exception e) {
-            handleException("Couldn't delete all sequences ", e);
+            handleException("无法删除所有序列", e);
         }
     }
 }
