@@ -266,7 +266,7 @@ public class PropertiesServiceClient {
 		if (!value.matches(regEx)) {
 			String message = "Password value for " + name + " does not match with the configured regular expression.";
 			log.error(message);
-			throw new Exception(message);
+			throw new Exception(name + "的密码与配置的正则表达式不匹配");
 		}
 	}
 
